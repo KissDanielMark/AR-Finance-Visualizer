@@ -13,6 +13,8 @@
 		29082E1A29C9A82500D11C48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29082E1829C9A82500D11C48 /* Main.storyboard */; };
 		29082E1C29C9A82800D11C48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29082E1B29C9A82800D11C48 /* Assets.xcassets */; };
 		29082E1F29C9A82800D11C48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29082E1D29C9A82800D11C48 /* LaunchScreen.storyboard */; };
+		29953B5429D089EB00776BF8 /* X-34Landspeeder.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 29953B5329D089EB00776BF8 /* X-34Landspeeder.rcproject */; };
+		29953B5629D08D9000776BF8 /* TinyToyTank.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 29953B5529D08D9000776BF8 /* TinyToyTank.rcproject */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		29082E1929C9A82500D11C48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		29082E1B29C9A82800D11C48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29082E1E29C9A82800D11C48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		29953B5329D089EB00776BF8 /* X-34Landspeeder.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = "X-34Landspeeder.rcproject"; sourceTree = "<group>"; };
+		29953B5529D08D9000776BF8 /* TinyToyTank.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = TinyToyTank.rcproject; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 				29082E1229C9A82500D11C48 /* AppDelegate.swift */,
 				29082E1429C9A82500D11C48 /* ViewController.swift */,
 				29082E1629C9A82500D11C48 /* Experience.rcproject */,
+				29953B5329D089EB00776BF8 /* X-34Landspeeder.rcproject */,
+				29953B5529D08D9000776BF8 /* TinyToyTank.rcproject */,
 				29082E1829C9A82500D11C48 /* Main.storyboard */,
 				29082E1B29C9A82800D11C48 /* Assets.xcassets */,
 				29082E1D29C9A82800D11C48 /* LaunchScreen.storyboard */,
@@ -138,6 +144,8 @@
 			files = (
 				29082E1529C9A82500D11C48 /* ViewController.swift in Sources */,
 				29082E1329C9A82500D11C48 /* AppDelegate.swift in Sources */,
+				29953B5629D08D9000776BF8 /* TinyToyTank.rcproject in Sources */,
+				29953B5429D089EB00776BF8 /* X-34Landspeeder.rcproject in Sources */,
 				29082E1729C9A82500D11C48 /* Experience.rcproject in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,7 +295,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BG8NEDT523;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "AR needs camera";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -317,7 +325,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BG8NEDT523;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "AR needs camera";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
