@@ -34,19 +34,24 @@ struct ARViewContainer: UIViewRepresentable {
         //anchorEntity.addChild(myEntity)
         // Add the anchor to the scene.
         arView.scene.addAnchor(create3DText())
+        
+        let textAnchor = AnchorEntity()
+        textAnchor.addChild(textGen(textString: "Testing"))
+        arView.scene.addAnchor(textAnchor)
+        
         return arView
     }
     
     func create3DText() -> AnchorEntity{
-        let ownTextObjectVertices = MeshResource.generateText(
+        let ownTextObjectVertices: MeshResource = .generateText(
             "HALO",
-            extrusionDepth: 0.25,
-            font: .systemFont(ofSize: MeshResource.Font.systemFontSize),
-            containerFrame: CGRect.init(x: 0.0, y: 0.0, width: 1.0, height: 1.0),
-            alignment:  .left,
-            lineBreakMode: .byTruncatingTail
+            extrusionDepth: 0.001,
+            font: UIFont.systemFont(ofSize: 0.03),
+            containerFrame: CGRect(x: 0.0, y: 0.0, width: 0.2, height: 0.2),
+            alignment:  .center,
+            lineBreakMode: .byWordWrapping
         )
-        let myMaterial2 = SimpleMaterial(color: .red, roughness: 0, isMetallic: true)
+        let myMaterial2 = SimpleMaterial(color: .red, roughness: 0, isMetallic: false)
         let ownTextModel = ModelEntity(mesh: ownTextObjectVertices, materials: [myMaterial2])
         
         // Create a new Anchor Entity using Identity Transform.
@@ -55,9 +60,30 @@ struct ARViewContainer: UIViewRepresentable {
         anchorEntity.addChild(ownTextModel)
         return anchorEntity
     }
+
+    func textGen(textString: String) -> ModelEntity {
+           
+           let materialVar = SimpleMaterial(color: .white, roughness: 0, isMetallic: false)
+           
+           let depthVar: Float = 0.001
+           let fontVar = UIFont.systemFont(ofSize: 0.01)
+           let containerFrameVar = CGRect(x: -0.05, y: -0.1, width: 0.1, height: 0.1)
+           let alignmentVar: CTTextAlignment = .center
+           let lineBreakModeVar : CTLineBreakMode = .byWordWrapping
+           
+           let textMeshResource : MeshResource = .generateText(textString,
+                                              extrusionDepth: depthVar,
+                                              font: fontVar,
+                                              containerFrame: containerFrameVar,
+                                              alignment: alignmentVar,
+                                              lineBreakMode: lineBreakModeVar)
+           
+           let textEntity = ModelEntity(mesh: textMeshResource, materials: [materialVar])
+           
+           return textEntity
+    }
     
     func updateUIView(_ uiView: ARView, context: Context) {}
-    
 }
 
 
