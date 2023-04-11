@@ -13,9 +13,6 @@ struct ContentView : View {
     var body: some View {
         ZStack{
             ARViewContainer().edgesIgnoringSafeArea(.all)
-            /*Button("GOMB") {
-                print("Nothing")
-            }*/
         }
         
     }
@@ -24,18 +21,23 @@ struct ContentView : View {
 struct ARViewContainer: UIViewRepresentable {
     
     func makeUIView(context: Context) -> ARView {
-        
         let arView = ARView(frame: .zero)
-        
         // Load the "Box" scene from the "Experience" Reality File
         let boxAnchor = try! Experience.loadBox()
-        
         // Add the box anchor to the scene
         //arView.scene.anchors.append(boxAnchor)
-        
         let sphereResource = MeshResource.generateSphere(radius: 0.05)
         //_ = MeshResource.generateBox(size: 0.08)
-        
+        let myMaterial = SimpleMaterial(color: .blue, roughness: 0, isMetallic: true)
+        let myEntity = ModelEntity(mesh: sphereResource, materials: [myMaterial])
+        // Add the entity as a child of the new anchor.
+        //anchorEntity.addChild(myEntity)
+        // Add the anchor to the scene.
+        arView.scene.addAnchor(create3DText())
+        return arView
+    }
+    
+    func create3DText() -> AnchorEntity{
         let ownTextObjectVertices = MeshResource.generateText(
             "HALO",
             extrusionDepth: 0.25,
@@ -44,32 +46,21 @@ struct ARViewContainer: UIViewRepresentable {
             alignment:  .left,
             lineBreakMode: .byTruncatingTail
         )
-        
-        let myMaterial = SimpleMaterial(color: .blue, roughness: 0, isMetallic: true)
-        
         let myMaterial2 = SimpleMaterial(color: .red, roughness: 0, isMetallic: true)
-        
-        let myEntity = ModelEntity(mesh: sphereResource, materials: [myMaterial])
-        
         let ownTextModel = ModelEntity(mesh: ownTextObjectVertices, materials: [myMaterial2])
         
         // Create a new Anchor Entity using Identity Transform.
         let anchorEntity = AnchorEntity()
-
         // Add the entity as a child of the new anchor.
-        //anchorEntity.addChild(myEntity)
         anchorEntity.addChild(ownTextModel)
-
-        // Add the anchor to the scene.
-        arView.scene.addAnchor(anchorEntity)
-        
-        return arView
-        
+        return anchorEntity
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {}
     
 }
+
+
 
 #if DEBUG
 struct ContentView_Previews : PreviewProvider {
