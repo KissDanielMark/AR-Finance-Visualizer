@@ -9,10 +9,30 @@ import SwiftUI
 import RealityKit
 import ARKit
 
+struct ARVariables{
+  static var arView: ARView!
+}
+
 struct ContentView : View {
     var body: some View {
         ZStack{
             ARViewContainer().edgesIgnoringSafeArea(.all)
+            Button {
+                // Placeholder: take a snapshot
+                ARVariables.arView.snapshot(saveToHDR: false) { (image) in
+                  // Compress the image
+                  let compressedImage = UIImage(data: (image?.pngData())!)
+                  // Save in the photo album
+                  UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
+                }
+              } label: {
+                Image(systemName: "camera")
+                  .frame(width:60, height:60)
+                  .font(.title)
+                  .background(.white.opacity(0.75))
+                  .cornerRadius(30)
+                  .padding()
+              }
         }
         
     }
@@ -21,25 +41,27 @@ struct ContentView : View {
 struct ARViewContainer: UIViewRepresentable {
     
     func makeUIView(context: Context) -> ARView {
-        let arView = ARView(frame: .zero)
+        ARVariables.arView = ARView(frame: .zero)
         // Load the "Box" scene from the "Experience" Reality File
         let boxAnchor = try! Experience.loadBox()
         // Add the box anchor to the scene
-        //arView.scene.anchors.append(boxAnchor)
+        ARVariables.arView.scene.anchors.append(boxAnchor)
         let sphereResource = MeshResource.generateSphere(radius: 0.05)
         //_ = MeshResource.generateBox(size: 0.08)
         let myMaterial = SimpleMaterial(color: .blue, roughness: 0, isMetallic: true)
         let myEntity = ModelEntity(mesh: sphereResource, materials: [myMaterial])
         // Add the entity as a child of the new anchor.
-        //anchorEntity.addChild(myEntity)
+        let anchorEntity = AnchorEntity()
+        anchorEntity.addChild(myEntity)
+        ARVariables.arView.scene.addAnchor(anchorEntity)
         // Add the anchor to the scene.
-        arView.scene.addAnchor(create3DText())
+        ARVariables.arView.scene.addAnchor(create3DText())
         
         let textAnchor = AnchorEntity()
         textAnchor.addChild(textGen(textString: "Testing"))
-        arView.scene.addAnchor(textAnchor)
+        ARVariables.arView.scene.addAnchor(textAnchor)
         
-        return arView
+        return ARVariables.arView
     }
     
     func create3DText() -> AnchorEntity{

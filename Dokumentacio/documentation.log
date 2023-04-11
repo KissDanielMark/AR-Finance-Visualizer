@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  11 APR 2023 13:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  11 APR 2023 14:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1256,13 +1256,16 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 36896 strings out of 476025
- 751619 string characters out of 5790018
+ 36897 strings out of 476025
+ 751699 string characters out of 5790018
  1856388 words of memory out of 5000000
  56670 multiletter control sequences out of 15000+600000
  526403 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,7n,102p,550b,596s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{https://betterprogramming.pub/take-an-arview-snapshot-in-realitykit-93b620cf99b3} has been referenced but does not exist, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{https://coledennis.medium.com/tutorial-generating-3d-text-with-realitykit-in-a-swiftui-app-fa2a50403012} has been referenced but does not exist, replaced by a fixed one
 
@@ -1285,10 +1288,10 @@ pdfTeX warning (dest): name{https://developer.apple.com/augmented-reality/} has 
 pdfTeX warning (dest): name{https://dynamics.microsoft.com/en-us/mixed-reality/guides/what-is-augmented-reality-ar/} has been referenced but does not exist, replaced by a fixed one
 
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb>
-Output written on documentation.pdf (5 pages, 69754 bytes).
+Output written on documentation.pdf (5 pages, 70172 bytes).
 PDF statistics:
- 151 PDF objects out of 1000 (max. 8388607)
- 102 compressed objects within 2 object streams
- 19 named destinations out of 1000 (max. 500000)
+ 153 PDF objects out of 1000 (max. 8388607)
+ 104 compressed objects within 2 object streams
+ 20 named destinations out of 1000 (max. 500000)
  205 words of extra memory for PDF output out of 10000 (max. 10000000)
 
