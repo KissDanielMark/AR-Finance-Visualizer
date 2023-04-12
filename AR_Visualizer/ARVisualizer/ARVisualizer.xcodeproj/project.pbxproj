@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		290238BE29E6907200DE8C7C /* DemoARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290238BD29E6907200DE8C7C /* DemoARViewContainer.swift */; };
 		29AD98CA29DC3A500086922C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AD98C929DC3A500086922C /* AppDelegate.swift */; };
 		29AD98CC29DC3A500086922C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AD98CB29DC3A500086922C /* ContentView.swift */; };
 		29AD98CE29DC3A500086922C /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 29AD98CD29DC3A500086922C /* Experience.rcproject */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		290238BD29E6907200DE8C7C /* DemoARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoARViewContainer.swift; sourceTree = "<group>"; };
 		29AD98C629DC3A500086922C /* ARVisualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARVisualizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29AD98C929DC3A500086922C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29AD98CB29DC3A500086922C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				29AD98CD29DC3A500086922C /* Experience.rcproject */,
 				29AD98CF29DC3A540086922C /* Assets.xcassets */,
 				29AD98D129DC3A540086922C /* Preview Content */,
+				290238BD29E6907200DE8C7C /* DemoARViewContainer.swift */,
 			);
 			path = ARVisualizer;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29AD98CC29DC3A500086922C /* ContentView.swift in Sources */,
+				290238BE29E6907200DE8C7C /* DemoARViewContainer.swift in Sources */,
 				29AD98CA29DC3A500086922C /* AppDelegate.swift in Sources */,
 				29AD98CE29DC3A500086922C /* Experience.rcproject in Sources */,
 			);
