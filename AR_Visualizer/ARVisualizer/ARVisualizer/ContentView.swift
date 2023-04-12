@@ -15,10 +15,10 @@ struct AR{
 
 struct ContentView : View {
     
-    let models: [String] = ["teapot","toy_biplane_idle"]
+    let models: [Model] = [Model(modelName: "teapot"), Model(modelName: "toy_biplane_idle")]
     @State private var isPlacementActive = false
-    @State private var selectedModel: String?
-    @State private var modelConfirmedForPlacement: String?
+    @State private var selectedModel: Model?
+    @State private var modelConfirmedForPlacement: Model?
     
     var body: some View {
         ZStack(alignment: .bottom){
@@ -35,8 +35,8 @@ struct ContentView : View {
 
 struct PlacementButtons: View{
     @Binding var isPlacementActive: Bool
-    @Binding var selectedModel: String?
-    @Binding var modelConfirmedForPlacement: String?
+    @Binding var selectedModel: Model?
+    @Binding var modelConfirmedForPlacement: Model?
     
     var body: some View{
         return HStack{
@@ -71,8 +71,8 @@ struct PlacementButtons: View{
 
 struct DemoModelPicker: View{
     @Binding var isPlacementActive: Bool
-    @Binding var selectedModel: String?
-    let models: [String]
+    @Binding var selectedModel: Model?
+    let models: [Model]
     
     var body: some View{
         return ScrollView(.horizontal, showsIndicators: false){
@@ -80,11 +80,11 @@ struct DemoModelPicker: View{
                 ForEach(0 ..< self.models.count, id: \.self){
                     index in
                     Button(action: {
-                        print("Selected model: \(self.models[index])")
+                        print("Selected model: \(self.models[index].modelName)")
                         isPlacementActive = true
                         self.selectedModel = self.models[index]
                     }){
-                        Image(uiImage: UIImage(named: self.models[index])!)
+                        Image(uiImage: self.models[index].image)
                             .resizable()
                             .frame(height: 60)
                             .aspectRatio(1/1,contentMode: .fit)
@@ -120,7 +120,7 @@ struct PhotoButton: View{
 
 struct ARViewContainer: UIViewRepresentable {
     
-    @Binding var modelConnfirmedForPlacement: String?
+    @Binding var modelConnfirmedForPlacement: Model?
     
     func makeUIView(context: Context) -> ARView {
         AR.view = ARView(frame: .zero)
@@ -139,15 +139,17 @@ struct ARViewContainer: UIViewRepresentable {
         return AR.view
     }
     func updateUIView(_ uiView: ARView, context: Context) {
-        if let modelName = self.modelConnfirmedForPlacement{
-            print("Addig \(modelName) model to the Scene")
+        if let model = self.modelConnfirmedForPlacement{
+            print("Addig \(model.modelName) model to the Scene")
             
-            let modelEntity = try! ModelEntity.loadModel(named: "\(modelName).usdz")
-            let anchorEntity = AnchorEntity(plane: .any)
-            
-            anchorEntity.addChild(modelEntity)
-            uiView.scene.addAnchor(anchorEntity)
-            
+            if let modelEntity = model.modelEntity{
+                let anchorEntity = AnchorEntity(plane: .any)
+                anchorEntity.addChild(modelEntity)
+                uiView.scene.addAnchor(anchorEntity)
+            }
+            else{
+                print("Model is not available")
+            }
             DispatchQueue.main.async {
                 self.modelConnfirmedForPlacement = nil
             }
