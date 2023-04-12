@@ -125,11 +125,29 @@ struct ARViewContainer: UIViewRepresentable {
     func makeUIView(context: Context) -> ARView {
         AR.view = ARView(frame: .zero)
         
+        let configuration = ARWorldTrackingConfiguration()
+        configuration.planeDetection = [.horizontal, .vertical]
+        configuration.environmentTexturing = .automatic
+        
+//      DOCUMENTATION: this is for LiDAR capable devices
+        if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh){
+            configuration.sceneReconstruction = .mesh
+        }
+        
+        AR.view.session.run(configuration)
+        
         return AR.view
     }
     func updateUIView(_ uiView: ARView, context: Context) {
         if let modelName = self.modelConnfirmedForPlacement{
             print("Addig \(modelName) model to the Scene")
+            
+            let modelEntity = try! ModelEntity.loadModel(named: "\(modelName).usdz")
+            let anchorEntity = AnchorEntity(plane: .any)
+            
+            anchorEntity.addChild(modelEntity)
+            uiView.scene.addAnchor(anchorEntity)
+            
             DispatchQueue.main.async {
                 self.modelConnfirmedForPlacement = nil
             }
