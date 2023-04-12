@@ -17,16 +17,17 @@ struct ContentView : View {
     
     let models: [String] = ["teapot","toy_biplane_idle"]
     @State private var isPlacementActive = false
+    @State private var selectedModel: String?
+    @State private var modelConfirmedForPlacement: String?
     
     var body: some View {
         ZStack(alignment: .bottom){
             DemoARViewContainer().edgesIgnoringSafeArea(.all)
             PhotoButton()
             if self.isPlacementActive{
-                PlacementButtons(isPlacementActive: self.$isPlacementActive)
-            }
-            else{
-                DemoModelPicker(isPlacementActive: self.$isPlacementActive, models: self.models)
+                PlacementButtons(isPlacementActive: self.$isPlacementActive, selectedModel: self.$selectedModel, modelConfirmedForPlacement: self.$modelConfirmedForPlacement)
+            }else{
+                DemoModelPicker(isPlacementActive: self.$isPlacementActive, selectedModel: self.$selectedModel, models: self.models)
             }
         }
     }
@@ -34,6 +35,9 @@ struct ContentView : View {
 
 struct PlacementButtons: View{
     @Binding var isPlacementActive: Bool
+    @Binding var selectedModel: String?
+    @Binding var modelConfirmedForPlacement: String?
+    
     var body: some View{
         return HStack{
             Button(action: {resetPlacement()}){
@@ -45,7 +49,10 @@ struct PlacementButtons: View{
                     .padding(20)
             }
             
-            Button(action: {resetPlacement()}){
+            Button(action: {
+                self.modelConfirmedForPlacement = self.selectedModel
+                resetPlacement()
+            }){
                 Image(systemName: "checkmark")
                     .frame(width: 60,height: 60)
                     .font(.title)
@@ -58,11 +65,13 @@ struct PlacementButtons: View{
     
     func resetPlacement(){
         self.isPlacementActive = false
+        self.selectedModel = nil
     }
 }
 
 struct DemoModelPicker: View{
     @Binding var isPlacementActive: Bool
+    @Binding var selectedModel: String?
     let models: [String]
     
     var body: some View{
@@ -73,7 +82,7 @@ struct DemoModelPicker: View{
                     Button(action: {
                         print("Selected model: \(self.models[index])")
                         isPlacementActive = true
-                        
+                        self.selectedModel = self.models[index]
                     }){
                         Image(uiImage: UIImage(named: self.models[index])!)
                             .resizable()
