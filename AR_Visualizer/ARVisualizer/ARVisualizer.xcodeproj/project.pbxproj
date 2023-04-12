@@ -12,6 +12,7 @@
 		290238C529E693AF00DE8C7C /* toy_biplane_idle.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 290238C229E693AE00DE8C7C /* toy_biplane_idle.usdz */; };
 		290238C629E693AF00DE8C7C /* robot_walk_idle.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 290238C329E693AF00DE8C7C /* robot_walk_idle.usdz */; };
 		299F37DE29E7055E000F3D50 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299F37DD29E7055E000F3D50 /* Model.swift */; };
+		299F37E129E70F2A000F3D50 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 299F37E029E70F2A000F3D50 /* FocusEntity */; };
 		29AD98CA29DC3A500086922C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AD98C929DC3A500086922C /* AppDelegate.swift */; };
 		29AD98CC29DC3A500086922C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AD98CB29DC3A500086922C /* ContentView.swift */; };
 		29AD98CE29DC3A500086922C /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 29AD98CD29DC3A500086922C /* Experience.rcproject */; };
@@ -63,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				299F37E129E70F2A000F3D50 /* FocusEntity in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +171,9 @@
 			dependencies = (
 			);
 			name = ARVisualizer;
+			packageProductDependencies = (
+				299F37E029E70F2A000F3D50 /* FocusEntity */,
+			);
 			productName = ARVisualizer;
 			productReference = 29AD98C629DC3A500086922C /* ARVisualizer.app */;
 			productType = "com.apple.product-type.application";
@@ -241,6 +246,9 @@
 				Base,
 			);
 			mainGroup = 29AD98BD29DC3A500086922C;
+			packageReferences = (
+				299F37DF29E70F2A000F3D50 /* XCRemoteSwiftPackageReference "FocusEntity" */,
+			);
 			productRefGroup = 29AD98C729DC3A500086922C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -621,6 +629,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		299F37DF29E70F2A000F3D50 /* XCRemoteSwiftPackageReference "FocusEntity" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maxxfrazer/FocusEntity";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		299F37E029E70F2A000F3D50 /* FocusEntity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 299F37DF29E70F2A000F3D50 /* XCRemoteSwiftPackageReference "FocusEntity" */;
+			productName = FocusEntity;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 29AD98BE29DC3A500086922C /* Project object */;
 }

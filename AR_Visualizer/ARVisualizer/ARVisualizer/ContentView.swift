@@ -8,8 +8,9 @@
 import SwiftUI
 import RealityKit
 import ARKit
+import FocusEntity
 
-struct AR{
+struct AR {
   static var view: ARView!
 }
 
@@ -102,7 +103,7 @@ struct PhotoButton: View{
     var body: some View{
         return VStack{
             Button {
-                ARVariables.arView.snapshot(saveToHDR: false) { (image) in
+                AR.view.snapshot(saveToHDR: false) { (image) in
                   let compressedImage = UIImage(data: (image?.pngData())!)
                   UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
                 }
@@ -124,6 +125,7 @@ struct ARViewContainer: UIViewRepresentable {
     
     func makeUIView(context: Context) -> ARView {
         AR.view = ARView(frame: .zero)
+        let focusSquare = FocusEntity(on: AR.view, focus: .classic)
         
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = [.horizontal, .vertical]
@@ -144,7 +146,7 @@ struct ARViewContainer: UIViewRepresentable {
             
             if let modelEntity = model.modelEntity{
                 let anchorEntity = AnchorEntity(plane: .any)
-                anchorEntity.addChild(modelEntity)
+                anchorEntity.addChild(modelEntity.clone(recursive: true))//to place multiple from the same model
                 uiView.scene.addAnchor(anchorEntity)
             }
             else{
