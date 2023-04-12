@@ -16,24 +16,27 @@ struct AR{
 struct ContentView : View {
     
     let models: [String] = ["teapot","toy_biplane_idle"]
-    
+    @State private var isPlacementActive = false
     
     var body: some View {
         ZStack(alignment: .bottom){
             DemoARViewContainer().edgesIgnoringSafeArea(.all)
-            DemoModelPicker(models: models)
-//            PhotoButton()
-            PlacementButtons()
+            PhotoButton()
+            if self.isPlacementActive{
+                PlacementButtons(isPlacementActive: self.$isPlacementActive)
+            }
+            else{
+                DemoModelPicker(isPlacementActive: self.$isPlacementActive, models: self.models)
+            }
         }
-        
     }
 }
 
 struct PlacementButtons: View{
-     
+    @Binding var isPlacementActive: Bool
     var body: some View{
         return HStack{
-            Button(action: {}){
+            Button(action: {resetPlacement()}){
                 Image(systemName: "xmark")
                     .frame(width: 60,height: 60)
                     .font(.title)
@@ -42,7 +45,7 @@ struct PlacementButtons: View{
                     .padding(20)
             }
             
-            Button(action: {}){
+            Button(action: {resetPlacement()}){
                 Image(systemName: "checkmark")
                     .frame(width: 60,height: 60)
                     .font(.title)
@@ -52,9 +55,14 @@ struct PlacementButtons: View{
             }
         }
     }
+    
+    func resetPlacement(){
+        self.isPlacementActive = false
+    }
 }
 
 struct DemoModelPicker: View{
+    @Binding var isPlacementActive: Bool
     let models: [String]
     
     var body: some View{
@@ -64,6 +72,7 @@ struct DemoModelPicker: View{
                     index in
                     Button(action: {
                         print("Selected model: \(self.models[index])")
+                        isPlacementActive = true
                         
                     }){
                         Image(uiImage: UIImage(named: self.models[index])!)
@@ -92,11 +101,11 @@ struct PhotoButton: View{
                 Image(systemName: "camera")
                   .frame(width:60, height:60)
                   .font(.title)
-                  .background(.white.opacity(0.75))
+                  .background(.gray.opacity(0.75))
                   .cornerRadius(30)
                   .padding()
               }
-        }.frame(maxHeight: .infinity, alignment: .bottomTrailing)
+        }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
     }
 }
 
