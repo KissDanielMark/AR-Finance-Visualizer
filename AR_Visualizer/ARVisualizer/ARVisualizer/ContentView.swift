@@ -14,12 +14,16 @@ struct AR{
 }
 
 struct ContentView : View {
+    
+    let models: [String] = ["teapot","toy_biplane_idle"]
+    
     var body: some View {
-        ZStack{
+        ZStack(alignment: .bottom){
             DemoARViewContainer().edgesIgnoringSafeArea(.all)
+            DemoModelPicker(models: models)
             VStack{
                 Button {
-                    AR.view.snapshot(saveToHDR: false) { (image) in
+                    ARVariables.arView.snapshot(saveToHDR: false) { (image) in
                       let compressedImage = UIImage(data: (image?.pngData())!)
                       UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
                     }
@@ -31,10 +35,36 @@ struct ContentView : View {
                       .cornerRadius(30)
                       .padding()
                   }
-            }.frame(maxHeight: .infinity, alignment: .bottom)
+            }.frame(maxHeight: .infinity, alignment: .bottomTrailing)
             
         }
         
+    }
+}
+
+struct DemoModelPicker: View{
+    let models: [String]
+    
+    var body: some View{
+        return ScrollView(.horizontal, showsIndicators: false){
+            HStack(spacing: 30.0){
+                ForEach(0 ..< self.models.count){
+                    index in
+                    Button(action: {
+                        print("Selected model: \(self.models[index])")
+                        
+                    }){
+                        Image(uiImage: UIImage(named: self.models[index])!)
+                            .resizable()
+                            .frame(height: 60)
+                            .aspectRatio(1/1,contentMode: .fit)
+                            .cornerRadius(12)
+                    }.buttonStyle(PlainButtonStyle())
+                }
+            }
+        }
+        .padding(20)
+        .background(Color.black.opacity(0.3))
     }
 }
 
@@ -47,8 +77,6 @@ struct ARViewContainer: UIViewRepresentable {
     }
     func updateUIView(_ uiView: ARView, context: Context) {}
 }
-
-
 
 #if DEBUG
 struct ContentView_Previews : PreviewProvider {
