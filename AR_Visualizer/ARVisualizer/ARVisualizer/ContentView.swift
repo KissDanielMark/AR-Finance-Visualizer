@@ -20,23 +20,8 @@ struct ContentView : View {
     var body: some View {
         ZStack(alignment: .bottom){
             DemoARViewContainer().edgesIgnoringSafeArea(.all)
-            DemoModelPicker(models: models)
-            VStack{
-                Button {
-                    ARVariables.arView.snapshot(saveToHDR: false) { (image) in
-                      let compressedImage = UIImage(data: (image?.pngData())!)
-                      UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
-                    }
-                  } label: {
-                    Image(systemName: "camera")
-                      .frame(width:60, height:60)
-                      .font(.title)
-                      .background(.white.opacity(0.75))
-                      .cornerRadius(30)
-                      .padding()
-                  }
-            }.frame(maxHeight: .infinity, alignment: .bottomTrailing)
-            
+//            DemoModelPicker(models: models)
+//            PhotoButton()
         }
         
     }
@@ -48,7 +33,7 @@ struct DemoModelPicker: View{
     var body: some View{
         return ScrollView(.horizontal, showsIndicators: false){
             HStack(spacing: 30.0){
-                ForEach(0 ..< self.models.count){
+                ForEach(0 ..< self.models.count, id: \.self){
                     index in
                     Button(action: {
                         print("Selected model: \(self.models[index])")
@@ -65,6 +50,26 @@ struct DemoModelPicker: View{
         }
         .padding(20)
         .background(Color.black.opacity(0.3))
+    }
+}
+
+struct PhotoButton: View{
+    var body: some View{
+        return VStack{
+            Button {
+                ARVariables.arView.snapshot(saveToHDR: false) { (image) in
+                  let compressedImage = UIImage(data: (image?.pngData())!)
+                  UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
+                }
+              } label: {
+                Image(systemName: "camera")
+                  .frame(width:60, height:60)
+                  .font(.title)
+                  .background(.white.opacity(0.75))
+                  .cornerRadius(30)
+                  .padding()
+              }
+        }.frame(maxHeight: .infinity, alignment: .bottomTrailing)
     }
 }
 
