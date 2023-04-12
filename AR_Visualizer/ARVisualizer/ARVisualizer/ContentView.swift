@@ -17,13 +17,40 @@ struct ContentView : View {
     
     let models: [String] = ["teapot","toy_biplane_idle"]
     
+    
     var body: some View {
         ZStack(alignment: .bottom){
             DemoARViewContainer().edgesIgnoringSafeArea(.all)
-//            DemoModelPicker(models: models)
+            DemoModelPicker(models: models)
 //            PhotoButton()
+            PlacementButtons()
         }
         
+    }
+}
+
+struct PlacementButtons: View{
+     
+    var body: some View{
+        return HStack{
+            Button(action: {}){
+                Image(systemName: "xmark")
+                    .frame(width: 60,height: 60)
+                    .font(.title)
+                    .background(Color.red.opacity(0.75))
+                    .cornerRadius(30)
+                    .padding(20)
+            }
+            
+            Button(action: {}){
+                Image(systemName: "checkmark")
+                    .frame(width: 60,height: 60)
+                    .font(.title)
+                    .background(Color.green.opacity(0.75))
+                    .cornerRadius(30)
+                    .padding(20)
+            }
+        }
     }
 }
 
