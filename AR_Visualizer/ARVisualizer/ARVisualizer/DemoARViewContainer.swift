@@ -17,7 +17,7 @@ struct ARVariables{
 struct DemoContentView: View {
     var body: some View {
         ZStack{
-            ARViewContainer().edgesIgnoringSafeArea(.all)
+            DemoARViewContainer().edgesIgnoringSafeArea(.all)
             VStack{
                 Button {
                     // Placeholder: take a snapshot
@@ -112,6 +112,6 @@ struct DemoARViewContainer: UIViewRepresentable {
 
 struct ARViewContainer_Previews: PreviewProvider {
     static var previews: some View {
-        ARViewContainer()
+        DemoARViewContainer()
     }
 }

@@ -22,7 +22,7 @@ struct ContentView : View {
     
     var body: some View {
         ZStack(alignment: .bottom){
-            DemoARViewContainer().edgesIgnoringSafeArea(.all)
+            ARViewContainer(modelConnfirmedForPlacement: self.$modelConfirmedForPlacement).edgesIgnoringSafeArea(.all)
             PhotoButton()
             if self.isPlacementActive{
                 PlacementButtons(isPlacementActive: self.$isPlacementActive, selectedModel: self.$selectedModel, modelConfirmedForPlacement: self.$modelConfirmedForPlacement)
@@ -120,12 +120,21 @@ struct PhotoButton: View{
 
 struct ARViewContainer: UIViewRepresentable {
     
+    @Binding var modelConnfirmedForPlacement: String?
+    
     func makeUIView(context: Context) -> ARView {
         AR.view = ARView(frame: .zero)
         
         return AR.view
     }
-    func updateUIView(_ uiView: ARView, context: Context) {}
+    func updateUIView(_ uiView: ARView, context: Context) {
+        if let modelName = self.modelConnfirmedForPlacement{
+            print("Addig \(modelName) model to the Scene")
+            DispatchQueue.main.async {
+                self.modelConnfirmedForPlacement = nil
+            }
+        }
+    }
 }
 
 #if DEBUG
