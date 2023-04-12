@@ -17,22 +17,25 @@ struct ContentView : View {
     var body: some View {
         ZStack{
             ARViewContainer().edgesIgnoringSafeArea(.all)
-            Button {
-                // Placeholder: take a snapshot
-                ARVariables.arView.snapshot(saveToHDR: false) { (image) in
-                  // Compress the image
-                  let compressedImage = UIImage(data: (image?.pngData())!)
-                  // Save in the photo album
-                  UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
-                }
-              } label: {
-                Image(systemName: "camera")
-                  .frame(width:60, height:60)
-                  .font(.title)
-                  .background(.white.opacity(0.75))
-                  .cornerRadius(30)
-                  .padding()
-              }
+            VStack{
+                Button {
+                    // Placeholder: take a snapshot
+                    ARVariables.arView.snapshot(saveToHDR: false) { (image) in
+                      // Compress the image
+                      let compressedImage = UIImage(data: (image?.pngData())!)
+                      // Save in the photo album
+                      UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
+                    }
+                  } label: {
+                    Image(systemName: "camera")
+                      .frame(width:60, height:60)
+                      .font(.title)
+                      .background(.white.opacity(0.75))
+                      .cornerRadius(30)
+                      .padding()
+                  }
+            }.frame(maxHeight: .infinity, alignment: .bottom)
+            
         }
         
     }
