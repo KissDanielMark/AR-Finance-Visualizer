@@ -22,15 +22,35 @@ struct ContentView : View {
     @State private var modelConfirmedForPlacement: Model?
     
     var body: some View {
-        ZStack(alignment: .bottom){
-            ARViewContainer(modelConnfirmedForPlacement: self.$modelConfirmedForPlacement).edgesIgnoringSafeArea(.all)
-            PhotoButton()
-            if self.isPlacementActive{
-                PlacementButtons(isPlacementActive: self.$isPlacementActive, selectedModel: self.$selectedModel, modelConfirmedForPlacement: self.$modelConfirmedForPlacement)
-            }else{
-                DemoModelPicker(isPlacementActive: self.$isPlacementActive, selectedModel: self.$selectedModel, models: self.models)
+        
+        VStack(alignment: .center){
+            ZStack(alignment: .bottom){
+                ARViewContainer(modelConnfirmedForPlacement: self.$modelConfirmedForPlacement).edgesIgnoringSafeArea(.all)
+                PhotoButton()
+                if self.isPlacementActive{
+                    PlacementButtons(isPlacementActive: self.$isPlacementActive, selectedModel: self.$selectedModel, modelConfirmedForPlacement: self.$modelConfirmedForPlacement)
+                }else{
+                    DemoModelPicker(isPlacementActive: self.$isPlacementActive, selectedModel: self.$selectedModel, models: self.models)
+                }
+            }
+            _inputSection()
+            
+        }
+    }
+}
+
+struct _inputSection: View{
+    var body: some View{
+        return HStack{
+            Button("Update"){
+                generateRandomValue()
             }
         }
+    }
+    
+    func generateRandomValue(){
+        let randomInt = Int.random(in: 1..<5)
+        print(randomInt)
     }
 }
 
