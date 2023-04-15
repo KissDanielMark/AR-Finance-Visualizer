@@ -180,6 +180,7 @@ struct ARViewContainer: UIViewRepresentable {
         return AR.view
     }
     func updateUIView(_ uiView: ARView, context: Context) {
+        //TODO: is it a good solution?
         uiView.scene.anchors.removeAll()
         if let model = self.modelConnfirmedForPlacement{
             print("Addig \(model.modelName) model to the Scene")
