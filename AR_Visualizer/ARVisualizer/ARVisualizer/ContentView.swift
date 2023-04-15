@@ -21,36 +21,54 @@ struct ContentView : View {
     @State private var selectedModel: Model?
     @State private var modelConfirmedForPlacement: Model?
     
+    @State private var valueOf = 0
+    
     var body: some View {
         
         VStack(alignment: .center){
             ZStack(alignment: .bottom){
-                ARViewContainer(modelConnfirmedForPlacement: self.$modelConfirmedForPlacement).edgesIgnoringSafeArea(.all)
+                ARViewContainer(modelConnfirmedForPlacement: self.$modelConfirmedForPlacement, _valueOf: self.$valueOf).edgesIgnoringSafeArea(.all)
                 PhotoButton()
-                if self.isPlacementActive{
+                /*if self.isPlacementActive{
                     PlacementButtons(isPlacementActive: self.$isPlacementActive, selectedModel: self.$selectedModel, modelConfirmedForPlacement: self.$modelConfirmedForPlacement)
                 }else{
                     DemoModelPicker(isPlacementActive: self.$isPlacementActive, selectedModel: self.$selectedModel, models: self.models)
-                }
+                }*/
             }
-            _inputSection()
+            _inputSection(_valueOf: self.$valueOf)
+            _generatedValue(_valueOf: self.$valueOf)
             
         }
     }
 }
 
+struct _generatedValue: View{
+    
+    @Binding var _valueOf: Int
+    
+    var body: some View{
+        return HStack{
+            Label("Generated num.: \(_valueOf)", systemImage: "folder.circle")
+        }
+    }
+}
+
 struct _inputSection: View{
+    
+    @Binding var _valueOf: Int
+    
     var body: some View{
         return HStack{
             Button("Update"){
-                generateRandomValue()
+                self._valueOf = generateRandomValue()
             }
         }
     }
     
-    func generateRandomValue(){
+    func generateRandomValue() ->Int{
         let randomInt = Int.random(in: 1..<5)
         print(randomInt)
+        return randomInt
     }
 }
 
@@ -142,6 +160,7 @@ struct PhotoButton: View{
 struct ARViewContainer: UIViewRepresentable {
     
     @Binding var modelConnfirmedForPlacement: Model?
+    @Binding var _valueOf: Int
     
     func makeUIView(context: Context) -> ARView {
         AR.view = ARView(frame: .zero)
@@ -176,6 +195,32 @@ struct ARViewContainer: UIViewRepresentable {
                 self.modelConnfirmedForPlacement = nil
             }
         }
+        
+        let textAnchor = AnchorEntity()
+        textAnchor.addChild(textGen(textString: String(_valueOf)).clone(recursive: false))
+        uiView.scene.addAnchor(textAnchor)
+    }
+    
+    func textGen(textString: String) -> ModelEntity {
+           
+           let materialVar = SimpleMaterial(color: .white, roughness: 0, isMetallic: false)
+           
+           let depthVar: Float = 0.001
+           let fontVar = UIFont.systemFont(ofSize: 0.01)
+           let containerFrameVar = CGRect(x: -0.05, y: -0.1, width: 0.1, height: 0.1)
+           let alignmentVar: CTTextAlignment = .center
+           let lineBreakModeVar : CTLineBreakMode = .byWordWrapping
+           
+           let textMeshResource : MeshResource = .generateText(textString,
+                                              extrusionDepth: depthVar,
+                                              font: fontVar,
+                                              containerFrame: containerFrameVar,
+                                              alignment: alignmentVar,
+                                              lineBreakMode: lineBreakModeVar)
+           
+           let textEntity = ModelEntity(mesh: textMeshResource, materials: [materialVar])
+           
+           return textEntity
     }
 }
 
