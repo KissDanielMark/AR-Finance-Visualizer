@@ -198,9 +198,13 @@ struct ARViewContainer: UIViewRepresentable {
             }
         }
         
-        let textAnchor = AnchorEntity()
+        let textAnchor = AnchorEntity(world: SIMD3(x: 0.0, y: (Float(_valueOf)/10.0), z: 0.0))
         textAnchor.addChild(textGen(textString: String(_valueOf)).clone(recursive: false))
         uiView.scene.addAnchor(textAnchor)
+        
+        let ownCube = AnchorEntity(world: SIMD3(x: 0.0, y: 0.0, z: 0.0))
+        ownCube.addChild(ownCubeGen(heightOfCube: (Float(_valueOf)/10.0)))
+        uiView.scene.addAnchor(ownCube)
     }
     
     func textGen(textString: String) -> ModelEntity {
@@ -223,6 +227,16 @@ struct ARViewContainer: UIViewRepresentable {
            let textEntity = ModelEntity(mesh: textMeshResource, materials: [materialVar])
            
            return textEntity
+    }
+    
+    func ownCubeGen(heightOfCube: Float)->ModelEntity{
+        
+        let sphereResource = MeshResource.generateBox(width: 0.2, height: heightOfCube, depth: 0.2)
+        //_ = MeshResource.generateBox(size: 0.08)
+        let myMaterial = SimpleMaterial(color: .blue, roughness: 0, isMetallic: true)
+        let myEntity = ModelEntity(mesh: sphereResource, materials: [myMaterial])
+        
+        return myEntity
     }
 }
 
