@@ -13,6 +13,7 @@ class CurrencyModel{
     let name: String
     var currentValue: Float
     var columnnModel: ModelEntity
+    var textModel: ModelEntity = ModelEntity()
     
     init(name: String, currentValue: Float, columnnModel: ModelEntity) {
         self.name = name
@@ -21,18 +22,19 @@ class CurrencyModel{
     }
     
     func updateValue(newValue: Float){
+        print("New value for \(name): \(newValue) [OLD: \(currentValue)]")
         currentValue = newValue
         rebuildModel()
     }
-    func rebuildModel(){
-        textGeneration()
+    private func rebuildModel(){
+        textModel = textGeneration()
         columnnModel = columnGeneration()
     }
     
-    func textGeneration() -> ModelEntity {
+    private func textGeneration() -> ModelEntity {
         let materialVar = SimpleMaterial(color: .white, roughness: 0, isMetallic: false)
         let depthVar: Float = 0.001
-        let fontVar = UIFont.systemFont(ofSize: 0.03)
+        let fontVar = UIFont.systemFont(ofSize: 0.05)
         let containerFrameVar = CGRect(x: -0.05, y: -0.1, width: 0.1, height: 0.1)
         let alignmentVar: CTTextAlignment = .center
         let lineBreakModeVar : CTLineBreakMode = .byWordWrapping
@@ -49,11 +51,18 @@ class CurrencyModel{
         return textEntity
     }
     
-    func columnGeneration()->ModelEntity{
+    private func columnGeneration()->ModelEntity{
         
-        let sphereResource = MeshResource.generateBox(width: 0.2, height: currentValue / 1000, depth: 0.2)
+        let sphereResource = MeshResource.generateBox(width: 0.2, height: currentValue / 2000, depth: 0.2)
         //_ = MeshResource.generateBox(size: 0.08)
-        let myMaterial = SimpleMaterial(color: .blue, roughness: 0, isMetallic: true)
+        var color: UIColor = .blue
+        if name == "EUR" {
+            color = .red
+        }
+        else if name == "USD"{
+            color = .yellow
+        }
+        let myMaterial = SimpleMaterial(color: color, roughness: 0, isMetallic: true)
         let myEntity = ModelEntity(mesh: sphereResource, materials: [myMaterial])
         
         return myEntity

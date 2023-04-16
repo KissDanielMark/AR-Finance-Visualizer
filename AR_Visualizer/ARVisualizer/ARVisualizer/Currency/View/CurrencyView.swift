@@ -22,10 +22,10 @@ struct CurrencyView: View {
     var body: some View {
         VStack(alignment: .center){
             ZStack(alignment: .bottom){
-                CurrencyARViewContainer().edgesIgnoringSafeArea(.all)
+                CurrencyARViewContainer(controler: controller).edgesIgnoringSafeArea(.all)
                 PhotoButton()
                 if self.isSelectionActive{
-                    CurrencySelectionButtons(isSelectionActive: self.$isSelectionActive, selectedCurrency: self.$selectedCurrency, confirmedCurrencyForPlacement: self.$confirmedCurrencyForPlacement)
+                    CurrencySelectionButtons(controler: self.controller, isSelectionActive: self.$isSelectionActive, selectedCurrency: self.$selectedCurrency, confirmedCurrencyForPlacement: self.$confirmedCurrencyForPlacement)
                 }else{
                     CurrencyPicker(isSelectionActive: self.$isSelectionActive, selectedCurrency: self.$selectedCurrency, currencies: self.controller.availableCurrencies)
                 }
@@ -38,6 +38,8 @@ struct CurrencyView: View {
 
 struct CurrencyARViewContainer: UIViewRepresentable {
     
+    var controler:CurrencyController
+    
     func makeUIView(context: Context) -> ARView{
         AR.view = ARView(frame: .zero)
         //_ = FocusEntity(on: AR.view, focus: .classic)
@@ -45,6 +47,20 @@ struct CurrencyARViewContainer: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {
+        print("updating view")
+        uiView.scene.anchors.removeAll()
+        var index: Float = 0.0
+        for i in controler.activeCurrencyModels{
+            let textAnchor = AnchorEntity(world: SIMD3(x: index/2, y: (Float(i.currentValue)/2000.0), z: 0.0))
+            textAnchor.addChild(i.textModel)
+            uiView.scene.addAnchor(textAnchor)
+            
+            let ownCube = AnchorEntity(world: SIMD3(x: index/2, y: 0.0, z: 0.0))
+            ownCube.addChild(i.columnnModel)
+            uiView.scene.addAnchor(ownCube)
+            
+            index += 1
+        }
         
     }
 }
@@ -81,6 +97,7 @@ struct CurrencyPicker: View {
 }
 
 struct CurrencySelectionButtons: View {
+    var controler:CurrencyController
     @Binding var isSelectionActive: Bool
     @Binding var selectedCurrency: CurrencyModel?
     @Binding var confirmedCurrencyForPlacement: CurrencyModel?
@@ -97,6 +114,7 @@ struct CurrencySelectionButtons: View {
             }
             
             Button(action: {
+                controler.addActiveCurrencyModel(new: self.selectedCurrency!)
                 self.confirmedCurrencyForPlacement = self.selectedCurrency
                 resetPlacement()
             }){

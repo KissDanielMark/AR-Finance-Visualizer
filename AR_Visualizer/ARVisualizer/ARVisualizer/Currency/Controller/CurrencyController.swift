@@ -11,7 +11,7 @@ import RealityFoundation
 class CurrencyController{
     
     let availableCurrencies: [CurrencyModel]
-    let activeCurrencyModels: [CurrencyModel] = []
+    var activeCurrencyModels: [CurrencyModel] = []
     
     init() {
         //TODO: lekérés megírása
@@ -20,8 +20,15 @@ class CurrencyController{
         let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
     }
     
-    @objc func fireTimer() {
+    @objc private func fireTimer() {
         print("Timer fired!")
+        for i in activeCurrencyModels{
+            i.updateValue(newValue: Float(Int.random(in: 300..<500)))
+        }
+    }
+    
+    func addActiveCurrencyModel(new: CurrencyModel){
+        activeCurrencyModels.append(new)
     }
     
 }
