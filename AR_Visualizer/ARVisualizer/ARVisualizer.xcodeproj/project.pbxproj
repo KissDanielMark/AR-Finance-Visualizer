@@ -11,6 +11,9 @@
 		290238C429E693AF00DE8C7C /* teapot.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 290238C129E693AC00DE8C7C /* teapot.usdz */; };
 		290238C529E693AF00DE8C7C /* toy_biplane_idle.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 290238C229E693AE00DE8C7C /* toy_biplane_idle.usdz */; };
 		290238C629E693AF00DE8C7C /* robot_walk_idle.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 290238C329E693AF00DE8C7C /* robot_walk_idle.usdz */; };
+		2933144329EC5F6F00A658FC /* CurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2933144229EC5F6F00A658FC /* CurrencyView.swift */; };
+		2933144629EC65F200A658FC /* CurrencyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2933144529EC65F200A658FC /* CurrencyController.swift */; };
+		2933144B29EC693D00A658FC /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2933144A29EC693D00A658FC /* CurrencyModel.swift */; };
 		299F37DE29E7055E000F3D50 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299F37DD29E7055E000F3D50 /* Model.swift */; };
 		299F37E129E70F2A000F3D50 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 299F37E029E70F2A000F3D50 /* FocusEntity */; };
 		29AD98CA29DC3A500086922C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AD98C929DC3A500086922C /* AppDelegate.swift */; };
@@ -45,6 +48,9 @@
 		290238C129E693AC00DE8C7C /* teapot.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = teapot.usdz; sourceTree = "<group>"; };
 		290238C229E693AE00DE8C7C /* toy_biplane_idle.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = toy_biplane_idle.usdz; sourceTree = "<group>"; };
 		290238C329E693AF00DE8C7C /* robot_walk_idle.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = robot_walk_idle.usdz; sourceTree = "<group>"; };
+		2933144229EC5F6F00A658FC /* CurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyView.swift; sourceTree = "<group>"; };
+		2933144529EC65F200A658FC /* CurrencyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyController.swift; sourceTree = "<group>"; };
+		2933144A29EC693D00A658FC /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
 		299F37DD29E7055E000F3D50 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		29AD98C629DC3A500086922C /* ARVisualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARVisualizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29AD98C929DC3A500086922C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +101,40 @@
 			path = Demo_Models;
 			sourceTree = "<group>";
 		};
+		2933144429EC65A200A658FC /* Currency */ = {
+			isa = PBXGroup;
+			children = (
+				2933144929EC691B00A658FC /* Controller */,
+				2933144829EC691000A658FC /* View */,
+				2933144729EC68FD00A658FC /* Model */,
+			);
+			path = Currency;
+			sourceTree = "<group>";
+		};
+		2933144729EC68FD00A658FC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2933144A29EC693D00A658FC /* CurrencyModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2933144829EC691000A658FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2933144229EC5F6F00A658FC /* CurrencyView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2933144929EC691B00A658FC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2933144529EC65F200A658FC /* CurrencyController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		29AD98BD29DC3A500086922C = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +158,7 @@
 		29AD98C829DC3A500086922C /* ARVisualizer */ = {
 			isa = PBXGroup;
 			children = (
+				2933144429EC65A200A658FC /* Currency */,
 				290238C029E6938B00DE8C7C /* Demo_Models */,
 				29AD98C929DC3A500086922C /* AppDelegate.swift */,
 				29AD98CB29DC3A500086922C /* ContentView.swift */,
@@ -295,6 +336,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				299F37DE29E7055E000F3D50 /* Model.swift in Sources */,
+				2933144B29EC693D00A658FC /* CurrencyModel.swift in Sources */,
+				2933144329EC5F6F00A658FC /* CurrencyView.swift in Sources */,
+				2933144629EC65F200A658FC /* CurrencyController.swift in Sources */,
 				29AD98CC29DC3A500086922C /* ContentView.swift in Sources */,
 				290238BE29E6907200DE8C7C /* DemoARViewContainer.swift in Sources */,
 				29AD98CA29DC3A500086922C /* AppDelegate.swift in Sources */,

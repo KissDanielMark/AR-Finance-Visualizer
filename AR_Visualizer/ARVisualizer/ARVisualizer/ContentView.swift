@@ -29,11 +29,11 @@ struct ContentView : View {
             ZStack(alignment: .bottom){
                 ARViewContainer(modelConnfirmedForPlacement: self.$modelConfirmedForPlacement, _valueOf: self.$valueOf).edgesIgnoringSafeArea(.all)
                 PhotoButton()
-                /*if self.isPlacementActive{
+                if self.isPlacementActive{
                     PlacementButtons(isPlacementActive: self.$isPlacementActive, selectedModel: self.$selectedModel, modelConfirmedForPlacement: self.$modelConfirmedForPlacement)
                 }else{
                     DemoModelPicker(isPlacementActive: self.$isPlacementActive, selectedModel: self.$selectedModel, models: self.models)
-                }*/
+                }
             }
             _inputSection(_valueOf: self.$valueOf)
             _generatedValue(_valueOf: self.$valueOf)
@@ -164,7 +164,7 @@ struct ARViewContainer: UIViewRepresentable {
     
     func makeUIView(context: Context) -> ARView {
         AR.view = ARView(frame: .zero)
-        let focusSquare = FocusEntity(on: AR.view, focus: .classic)
+        _ = FocusEntity(on: AR.view, focus: .classic)
         
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = [.horizontal, .vertical]
@@ -179,9 +179,10 @@ struct ARViewContainer: UIViewRepresentable {
         
         return AR.view
     }
+    
     func updateUIView(_ uiView: ARView, context: Context) {
         //TODO: is it a good solution?
-        uiView.scene.anchors.removeAll()
+        //uiView.scene.anchors.removeAll()
         if let model = self.modelConnfirmedForPlacement{
             print("Addig \(model.modelName) model to the Scene")
             
