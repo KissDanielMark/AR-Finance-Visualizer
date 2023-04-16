@@ -22,7 +22,7 @@ struct CurrencyView: View {
     var body: some View {
         VStack(alignment: .center){
             ZStack(alignment: .bottom){
-                CurrencyARViewContainer(controler: controller).edgesIgnoringSafeArea(.all)
+                CurrencyARViewContainer(controler: controller).edgesIgnoringSafeArea(.all).environmentObject(controller)
                 PhotoButton()
                 if self.isSelectionActive{
                     CurrencySelectionButtons(controler: self.controller, isSelectionActive: self.$isSelectionActive, selectedCurrency: self.$selectedCurrency, confirmedCurrencyForPlacement: self.$confirmedCurrencyForPlacement)
@@ -38,7 +38,7 @@ struct CurrencyView: View {
 
 struct CurrencyARViewContainer: UIViewRepresentable {
     
-    var controler:CurrencyController
+    @StateObject var controler:CurrencyController
     
     func makeUIView(context: Context) -> ARView{
         AR.view = ARView(frame: .zero)
@@ -47,7 +47,7 @@ struct CurrencyARViewContainer: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {
-        print("updating view")
+        print("updating view - \(controler.timerHappened)")
         uiView.scene.anchors.removeAll()
         var index: Float = 0.0
         for i in controler.activeCurrencyModels{

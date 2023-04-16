@@ -8,10 +8,12 @@
 import Foundation
 import RealityFoundation
 
-class CurrencyController{
+class CurrencyController: ObservableObject{
     
     let availableCurrencies: [CurrencyModel]
     var activeCurrencyModels: [CurrencyModel] = []
+    
+    @Published var timerHappened = 0
     
     init() {
         //TODO: lekérés megírása
@@ -21,7 +23,8 @@ class CurrencyController{
     }
     
     @objc private func fireTimer() {
-        print("Timer fired!")
+        print("Timer fired! - \(timerHappened)")
+        timerHappened += 1
         for i in activeCurrencyModels{
             i.updateValue(newValue: Float(Int.random(in: 300..<500)))
         }
