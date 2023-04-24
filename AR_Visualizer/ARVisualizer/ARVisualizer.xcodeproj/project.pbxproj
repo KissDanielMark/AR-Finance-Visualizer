@@ -24,6 +24,7 @@
 		29AD98DD29DC3A540086922C /* ARVisualizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AD98DC29DC3A540086922C /* ARVisualizerTests.swift */; };
 		29AD98E729DC3A540086922C /* ARVisualizerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AD98E629DC3A540086922C /* ARVisualizerUITests.swift */; };
 		29AD98E929DC3A540086922C /* ARVisualizerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AD98E829DC3A540086922C /* ARVisualizerUITestsLaunchTests.swift */; };
+		29FF8CEA29F6EA0300AC2A00 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FF8CE929F6EA0300AC2A00 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		29AD98E229DC3A540086922C /* ARVisualizerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARVisualizerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29AD98E629DC3A540086922C /* ARVisualizerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARVisualizerUITests.swift; sourceTree = "<group>"; };
 		29AD98E829DC3A540086922C /* ARVisualizerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARVisualizerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		29FF8CE929F6EA0300AC2A00 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 		29AD98C829DC3A500086922C /* ARVisualizer */ = {
 			isa = PBXGroup;
 			children = (
+				29FF8CE829F6E62200AC2A00 /* API */,
 				2933144429EC65A200A658FC /* Currency */,
 				290238C029E6938B00DE8C7C /* Demo_Models */,
 				29AD98C929DC3A500086922C /* AppDelegate.swift */,
@@ -194,6 +197,14 @@
 				29AD98E829DC3A540086922C /* ARVisualizerUITestsLaunchTests.swift */,
 			);
 			path = ARVisualizerUITests;
+			sourceTree = "<group>";
+		};
+		29FF8CE829F6E62200AC2A00 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				29FF8CE929F6EA0300AC2A00 /* API.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +353,7 @@
 				29AD98CC29DC3A500086922C /* ContentView.swift in Sources */,
 				290238BE29E6907200DE8C7C /* DemoARViewContainer.swift in Sources */,
 				29AD98CA29DC3A500086922C /* AppDelegate.swift in Sources */,
+				29FF8CEA29F6EA0300AC2A00 /* API.swift in Sources */,
 				29AD98CE29DC3A500086922C /* Experience.rcproject in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
