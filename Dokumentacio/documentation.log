@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  15 APR 2023 21:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  24 APR 2023 17:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/kissdanielmark/Documents/01.Iskola/MSc/Onlab1/AR-Finance-Visualizer/Dokumentacio/documentation.tex
-(/Users/kissdanielmark/Documents/01.Iskola/MSc/Onlab1/AR-Finance-Visualizer/Dokumentacio/documentation.tex
+**/Users/kissdanielmark/Documents/01.Iskola/MSc/1/Onlab1/AR-Finance-Visualizer/Dokumentacio/documentation.tex
+(/Users/kissdanielmark/Documents/01.Iskola/MSc/1/Onlab1/AR-Finance-Visualizer/Dokumentacio/documentation.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (/usr/local/texlive/2023/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2022/07/02 v1.4n Standard LaTeX document class
@@ -1252,12 +1252,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
  ) 
 Here is how much of TeX's memory you used:
  36900 strings out of 476025
- 751885 string characters out of 5790018
+ 751891 string characters out of 5790018
  1856388 words of memory out of 5000000
  56670 multiletter control sequences out of 15000+600000
  526403 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,7n,102p,550b,596s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,7n,102p,552b,596s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{https://betterprogramming.pub/how-to-add-text-to-an-arview-in-an-ios-application-tutorial-f3f746f4dc1f} has been referenced but does not exist, replaced by a fixed one
 
