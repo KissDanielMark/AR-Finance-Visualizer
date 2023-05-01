@@ -12,8 +12,15 @@ class RapidAPI{
     
     
     func get_data(){
+        let apiKey = Bundle.main.object(forInfoDictionaryKey: "RAPID_API_KEY") as? String
+        guard let key = apiKey, !key.isEmpty else {
+        print("API key does not exist")
+            return
+        }
+        print("RAPID REST API key:", key)
+        
         let headers = [
-            "X-RapidAPI-Key": "b90f3a3ae2msh7522a4f087c8388p1df07cjsn5cb32bc028de",
+            "X-RapidAPI-Key": "\(apiKey!)",
             "X-RapidAPI-Host": "apidojo-yahoo-finance-v1.p.rapidapi.com"
         ]
 

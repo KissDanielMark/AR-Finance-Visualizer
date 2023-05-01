@@ -57,6 +57,8 @@
 		299F37DD29E7055E000F3D50 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		29A1EC1829FFAA0700DEC015 /* RapidAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RapidAPI.swift; sourceTree = "<group>"; };
 		29A1EC1A29FFAC5000DEC015 /* CurrencyAPILayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyAPILayer.swift; sourceTree = "<group>"; };
+		29A1EC1C29FFB57700DEC015 /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
+		29A1EC1D29FFB68100DEC015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		29AD98C629DC3A500086922C /* ARVisualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARVisualizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29AD98C929DC3A500086922C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29AD98CB29DC3A500086922C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 		29AD98C829DC3A500086922C /* ARVisualizer */ = {
 			isa = PBXGroup;
 			children = (
+				29A1EC1D29FFB68100DEC015 /* Info.plist */,
 				29FF8CE829F6E62200AC2A00 /* API */,
 				2933144429EC65A200A658FC /* Currency */,
 				290238C029E6938B00DE8C7C /* Demo_Models */,
@@ -174,6 +177,7 @@
 				29AD98D129DC3A540086922C /* Preview Content */,
 				290238BD29E6907200DE8C7C /* DemoARViewContainer.swift */,
 				299F37DD29E7055E000F3D50 /* Model.swift */,
+				29A1EC1C29FFB57700DEC015 /* Secret.xcconfig */,
 			);
 			path = ARVisualizer;
 			sourceTree = "<group>";
@@ -401,6 +405,7 @@
 /* Begin XCBuildConfiguration section */
 		29AD98EA29DC3A540086922C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29A1EC1C29FFB57700DEC015 /* Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -461,6 +466,7 @@
 		};
 		29AD98EB29DC3A540086922C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29A1EC1C29FFB57700DEC015 /* Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -524,6 +530,7 @@
 				DEVELOPMENT_TEAM = BG8NEDT523;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ARVisualizer/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "\"Required to save AR pictures to Photo Library\"";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -556,6 +563,7 @@
 				DEVELOPMENT_TEAM = BG8NEDT523;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ARVisualizer/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "\"Required to save AR pictures to Photo Library\"";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
