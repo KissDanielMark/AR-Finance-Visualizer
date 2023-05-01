@@ -17,6 +17,12 @@ class CurrencyController: ObservableObject{
     
     init() {
         //TODO: lekérés megírása
+        
+        let api = RapidAPI()
+        let currency_api = CurrencyAPILayer()
+        api.get_data()
+        currency_api.convert()
+        
         availableCurrencies = [CurrencyModel(name: "EUR", currentValue: 400.0, columnnModel: ModelEntity()), CurrencyModel(name: "USD", currentValue: 300.0, columnnModel: ModelEntity())]
         
         let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)

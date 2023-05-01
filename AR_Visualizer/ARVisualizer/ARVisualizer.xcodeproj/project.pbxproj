@@ -16,6 +16,8 @@
 		2933144B29EC693D00A658FC /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2933144A29EC693D00A658FC /* CurrencyModel.swift */; };
 		299F37DE29E7055E000F3D50 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299F37DD29E7055E000F3D50 /* Model.swift */; };
 		299F37E129E70F2A000F3D50 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 299F37E029E70F2A000F3D50 /* FocusEntity */; };
+		29A1EC1929FFAA0700DEC015 /* RapidAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A1EC1829FFAA0700DEC015 /* RapidAPI.swift */; };
+		29A1EC1B29FFAC5000DEC015 /* CurrencyAPILayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A1EC1A29FFAC5000DEC015 /* CurrencyAPILayer.swift */; };
 		29AD98CA29DC3A500086922C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AD98C929DC3A500086922C /* AppDelegate.swift */; };
 		29AD98CC29DC3A500086922C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AD98CB29DC3A500086922C /* ContentView.swift */; };
 		29AD98CE29DC3A500086922C /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 29AD98CD29DC3A500086922C /* Experience.rcproject */; };
@@ -53,6 +55,8 @@
 		2933144529EC65F200A658FC /* CurrencyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyController.swift; sourceTree = "<group>"; };
 		2933144A29EC693D00A658FC /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
 		299F37DD29E7055E000F3D50 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		29A1EC1829FFAA0700DEC015 /* RapidAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RapidAPI.swift; sourceTree = "<group>"; };
+		29A1EC1A29FFAC5000DEC015 /* CurrencyAPILayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyAPILayer.swift; sourceTree = "<group>"; };
 		29AD98C629DC3A500086922C /* ARVisualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARVisualizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29AD98C929DC3A500086922C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29AD98CB29DC3A500086922C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -203,6 +207,8 @@
 			isa = PBXGroup;
 			children = (
 				29FF8CE929F6EA0300AC2A00 /* API.swift */,
+				29A1EC1829FFAA0700DEC015 /* RapidAPI.swift */,
+				29A1EC1A29FFAC5000DEC015 /* CurrencyAPILayer.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -351,10 +357,12 @@
 				2933144329EC5F6F00A658FC /* CurrencyView.swift in Sources */,
 				2933144629EC65F200A658FC /* CurrencyController.swift in Sources */,
 				29AD98CC29DC3A500086922C /* ContentView.swift in Sources */,
+				29A1EC1929FFAA0700DEC015 /* RapidAPI.swift in Sources */,
 				290238BE29E6907200DE8C7C /* DemoARViewContainer.swift in Sources */,
 				29AD98CA29DC3A500086922C /* AppDelegate.swift in Sources */,
 				29FF8CEA29F6EA0300AC2A00 /* API.swift in Sources */,
 				29AD98CE29DC3A500086922C /* Experience.rcproject in Sources */,
+				29A1EC1B29FFAC5000DEC015 /* CurrencyAPILayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
