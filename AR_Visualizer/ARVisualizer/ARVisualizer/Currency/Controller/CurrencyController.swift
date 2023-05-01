@@ -19,9 +19,9 @@ class CurrencyController: ObservableObject{
         //TODO: lekérés megírása
         
         //let api = RapidAPI()
-        let currency_api = CurrencyAPILayer()
+        //let currency_api = CurrencyAPILayer()
         //api.get_data()
-        currency_api.convert()
+        //currency_api.convert()
         
         availableCurrencies = [CurrencyModel(name: "EUR", currentValue: 400.0, columnnModel: ModelEntity()), CurrencyModel(name: "USD", currentValue: 300.0, columnnModel: ModelEntity())]
         

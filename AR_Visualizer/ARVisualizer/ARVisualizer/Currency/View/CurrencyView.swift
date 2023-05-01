@@ -49,6 +49,21 @@ struct CurrencyARViewContainer: UIViewRepresentable {
     func updateUIView(_ uiView: ARView, context: Context) {
         print("updating view - \(controler.timerHappened)")
         uiView.scene.anchors.removeAll()
+        
+        let zeroPoint = AnchorEntity(world: SIMD3(x: 0.0, y: 0.0, z: 0.0))
+        let cylinderMeshResource = MeshResource.generateBox(size: SIMD3(x: 1.0, y: 0.01, z: 0.01), cornerRadius: 0.1)
+        let myMaterial = SimpleMaterial(color: .gray, roughness: 0, isMetallic: true)
+        let axisXEntity = ModelEntity(mesh: cylinderMeshResource, materials: [myMaterial])
+        let axisYEntity = ModelEntity(mesh: cylinderMeshResource, materials: [myMaterial])
+        let axisZEntity = ModelEntity(mesh: cylinderMeshResource, materials: [myMaterial])
+        let radians = 90.0 * Float.pi / 180.0
+        axisYEntity.orientation = simd_quatf(angle: radians, axis: SIMD3(x: 0, y: 1, z: 0))
+        axisZEntity.orientation = simd_quatf(angle: radians, axis: SIMD3(x: 0, y: 0, z: 1))
+        zeroPoint.addChild(axisXEntity)
+        zeroPoint.addChild(axisYEntity)
+        zeroPoint.addChild(axisZEntity)
+        uiView.scene.addAnchor(zeroPoint)
+        
         var index: Float = 0.0
         for i in controler.activeCurrencyModels{
             let textAnchor = AnchorEntity(world: SIMD3(x: index/2, y: (Float(i.currentValue)/2000.0), z: 0.0))
