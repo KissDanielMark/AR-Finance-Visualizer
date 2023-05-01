@@ -66,11 +66,11 @@ struct CurrencyARViewContainer: UIViewRepresentable {
         
         var index: Float = 0.0
         for i in controler.activeCurrencyModels{
-            let textAnchor = AnchorEntity(world: SIMD3(x: index/2, y: (Float(i.currentValue)/2000.0), z: 0.0))
+            let textAnchor = AnchorEntity(world: SIMD3(x: index/2+0.1+0.01, y: (Float(i.currentValue)/2000.0) + (Float(i.currentValue)/2000.0/2), z: 0.0))
             textAnchor.addChild(i.textModel)
             uiView.scene.addAnchor(textAnchor)
             
-            let ownCube = AnchorEntity(world: SIMD3(x: index/2, y: 0.0, z: 0.0))
+            let ownCube = AnchorEntity(world: SIMD3(x: index/2+0.1+0.01, y: (Float(i.currentValue)/2000.0 - Float(i.currentValue)/2000.0/2) + 0.01, z: 0.0))
             ownCube.addChild(i.columnnModel)
             uiView.scene.addAnchor(ownCube)
             
