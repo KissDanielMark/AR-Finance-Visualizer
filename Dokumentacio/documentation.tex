@@ -2,6 +2,8 @@
 \usepackage{listings}
 \linespread{1.5}
 \input{preamble}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
 
 \title{\Huge{MSc - Önálló laboratórium 1}\\Augmenteted reality using ARKit}
 \author{\huge{Daniel Mark Kiss}}
@@ -24,7 +26,7 @@ As I mentioned in the first paragraph, today's phones have a huge computing capa
 
 Last but not least, it is important to mention the Oculus Quest 2 VR headset introduced by Meta and the computer use and games based on it. In addition, the Metaverse, announced by Meta 2 years ago, is also an important milestone in the life of virtual reality and therefore also in the life of augmented reality.
 
-As the examples above clearly reflect, it will be an important and presumably defining technology in the future. In light of this, during my self-lab, I got to know the ARKit and RealityKit developed and used by Apple. And with the help of the frameworks, I developed an augmented reality application displaying economic metrics.
+As the examples above clearly reflect, it will be an important and presumably defining technology in the future. In light of this, during my self-lab, I got to know the ARKit and RealityKit developed and used by Apple. And with the help of the frameworks, I developed an augmented reality application displaying economic metrics. And during the report I used LaTex, because I felt it was time to familiarize myself with this kind of documentation language.
 
 \chapter{Current techologies}
 
@@ -52,6 +54,23 @@ Apple ARKit and RealityKit are two powerful technologies developed by Apple that
 On the other hand, RealityKit is a high-level framework that makes it easy for developers to create 3D content and build AR experiences without requiring extensive knowledge of 3D graphics or game engine programming. RealityKit includes features such as physics simulations, animations, and spatial audio, which can be used to create highly immersive AR experiences.
 
 Together, ARKit and RealityKit provide developers with a comprehensive set of tools for building augmented reality experiences on iOS devices. With these technologies, developers can create innovative and engaging apps that allow users to interact with virtual objects in the real world, opening up new possibilities for gaming, education, and more.
+
+\includegraphics[width=\textwidth]{realitykit.png}
+
+RealityKit’s features:
+\begin{itemize}
+    \item Rendering: RealityKit offers a powerful new physically-based renderer built on top of Metal, which is fully optimized for all Apple devices.
+
+    \item Animation: It has built-in support for Skeletal animation and Transform-based animation. So, if you want, you can animate anithing or you can move, scale and rotate objects with various easing functions.
+
+    \item Physics: With a powerful physics engine, RealityKit lets you adjust real-world physics properties like mass, drag and restitution, allowing you to fine-tune collisions.
+
+    \item Audio: Spacial audio understanding and automatic listener configuration let you attach sound effects to 3D objects. You can then track those sounds, making them sound realistic based on their position in the real world.
+
+    \item ECS: From a coding perspective, RealityKit enforces the Entity Component System design pattern to build objects within the world.
+
+    \item Synchronization: The framework has built-in support for networking, designed for collaborative experiences. It even offers automatic synchronization of entities between multiple clients.
+\end{itemize}
 
 
 \chapter{Development}
