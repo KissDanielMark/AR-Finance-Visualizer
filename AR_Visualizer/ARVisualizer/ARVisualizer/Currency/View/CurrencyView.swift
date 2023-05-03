@@ -23,7 +23,7 @@ struct CurrencyView: View {
     var body: some View {
         VStack(alignment: .center){
             ZStack(alignment: .bottom){
-                CurrencyARViewContainer(controler: controller).edgesIgnoringSafeArea(.all)//.environmentObject(controller)
+                CurrencyARViewContainer(/*controler: controller*/).edgesIgnoringSafeArea(.all)//.environmentObject(controller)
                 PhotoButton()
                 if self.isSelectionActive{
                     CurrencySelectionButtons(controler: self.controller, isSelectionActive: self.$isSelectionActive, selectedCurrency: self.$selectedCurrency, confirmedCurrencyForPlacement: self.$confirmedCurrencyForPlacement)
@@ -39,7 +39,7 @@ struct CurrencyView: View {
 
 struct CurrencyARViewContainer: UIViewRepresentable {
     
-    @StateObject var controler:CurrencyController
+    //@StateObject var controler:CurrencyController
     
     func makeUIView(context: Context) -> ARView{
         AR.view = ARView(frame: .zero)
@@ -48,31 +48,26 @@ struct CurrencyARViewContainer: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {
-        print("updating view - \(controler.timerHappened)")
+        //print("updating view - \(controler.timerHappened)")
         uiView.scene.anchors.removeAll()
         
         let cylinderMeshResource = MeshResource.generateBox(size: SIMD3(x: 1.2, y: 0.01, z: 0.01), cornerRadius: 0.1)
         let coneMeshResource = try! MeshResource.generateCone(radius: 0.02, height: 0.04)
         let myMaterial = SimpleMaterial(color: .gray, roughness: 0, isMetallic: true)
         let radians = 90.0 * Float.pi / 180.0
-        
+        let kozeppont = AnchorEntity(world: SIMD3(x: 0.0, y: 0.0, z: 0.0))//SIMD3(x: 0.25, y: 0.0, z: 0.0)
         //X
-        let anchorX = AnchorEntity(world: SIMD3(x: 0.0, y: 0.0, z: 0.0))//SIMD3(x: 0.25, y: 0.0, z: 0.0)
         let axisXEntity = ModelEntity(mesh: cylinderMeshResource, materials: [myMaterial])
-        //axisXEntity.generateCollisionShapes(recursive: false)
         
         let coneXEntity = ModelEntity(mesh: coneMeshResource, materials: [myMaterial])
         coneXEntity.orientation = simd_quatf(angle: radians, axis: SIMD3(x: 0, y: 0, z: -1))
         
         axisXEntity.addChild(coneXEntity)
         coneXEntity.setPosition(SIMD3(x: 0.6, y: 0.0, z: 0.0), relativeTo: axisXEntity)
-        anchorX.addChild(axisXEntity)
         
-        uiView.scene.addAnchor(anchorX)
         //uiView.installGestures([.translation, .rotation, .scale], for: axisXEntity)
         
         //Y
-        let anchorY = AnchorEntity(world: SIMD3(x: 0.0, y: 0.0, z: 0.0))//SIMD3(x: 0.0, y: 0.0, z: 0.25)
         let axisYEntity = ModelEntity(mesh: cylinderMeshResource, materials: [myMaterial])
         axisYEntity.orientation = simd_quatf(angle: radians, axis: SIMD3(x: 0, y: 0, z: 1))
         
@@ -80,32 +75,32 @@ struct CurrencyARViewContainer: UIViewRepresentable {
         axisYEntity.addChild(coneYEntity)
         coneYEntity.setPosition(SIMD3(x: 0.6, y: 0.0, z: 0.0), relativeTo: axisYEntity)
         coneYEntity.orientation = simd_quatf(angle: radians, axis: SIMD3(x: 0, y: 0, z: -1))
-        anchorY.addChild(axisYEntity)
-        uiView.scene.addAnchor(anchorY)
+        
+        axisXEntity.addChild(axisYEntity)
+        
         
         //Z
-        let anchorZ = AnchorEntity(world: SIMD3(x: 0.0, y: 0.0, z: 0.0))
         let axisZEntity = ModelEntity(mesh: cylinderMeshResource, materials: [myMaterial])
         axisZEntity.orientation = simd_quatf(angle: radians, axis: SIMD3(x: 0, y: 1, z: 0))
         let coneZEntity = ModelEntity(mesh: coneMeshResource, materials: [myMaterial])
         coneZEntity.orientation = simd_quatf(angle: radians, axis: SIMD3(x: 0, y: 0, z: 1))
         coneZEntity.setPosition(SIMD3(x: 0.0, y: 0.0, z: -0.6), relativeTo: axisZEntity)
         axisZEntity.addChild(coneZEntity)
-        anchorY.addChild(axisZEntity)
-        uiView.scene.addAnchor(anchorZ)
         
-        /*
+        axisXEntity.addChild(axisZEntity)
+        
+        axisXEntity.generateCollisionShapes(recursive: true)
         axisYEntity.generateCollisionShapes(recursive: true)
-        
         axisZEntity.generateCollisionShapes(recursive: true)
         
-        coneZEntity.generateCollisionShapes(recursive: true)
-        
+        uiView.installGestures([.translation, .rotation, .scale], for: axisXEntity)
         uiView.installGestures([.translation, .rotation, .scale], for: axisYEntity)
-       */
+        uiView.installGestures([.translation, .rotation, .scale], for: axisZEntity)
+       
+        kozeppont.addChild(axisXEntity)
+        uiView.scene.addAnchor(kozeppont)
         
-        
-        var index: Float = 0.0
+        /*var index: Float = 0.0
         for i in controler.activeCurrencyModels{
             let textAnchor = AnchorEntity(world: SIMD3(x: index/3.5+0.1+0.01, y: (Float(i.currentValue)/2000.0) + (Float(i.currentValue)/2000.0/2), z: 0.0))
             textAnchor.addChild(i.textModel)
@@ -116,7 +111,7 @@ struct CurrencyARViewContainer: UIViewRepresentable {
             uiView.scene.addAnchor(ownCube)
             
             index += 1
-        }
+        }*/
         
     }
 }
