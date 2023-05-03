@@ -12,13 +12,24 @@ class CurrencyModel{
     
     let name: String
     var currentValue: Float
-    var columnnModel: ModelEntity
+    var fluctuation_Start: Float
+    var fluctuation_End: Float
+    var oneYearAgoValue: Float
+    
+    var currentValue_columnnModel: ModelEntity = ModelEntity()
+    var fluctuation_Start_columnModel: ModelEntity = ModelEntity()
+    var fluctuation_End_columnModel: ModelEntity = ModelEntity()
+    var oneYearAgoValue_columnModel: ModelEntity = ModelEntity()
+    
     var textModel: ModelEntity = ModelEntity()
     
-    init(name: String, currentValue: Float, columnnModel: ModelEntity) {
+    init(name: String, currentValue: Float, columnnModel: ModelEntity, fluctuation_Start: Float, fluctuation_End: Float, oneYearAgoValue: Float) {
         self.name = name
         self.currentValue = currentValue
-        self.columnnModel = columnnModel
+        self.currentValue_columnnModel = columnnModel
+        self.fluctuation_Start = fluctuation_Start
+        self.fluctuation_End = fluctuation_End
+        self.oneYearAgoValue = oneYearAgoValue
     }
     
     func updateValue(newValue: Float){
@@ -28,7 +39,10 @@ class CurrencyModel{
     }
     private func rebuildModel(){
         textModel = textGeneration()
-        columnnModel = columnGeneration()
+        currentValue_columnnModel = columnGeneration(value: currentValue)
+        fluctuation_Start_columnModel = columnGeneration(value: fluctuation_Start)
+        fluctuation_End_columnModel = columnGeneration(value: fluctuation_End)
+        oneYearAgoValue_columnModel = columnGeneration(value: oneYearAgoValue)
     }
     
     private func textGeneration() -> ModelEntity {
@@ -51,16 +65,16 @@ class CurrencyModel{
         return textEntity
     }
     
-    private func columnGeneration()->ModelEntity{
+    private func columnGeneration(value: Float)->ModelEntity{
         
-        let sphereResource = MeshResource.generateBox(width: 0.2, height: currentValue / 2000, depth: 0.2)
+        let sphereResource = MeshResource.generateBox(width: 0.2, height: value / 2000, depth: 0.2)
         //_ = MeshResource.generateBox(size: 0.08)
         var color: UIColor = .blue
         if name == "EUR" {
-            color = .red
+            color = .blue
         }
         else if name == "USD"{
-            color = .yellow
+            color = .green
         }
         let myMaterial = SimpleMaterial(color: color, roughness: 0, isMetallic: true)
         let myEntity = ModelEntity(mesh: sphereResource, materials: [myMaterial])

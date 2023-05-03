@@ -106,11 +106,24 @@ struct CurrencyARViewContainer: UIViewRepresentable {
             i.textModel.setPosition(SIMD3(x: index/3.5+0.1+0.01, y: (Float(i.currentValue)/2000.0) + (Float(i.currentValue)/2000.0/2), z: 0.0), relativeTo: axisXEntity)
             
             
-            axisXEntity.addChild(i.columnnModel)
-            i.columnnModel.setPosition(SIMD3(x: index/3.5+0.1+0.01, y: (Float(i.currentValue)/2000.0 - Float(i.currentValue)/2000.0/2) + 0.01, z: 0.0), relativeTo: axisXEntity)
+            axisXEntity.addChild(i.currentValue_columnnModel)
+            i.currentValue_columnnModel.setPosition(SIMD3(x: index/3.5+0.1+0.01, y: (Float(i.currentValue)/2000.0 - Float(i.currentValue)/2000.0/2) + 0.01, z: 0.0), relativeTo: axisXEntity)
+            
+            
+            axisXEntity.addChild(i.fluctuation_Start_columnModel)
+            i.fluctuation_Start_columnModel.setPosition(SIMD3(x: index/3.5+0.1+0.01, y: (Float(i.fluctuation_Start)/2000.0 - Float(i.fluctuation_Start)/2000.0/2) + 0.01, z: 0.4), relativeTo: axisXEntity)
+            
+            axisXEntity.addChild(i.fluctuation_End_columnModel)
+            i.fluctuation_End_columnModel.setPosition(SIMD3(x: index/3.5+0.1+0.01, y: (Float(i.fluctuation_End)/2000.0 - Float(i.fluctuation_End)/2000.0/2) + 0.01, z: 0.8), relativeTo: axisXEntity)
+            
+            axisXEntity.addChild(i.oneYearAgoValue_columnModel)
+            i.oneYearAgoValue_columnModel.setPosition(SIMD3(x: index/3.5+0.1+0.01, y: (Float(i.oneYearAgoValue)/2000.0 - Float(i.oneYearAgoValue)/2000.0/2) + 0.01, z: 1.2), relativeTo: axisXEntity)
+            
             index += 1
+            
+            i.currentValue_columnnModel.generateCollisionShapes(recursive: true)
+            uiView.installGestures([.translation], for: i.currentValue_columnnModel)
         }
-        
     }
 }
 

@@ -21,11 +21,12 @@ class CurrencyController: ObservableObject{
         //TODO: lekérés megírása
         
         //let api = RapidAPI()
-        //let currency_api = CurrencyAPILayer()
+        let currency_api = CurrencyAPILayer()
+        //currency_api.fluctuation()
         //api.get_data()
         //currency_api.convert()
         
-        availableCurrencies = [CurrencyModel(name: "EUR", currentValue: 400.0, columnnModel: ModelEntity()), CurrencyModel(name: "USD", currentValue: 300.0, columnnModel: ModelEntity())]
+        availableCurrencies = [CurrencyModel(name: "EUR", currentValue: 400.0, columnnModel: ModelEntity(), fluctuation_Start: 300.0, fluctuation_End: 340.0, oneYearAgoValue: 200), CurrencyModel(name: "USD", currentValue: 300.0, columnnModel: ModelEntity(), fluctuation_Start: 400.0, fluctuation_End: 500.0, oneYearAgoValue: 100.0)]
         
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
     }
