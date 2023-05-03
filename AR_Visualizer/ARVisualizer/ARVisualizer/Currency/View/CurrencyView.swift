@@ -51,31 +51,51 @@ struct CurrencyARViewContainer: UIViewRepresentable {
         print("updating view - \(controler.timerHappened)")
         uiView.scene.anchors.removeAll()
         
+        let axisZEnd = AnchorEntity(world: SIMD3(x: 0.0, y: 0.0, z: 0.6))
+        let axisYEnd = AnchorEntity(world: SIMD3(x: 0.0, y: 0.6, z: 0.0))
+        let axisXEnd = AnchorEntity(world: SIMD3(x: 0.6, y: 0.0, z: 0.0))
+        
         let anchorX = AnchorEntity(world: SIMD3(x: 0.0, y: 0.0, z: 0.0))//SIMD3(x: 0.25, y: 0.0, z: 0.0)
         let anchorY = AnchorEntity(world: SIMD3(x: 0.0, y: 0.0, z: 0.0))//SIMD3(x: 0.0, y: 0.0, z: 0.25)
         let anchorZ = AnchorEntity(world: SIMD3(x: 0.0, y: 0.0, z: 0.0))
-        let cylinderMeshResource = MeshResource.generateBox(size: SIMD3(x: 1.2, y: 0.01, z: 0.01), cornerRadius: 0.1)
         
-        let coneMeshResource = try! MeshResource.generateCone(radius: 0.2, height: 0.4)
+        let cylinderMeshResource = MeshResource.generateBox(size: SIMD3(x: 1.2, y: 0.01, z: 0.01), cornerRadius: 0.1)
+        let coneMeshResource = try! MeshResource.generateCone(radius: 0.02, height: 0.04)
         
         let myMaterial = SimpleMaterial(color: .gray, roughness: 0, isMetallic: true)
+        
         let axisXEntity = ModelEntity(mesh: cylinderMeshResource, materials: [myMaterial])
         let axisYEntity = ModelEntity(mesh: cylinderMeshResource, materials: [myMaterial])
         let axisZEntity = ModelEntity(mesh: cylinderMeshResource, materials: [myMaterial])
         
-        let coneEntity = ModelEntity(mesh: coneMeshResource, materials: [myMaterial])
+        let coneZEntity = ModelEntity(mesh: coneMeshResource, materials: [myMaterial])
+        let coneYEntity = ModelEntity(mesh: coneMeshResource, materials: [myMaterial])
+        let coneXEntity = ModelEntity(mesh: coneMeshResource, materials: [myMaterial])
         
         let radians = 90.0 * Float.pi / 180.0
         axisYEntity.orientation = simd_quatf(angle: radians, axis: SIMD3(x: 0, y: 1, z: 0))
         axisZEntity.orientation = simd_quatf(angle: radians, axis: SIMD3(x: 0, y: 0, z: 1))
+        
+        coneZEntity.orientation = simd_quatf(angle: radians, axis: SIMD3(x: 1, y: 0, z: 0))
+        coneXEntity.orientation = simd_quatf(angle: radians, axis: SIMD3(x: 0, y: 0, z: -1))
+        
         anchorX.addChild(axisXEntity)
-        anchorX.addChild(coneEntity)
+        axisXEnd.addChild(coneXEntity)
+        
         anchorY.addChild(axisYEntity)
+        axisYEnd.addChild(coneYEntity)
+        
         anchorZ.addChild(axisZEntity)
+        axisZEnd.addChild(coneZEntity)
+        
         uiView.scene.addAnchor(anchorX)
         uiView.scene.addAnchor(anchorY)
         uiView.scene.addAnchor(anchorZ)
-//        uiView.scene.addAnchor(<#T##anchor: HasAnchoring##HasAnchoring#>)
+        
+        uiView.scene.addAnchor(axisZEnd)
+        uiView.scene.addAnchor(axisYEnd)
+        uiView.scene.addAnchor(axisXEnd)
+        
         
         var index: Float = 0.0
         for i in controler.activeCurrencyModels{

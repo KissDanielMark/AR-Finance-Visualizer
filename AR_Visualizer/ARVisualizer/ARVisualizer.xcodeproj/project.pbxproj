@@ -145,6 +145,16 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		2962AFAB2A024221007D199B /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				299F37DD29E7055E000F3D50 /* Model.swift */,
+				290238BD29E6907200DE8C7C /* DemoARViewContainer.swift */,
+				290238C029E6938B00DE8C7C /* Demo_Models */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
 		29AD98BD29DC3A500086922C = {
 			isa = PBXGroup;
 			children = (
@@ -168,17 +178,15 @@
 		29AD98C829DC3A500086922C /* ARVisualizer */ = {
 			isa = PBXGroup;
 			children = (
+				2962AFAB2A024221007D199B /* Demo */,
 				29A1EC1D29FFB68100DEC015 /* Info.plist */,
 				29FF8CE829F6E62200AC2A00 /* API */,
 				2933144429EC65A200A658FC /* Currency */,
-				290238C029E6938B00DE8C7C /* Demo_Models */,
 				29AD98C929DC3A500086922C /* AppDelegate.swift */,
 				29AD98CB29DC3A500086922C /* ContentView.swift */,
 				29AD98CD29DC3A500086922C /* Experience.rcproject */,
 				29AD98CF29DC3A540086922C /* Assets.xcassets */,
 				29AD98D129DC3A540086922C /* Preview Content */,
-				290238BD29E6907200DE8C7C /* DemoARViewContainer.swift */,
-				299F37DD29E7055E000F3D50 /* Model.swift */,
 				29A1EC1C29FFB57700DEC015 /* Secret.xcconfig */,
 			);
 			path = ARVisualizer;
