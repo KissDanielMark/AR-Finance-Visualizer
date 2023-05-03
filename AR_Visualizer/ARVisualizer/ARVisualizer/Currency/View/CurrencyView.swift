@@ -23,8 +23,9 @@ struct CurrencyView: View {
     var body: some View {
         VStack(alignment: .center){
             ZStack(alignment: .bottom){
-                CurrencyARViewContainer(/*controler: controller*/).edgesIgnoringSafeArea(.all)//.environmentObject(controller)
+                CurrencyARViewContainer(controler: controller).edgesIgnoringSafeArea(.all)
                 PhotoButton()
+                PauseButton(controler: controller)
                 if self.isSelectionActive{
                     CurrencySelectionButtons(controler: self.controller, isSelectionActive: self.$isSelectionActive, selectedCurrency: self.$selectedCurrency, confirmedCurrencyForPlacement: self.$confirmedCurrencyForPlacement)
                 }else{
@@ -39,7 +40,7 @@ struct CurrencyView: View {
 
 struct CurrencyARViewContainer: UIViewRepresentable {
     
-    //@StateObject var controler:CurrencyController
+    @StateObject var controler:CurrencyController
     
     func makeUIView(context: Context) -> ARView{
         AR.view = ARView(frame: .zero)
@@ -48,7 +49,7 @@ struct CurrencyARViewContainer: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {
-        //print("updating view - \(controler.timerHappened)")
+        print("updating view - \(controler.timerHappened)")
         uiView.scene.anchors.removeAll()
         
         let cylinderMeshResource = MeshResource.generateBox(size: SIMD3(x: 1.2, y: 0.01, z: 0.01), cornerRadius: 0.1)
@@ -100,7 +101,7 @@ struct CurrencyARViewContainer: UIViewRepresentable {
         kozeppont.addChild(axisXEntity)
         uiView.scene.addAnchor(kozeppont)
         
-        /*var index: Float = 0.0
+        var index: Float = 0.0
         for i in controler.activeCurrencyModels{
             let textAnchor = AnchorEntity(world: SIMD3(x: index/3.5+0.1+0.01, y: (Float(i.currentValue)/2000.0) + (Float(i.currentValue)/2000.0/2), z: 0.0))
             textAnchor.addChild(i.textModel)
@@ -111,7 +112,7 @@ struct CurrencyARViewContainer: UIViewRepresentable {
             uiView.scene.addAnchor(ownCube)
             
             index += 1
-        }*/
+        }
         
     }
 }
@@ -182,6 +183,44 @@ struct CurrencySelectionButtons: View {
     func resetPlacement(){
         self.isSelectionActive = false
         self.selectedCurrency = nil
+    }
+}
+
+struct PhotoButton: View{
+    var body: some View{
+        return VStack{
+            Button {
+                AR.view.snapshot(saveToHDR: false) { (image) in
+                  let compressedImage = UIImage(data: (image?.pngData())!)
+                  UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
+                }
+              } label: {
+                Image(systemName: "camera")
+                  .frame(width:60, height:60)
+                  .font(.title)
+                  .background(.gray.opacity(0.75))
+                  .cornerRadius(30)
+                  .padding()
+              }
+        }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+    }
+}
+
+struct PauseButton: View{
+    @StateObject var controler:CurrencyController
+    var body: some View{
+        return VStack{
+            Button {
+                controler.pauseResume()
+              } label: {
+                  Image(systemName: controler.isPaused ? "play":"pause")
+                  .frame(width:60, height:60)
+                  .font(.title)
+                  .background(.gray.opacity(0.75))
+                  .cornerRadius(30)
+                  .padding()
+              }
+        }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
     }
 }
 

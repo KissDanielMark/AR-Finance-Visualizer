@@ -137,25 +137,7 @@ struct DemoModelPicker: View{
     }
 }
 
-struct PhotoButton: View{
-    var body: some View{
-        return VStack{
-            Button {
-                AR.view.snapshot(saveToHDR: false) { (image) in
-                  let compressedImage = UIImage(data: (image?.pngData())!)
-                  UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
-                }
-              } label: {
-                Image(systemName: "camera")
-                  .frame(width:60, height:60)
-                  .font(.title)
-                  .background(.gray.opacity(0.75))
-                  .cornerRadius(30)
-                  .padding()
-              }
-        }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-    }
-}
+
 
 struct ARViewContainer: UIViewRepresentable {
     
