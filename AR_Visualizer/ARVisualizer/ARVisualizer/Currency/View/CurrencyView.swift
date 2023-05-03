@@ -94,23 +94,20 @@ struct CurrencyARViewContainer: UIViewRepresentable {
         axisYEntity.generateCollisionShapes(recursive: true)
         axisZEntity.generateCollisionShapes(recursive: true)
         
-        uiView.installGestures([.translation, .rotation, .scale], for: axisXEntity)
-        uiView.installGestures([.translation, .rotation, .scale], for: axisYEntity)
-        uiView.installGestures([.translation, .rotation, .scale], for: axisZEntity)
+        uiView.installGestures([.translation, .rotation], for: axisXEntity)
        
         kozeppont.addChild(axisXEntity)
         uiView.scene.addAnchor(kozeppont)
         
         var index: Float = 0.0
         for i in controler.activeCurrencyModels{
-            let textAnchor = AnchorEntity(world: SIMD3(x: index/3.5+0.1+0.01, y: (Float(i.currentValue)/2000.0) + (Float(i.currentValue)/2000.0/2), z: 0.0))
-            textAnchor.addChild(i.textModel)
-            uiView.scene.addAnchor(textAnchor)
+           
+            axisXEntity.addChild(i.textModel)
+            i.textModel.setPosition(SIMD3(x: index/3.5+0.1+0.01, y: (Float(i.currentValue)/2000.0) + (Float(i.currentValue)/2000.0/2), z: 0.0), relativeTo: axisXEntity)
             
-            let ownCube = AnchorEntity(world: SIMD3(x: index/3.5+0.1+0.01, y: (Float(i.currentValue)/2000.0 - Float(i.currentValue)/2000.0/2) + 0.01, z: 0.0))
-            ownCube.addChild(i.columnnModel)
-            uiView.scene.addAnchor(ownCube)
             
+            axisXEntity.addChild(i.columnnModel)
+            i.columnnModel.setPosition(SIMD3(x: index/3.5+0.1+0.01, y: (Float(i.currentValue)/2000.0 - Float(i.currentValue)/2000.0/2) + 0.01, z: 0.0), relativeTo: axisXEntity)
             index += 1
         }
         
