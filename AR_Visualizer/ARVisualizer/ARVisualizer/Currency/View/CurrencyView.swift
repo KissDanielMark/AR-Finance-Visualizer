@@ -50,8 +50,13 @@ struct CurrencyARViewContainer: UIViewRepresentable {
         print("updating view - \(controler.timerHappened)")
         uiView.scene.anchors.removeAll()
         
-        let zeroPoint = AnchorEntity(world: SIMD3(x: 0.0, y: 0.0, z: 0.0))
-        let cylinderMeshResource = MeshResource.generateBox(size: SIMD3(x: 1.0, y: 0.01, z: 0.01), cornerRadius: 0.1)
+        let anchorX = AnchorEntity(world: SIMD3(x: 0.0, y: 0.0, z: 0.0))//SIMD3(x: 0.25, y: 0.0, z: 0.0)
+        let anchorY = AnchorEntity(world: SIMD3(x: 0.0, y: 0.0, z: 0.0))//SIMD3(x: 0.0, y: 0.0, z: 0.25)
+        let anchorZ = AnchorEntity(world: SIMD3(x: 0.0, y: 0.0, z: 0.0))
+        let cylinderMeshResource = MeshResource.generateBox(size: SIMD3(x: 1.2, y: 0.01, z: 0.01), cornerRadius: 0.1)
+        
+        
+        
         let myMaterial = SimpleMaterial(color: .gray, roughness: 0, isMetallic: true)
         let axisXEntity = ModelEntity(mesh: cylinderMeshResource, materials: [myMaterial])
         let axisYEntity = ModelEntity(mesh: cylinderMeshResource, materials: [myMaterial])
@@ -59,18 +64,20 @@ struct CurrencyARViewContainer: UIViewRepresentable {
         let radians = 90.0 * Float.pi / 180.0
         axisYEntity.orientation = simd_quatf(angle: radians, axis: SIMD3(x: 0, y: 1, z: 0))
         axisZEntity.orientation = simd_quatf(angle: radians, axis: SIMD3(x: 0, y: 0, z: 1))
-        zeroPoint.addChild(axisXEntity)
-        zeroPoint.addChild(axisYEntity)
-        zeroPoint.addChild(axisZEntity)
-        uiView.scene.addAnchor(zeroPoint)
+        anchorX.addChild(axisXEntity)
+        anchorY.addChild(axisYEntity)
+        anchorZ.addChild(axisZEntity)
+        uiView.scene.addAnchor(anchorX)
+        uiView.scene.addAnchor(anchorY)
+        uiView.scene.addAnchor(anchorZ)
         
         var index: Float = 0.0
         for i in controler.activeCurrencyModels{
-            let textAnchor = AnchorEntity(world: SIMD3(x: index/2+0.1+0.01, y: (Float(i.currentValue)/2000.0) + (Float(i.currentValue)/2000.0/2), z: 0.0))
+            let textAnchor = AnchorEntity(world: SIMD3(x: index/3.5+0.1+0.01, y: (Float(i.currentValue)/2000.0) + (Float(i.currentValue)/2000.0/2), z: 0.0))
             textAnchor.addChild(i.textModel)
             uiView.scene.addAnchor(textAnchor)
             
-            let ownCube = AnchorEntity(world: SIMD3(x: index/2+0.1+0.01, y: (Float(i.currentValue)/2000.0 - Float(i.currentValue)/2000.0/2) + 0.01, z: 0.0))
+            let ownCube = AnchorEntity(world: SIMD3(x: index/3.5+0.1+0.01, y: (Float(i.currentValue)/2000.0 - Float(i.currentValue)/2000.0/2) + 0.01, z: 0.0))
             ownCube.addChild(i.columnnModel)
             uiView.scene.addAnchor(ownCube)
             
