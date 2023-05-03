@@ -8,6 +8,15 @@
         "revision" : "ced786adbfd91d701316c369bd52f023f681733b",
         "version" : "2.3.0"
       }
+    },
+    {
+      "identity" : "realitygeometries",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/maxxfrazer/RealityGeometries.git",
+      "state" : {
+        "revision" : "1469a67c00dafff7ecd20da02d8ee9375f2d84d3",
+        "version" : "1.0.3"
+      }
     }
   ],
   "version" : 2

@@ -9,6 +9,7 @@ import SwiftUI
 import ARKit
 import RealityKit
 import FocusEntity
+import RealityGeometries
 
 struct CurrencyView: View {
     
@@ -55,21 +56,26 @@ struct CurrencyARViewContainer: UIViewRepresentable {
         let anchorZ = AnchorEntity(world: SIMD3(x: 0.0, y: 0.0, z: 0.0))
         let cylinderMeshResource = MeshResource.generateBox(size: SIMD3(x: 1.2, y: 0.01, z: 0.01), cornerRadius: 0.1)
         
-        
+        let coneMeshResource = try! MeshResource.generateCone(radius: 0.2, height: 0.4)
         
         let myMaterial = SimpleMaterial(color: .gray, roughness: 0, isMetallic: true)
         let axisXEntity = ModelEntity(mesh: cylinderMeshResource, materials: [myMaterial])
         let axisYEntity = ModelEntity(mesh: cylinderMeshResource, materials: [myMaterial])
         let axisZEntity = ModelEntity(mesh: cylinderMeshResource, materials: [myMaterial])
+        
+        let coneEntity = ModelEntity(mesh: coneMeshResource, materials: [myMaterial])
+        
         let radians = 90.0 * Float.pi / 180.0
         axisYEntity.orientation = simd_quatf(angle: radians, axis: SIMD3(x: 0, y: 1, z: 0))
         axisZEntity.orientation = simd_quatf(angle: radians, axis: SIMD3(x: 0, y: 0, z: 1))
         anchorX.addChild(axisXEntity)
+        anchorX.addChild(coneEntity)
         anchorY.addChild(axisYEntity)
         anchorZ.addChild(axisZEntity)
         uiView.scene.addAnchor(anchorX)
         uiView.scene.addAnchor(anchorY)
         uiView.scene.addAnchor(anchorZ)
+//        uiView.scene.addAnchor(<#T##anchor: HasAnchoring##HasAnchoring#>)
         
         var index: Float = 0.0
         for i in controler.activeCurrencyModels{
