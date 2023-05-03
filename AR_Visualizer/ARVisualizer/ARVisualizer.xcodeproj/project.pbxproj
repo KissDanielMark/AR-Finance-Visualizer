@@ -15,6 +15,7 @@
 		2933144629EC65F200A658FC /* CurrencyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2933144529EC65F200A658FC /* CurrencyController.swift */; };
 		2933144B29EC693D00A658FC /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2933144A29EC693D00A658FC /* CurrencyModel.swift */; };
 		2962AFAA2A023ED3007D199B /* RealityGeometries in Frameworks */ = {isa = PBXBuildFile; productRef = 2962AFA92A023ED3007D199B /* RealityGeometries */; };
+		2962AFAF2A024B7E007D199B /* DemoInteractionWithObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2962AFAE2A024B7E007D199B /* DemoInteractionWithObjects.swift */; };
 		299F37DE29E7055E000F3D50 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299F37DD29E7055E000F3D50 /* Model.swift */; };
 		299F37E129E70F2A000F3D50 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 299F37E029E70F2A000F3D50 /* FocusEntity */; };
 		29A1EC1929FFAA0700DEC015 /* RapidAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A1EC1829FFAA0700DEC015 /* RapidAPI.swift */; };
@@ -55,6 +56,7 @@
 		2933144229EC5F6F00A658FC /* CurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyView.swift; sourceTree = "<group>"; };
 		2933144529EC65F200A658FC /* CurrencyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyController.swift; sourceTree = "<group>"; };
 		2933144A29EC693D00A658FC /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
+		2962AFAE2A024B7E007D199B /* DemoInteractionWithObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoInteractionWithObjects.swift; sourceTree = "<group>"; };
 		299F37DD29E7055E000F3D50 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		29A1EC1829FFAA0700DEC015 /* RapidAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RapidAPI.swift; sourceTree = "<group>"; };
 		29A1EC1A29FFAC5000DEC015 /* CurrencyAPILayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyAPILayer.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				299F37DD29E7055E000F3D50 /* Model.swift */,
 				290238BD29E6907200DE8C7C /* DemoARViewContainer.swift */,
 				290238C029E6938B00DE8C7C /* Demo_Models */,
+				2962AFAE2A024B7E007D199B /* DemoInteractionWithObjects.swift */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				2933144B29EC693D00A658FC /* CurrencyModel.swift in Sources */,
 				2933144329EC5F6F00A658FC /* CurrencyView.swift in Sources */,
 				2933144629EC65F200A658FC /* CurrencyController.swift in Sources */,
+				2962AFAF2A024B7E007D199B /* DemoInteractionWithObjects.swift in Sources */,
 				29AD98CC29DC3A500086922C /* ContentView.swift in Sources */,
 				29A1EC1929FFAA0700DEC015 /* RapidAPI.swift in Sources */,
 				290238BE29E6907200DE8C7C /* DemoARViewContainer.swift in Sources */,
