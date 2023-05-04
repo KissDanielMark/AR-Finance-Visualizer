@@ -53,9 +53,12 @@ struct CurrencyARViewContainer: UIViewRepresentable {
         uiView.scene.anchors.removeAll()
         
         let cylinderMeshResource = MeshResource.generateBox(size: SIMD3(x: 1.2, y: 0.01, z: 0.01), cornerRadius: 0.1)
+        let cylinderSmallMeshResource = MeshResource.generateBox(size: SIMD3(x: 0.05, y: 0.01, z: 0.01), cornerRadius: 0.1)
         let coneMeshResource = try! MeshResource.generateCone(radius: 0.02, height: 0.04)
         let myMaterial = SimpleMaterial(color: .gray, roughness: 0, isMetallic: true)
         let radians = 90.0 * Float.pi / 180.0
+        
+        
         let kozeppont = AnchorEntity(world: SIMD3(x: 0.0, y: 0.0, z: 0.0))//SIMD3(x: 0.25, y: 0.0, z: 0.0)
         //X
         let axisXEntity = ModelEntity(mesh: cylinderMeshResource, materials: [myMaterial])
@@ -65,6 +68,18 @@ struct CurrencyARViewContainer: UIViewRepresentable {
         
         axisXEntity.addChild(coneXEntity)
         coneXEntity.setPosition(SIMD3(x: 0.6, y: 0.0, z: 0.0), relativeTo: axisXEntity)
+        
+        let xJelolo1 = ModelEntity(mesh: cylinderSmallMeshResource, materials: [myMaterial])
+        axisXEntity.addChild(xJelolo1)
+        xJelolo1.orientation = simd_quatf(angle: radians, axis: SIMD3(x: 0, y: 0, z: 1))
+        xJelolo1.setPosition(SIMD3(x: (0/3.5+0.1   + 0.0125), y: 0.0, z: 0.0), relativeTo: axisXEntity)
+        
+        if(!controler.activeCurrencyModels.isEmpty){
+            let elsoxSzoveg = textGeneration(value: controler.activeCurrencyModels[0].name)
+            axisXEntity.addChild(elsoxSzoveg)
+            elsoxSzoveg.setPosition(SIMD3(x: (0/3.5+0.1   + 0.0125), y: -0.05, z: 0.0), relativeTo: axisXEntity)
+        }
+        
         
         //uiView.installGestures([.translation, .rotation, .scale], for: axisXEntity)
         
@@ -102,8 +117,8 @@ struct CurrencyARViewContainer: UIViewRepresentable {
         var index: Float = 0.0
         for i in controler.activeCurrencyModels{
            
-            axisXEntity.addChild(i.textModel)
-            i.textModel.setPosition(SIMD3(x: index/3.5+0.1+0.01, y: (Float(i.currentValue)/2000.0) + (Float(i.currentValue)/2000.0/2), z: 0.0), relativeTo: axisXEntity)
+            i.currentValue_columnnModel.addChild(i.textModel)
+            i.textModel.setPosition(SIMD3(x: 0.0, y: (Float(i.currentValue)/2000.0) + (Float(i.currentValue)/2000.0/2), z: 0.0), relativeTo: i.currentValue_columnnModel)
             
             
             axisXEntity.addChild(i.currentValue_columnnModel)
@@ -111,13 +126,13 @@ struct CurrencyARViewContainer: UIViewRepresentable {
             
             
             axisXEntity.addChild(i.fluctuation_Start_columnModel)
-            i.fluctuation_Start_columnModel.setPosition(SIMD3(x: index/3.5+0.1+0.01, y: (Float(i.fluctuation_Start)/2000.0 - Float(i.fluctuation_Start)/2000.0/2) + 0.01, z: 0.4), relativeTo: axisXEntity)
+            i.fluctuation_Start_columnModel.setPosition(SIMD3(x: index/3.5+0.1+0.01, y: (Float(i.fluctuation_Start)/2000.0 - Float(i.fluctuation_Start)/2000.0/2) + 0.01, z: -0.2), relativeTo: axisXEntity)
             
             axisXEntity.addChild(i.fluctuation_End_columnModel)
-            i.fluctuation_End_columnModel.setPosition(SIMD3(x: index/3.5+0.1+0.01, y: (Float(i.fluctuation_End)/2000.0 - Float(i.fluctuation_End)/2000.0/2) + 0.01, z: 0.8), relativeTo: axisXEntity)
+            i.fluctuation_End_columnModel.setPosition(SIMD3(x: index/3.5+0.1+0.01, y: (Float(i.fluctuation_End)/2000.0 - Float(i.fluctuation_End)/2000.0/2) + 0.01, z: -0.4), relativeTo: axisXEntity)
             
             axisXEntity.addChild(i.oneYearAgoValue_columnModel)
-            i.oneYearAgoValue_columnModel.setPosition(SIMD3(x: index/3.5+0.1+0.01, y: (Float(i.oneYearAgoValue)/2000.0 - Float(i.oneYearAgoValue)/2000.0/2) + 0.01, z: 1.2), relativeTo: axisXEntity)
+            i.oneYearAgoValue_columnModel.setPosition(SIMD3(x: index/3.5+0.1+0.01, y: (Float(i.oneYearAgoValue)/2000.0 - Float(i.oneYearAgoValue)/2000.0/2) + 0.01, z: -0.6), relativeTo: axisXEntity)
             
             index += 1
             
@@ -232,6 +247,26 @@ struct PauseButton: View{
               }
         }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
     }
+}
+
+private func textGeneration(value:  String) -> ModelEntity {
+    let materialVar = SimpleMaterial(color: .white, roughness: 0, isMetallic: false)
+    let depthVar: Float = 0.001
+    let fontVar = UIFont.systemFont(ofSize: 0.025)
+    let containerFrameVar = CGRect(x: -0.05, y: -0.1, width: 0.1, height: 0.1)
+    let alignmentVar: CTTextAlignment = .center
+    let lineBreakModeVar : CTLineBreakMode = .byWordWrapping
+   
+    let textMeshResource : MeshResource = .generateText(String(value),
+                                      extrusionDepth: depthVar,
+                                      font: fontVar,
+                                      containerFrame: containerFrameVar,
+                                      alignment: alignmentVar,
+                                      lineBreakMode: lineBreakModeVar)
+   
+    let textEntity = ModelEntity(mesh: textMeshResource, materials: [materialVar])
+   
+    return textEntity
 }
 
 struct CurrencyView_Previews: PreviewProvider {

@@ -67,7 +67,7 @@ class CurrencyModel{
     
     private func columnGeneration(value: Float)->ModelEntity{
         
-        let sphereResource = MeshResource.generateBox(width: 0.2, height: value / 2000, depth: 0.2)
+        let sphereResource = MeshResource.generateBox(width: 0.1, height: value / 2000, depth: 0.1)
         //_ = MeshResource.generateBox(size: 0.08)
         var color: UIColor = .blue
         if name == "EUR" {
