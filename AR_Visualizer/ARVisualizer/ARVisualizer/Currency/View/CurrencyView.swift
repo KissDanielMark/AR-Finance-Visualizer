@@ -80,6 +80,17 @@ struct CurrencyARViewContainer: UIViewRepresentable {
             elsoxSzoveg.setPosition(SIMD3(x: (0/3.5+0.1   + 0.0125), y: -0.05, z: 0.0), relativeTo: axisXEntity)
         }
         
+        let xJelolo2 = ModelEntity(mesh: cylinderSmallMeshResource, materials: [myMaterial])
+        axisXEntity.addChild(xJelolo2)
+        xJelolo2.orientation = simd_quatf(angle: radians, axis: SIMD3(x: 0, y: 0, z: 1))
+        xJelolo2.setPosition(SIMD3(x: (1/3.5+0.1   + 0.0125), y: 0.0, z: 0.0), relativeTo: axisXEntity)
+        
+        if(controler.activeCurrencyModels.count >= 2){
+            let elsoxSzoveg = textGeneration(value: controler.activeCurrencyModels[1].name)
+            axisXEntity.addChild(elsoxSzoveg)
+            elsoxSzoveg.setPosition(SIMD3(x: (1/3.5+0.1   + 0.0125), y: -0.05, z: 0.0), relativeTo: axisXEntity)
+        }
+        
         
         //uiView.installGestures([.translation, .rotation, .scale], for: axisXEntity)
         
