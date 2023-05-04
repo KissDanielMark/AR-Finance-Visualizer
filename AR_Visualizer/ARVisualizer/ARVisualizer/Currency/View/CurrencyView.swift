@@ -58,6 +58,8 @@ struct CurrencyARViewContainer: UIViewRepresentable {
         let myMaterial = SimpleMaterial(color: .gray, roughness: 0, isMetallic: true)
         let radians = 90.0 * Float.pi / 180.0
         
+        let radians2 = 180.0 * Float.pi / 180.0
+        
         
         let kozeppont = AnchorEntity(world: SIMD3(x: 0.0, y: 0.0, z: 0.0))//SIMD3(x: 0.25, y: 0.0, z: 0.0)
         //X
@@ -115,6 +117,31 @@ struct CurrencyARViewContainer: UIViewRepresentable {
         axisZEntity.addChild(coneZEntity)
         
         axisXEntity.addChild(axisZEntity)
+        
+        
+        let zJelolo1 = ModelEntity(mesh: cylinderSmallMeshResource, materials: [myMaterial])
+        axisZEntity.addChild(zJelolo1)
+        zJelolo1.orientation = simd_quatf(angle: radians, axis: SIMD3(x: 0, y: 0, z: 1))
+        zJelolo1.setPosition(SIMD3(x: (0/3.5+0.1   + 0.0125), y: 0.0, z: 0.0), relativeTo: axisZEntity)
+        
+        
+        let elsoZSzoveg = textGeneration(value: "Valami")
+        axisZEntity.addChild(elsoZSzoveg)
+        elsoZSzoveg.orientation = simd_quatf(angle: radians2, axis: SIMD3(x: 0, y: -1.0, z: 0.0))
+        elsoZSzoveg.setPosition(SIMD3(x: (0/3.5+0.1   + 0.0125), y: -0.05, z: 0.0), relativeTo: axisZEntity)
+        
+        
+        let zJelolo2 = ModelEntity(mesh: cylinderSmallMeshResource, materials: [myMaterial])
+        axisZEntity.addChild(zJelolo2)
+        zJelolo2.orientation = simd_quatf(angle: radians, axis: SIMD3(x: 0, y: 0, z: 1))
+        zJelolo2.setPosition(SIMD3(x: (1/3.5+0.1   + 0.0125), y: 0.0, z: 0.0), relativeTo: axisZEntity)
+        
+       
+        /*let elsoxSzoveg = textGeneration(value: controler.activeCurrencyModels[1].name)
+        axisXEntity.addChild(elsoxSzoveg)
+        elsoxSzoveg.setPosition(SIMD3(x: (1/3.5+0.1   + 0.0125), y: -0.05, z: 0.0), relativeTo: axisXEntity)*/
+        
+        
         
         axisXEntity.generateCollisionShapes(recursive: true)
         axisYEntity.generateCollisionShapes(recursive: true)
