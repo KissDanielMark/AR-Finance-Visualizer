@@ -196,7 +196,6 @@ struct CurrencyPicker: View {
     @Binding var isSelectionActive: Bool
     @Binding var selectedCurrency: CurrencyModel?
     let currencies: [CurrencyModel]
-    
     var body: some View{
         return ScrollView(.horizontal, showsIndicators: false){
             HStack(spacing: 30.0){
@@ -207,14 +206,30 @@ struct CurrencyPicker: View {
                         isSelectionActive = true
                         self.selectedCurrency = self.currencies[index]
                     }){
-                        Label(self.currencies[index].name, systemImage: "dollarsign.square")
-                        //Image(uiImage: UIImage (named:self.currencies[index]))
-                            //.resizable()
-                            .frame(height: 80)
-                            .aspectRatio(1/1,contentMode: .fit)
-                            .cornerRadius(12)
-                            .background(Color.orange.opacity(0.4))
+                        if(self.currencies[index].name == "EUR"){
+                            Label(self.currencies[index].name, systemImage: "eurosign.square")
+                            //Image(uiImage: UIImage (named:self.currencies[index]))
+                                //.resizable()
+                                .frame(height: 80)
+                                .frame(width: 80)
+                                .aspectRatio(1/1,contentMode: .fit)
+                                .cornerRadius(12)
+                                .background(Color.blue.opacity(0.4))
+                        }
+                        else if(self.currencies[index].name == "USD"){
+                            Label(self.currencies[index].name, systemImage: "dollarsign.square")
+                            //Image(uiImage: UIImage (named:self.currencies[index]))
+                                //.resizable()
+                                .frame(height: 80)
+                                .frame(width: 80)
+                                .aspectRatio(1/1,contentMode: .fit)
+                                .cornerRadius(12)
+                                .background(Color.green.opacity(0.4))
+                        }
+                        
                     }.buttonStyle(PlainButtonStyle())
+                        .disabled(self.currencies[index].isPlaced)
+                    
                 }
             }
         }
@@ -241,6 +256,7 @@ struct CurrencySelectionButtons: View {
             }
             
             Button(action: {
+                self.selectedCurrency?.isPlaced = true
                 controler.addActiveCurrencyModel(new: self.selectedCurrency!)
                 self.confirmedCurrencyForPlacement = self.selectedCurrency
                 resetPlacement()

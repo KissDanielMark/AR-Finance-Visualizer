@@ -23,6 +23,8 @@ class CurrencyModel{
     
     var textModel: ModelEntity = ModelEntity()
     
+    var isPlaced = false
+    
     init(name: String, currentValue: Float, columnnModel: ModelEntity, fluctuation_Start: Float, fluctuation_End: Float, oneYearAgoValue: Float) {
         self.name = name
         self.currentValue = currentValue
