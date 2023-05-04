@@ -122,24 +122,36 @@ struct CurrencyARViewContainer: UIViewRepresentable {
         let zJelolo1 = ModelEntity(mesh: cylinderSmallMeshResource, materials: [myMaterial])
         axisZEntity.addChild(zJelolo1)
         zJelolo1.orientation = simd_quatf(angle: radians, axis: SIMD3(x: 0, y: 0, z: 1))
-        zJelolo1.setPosition(SIMD3(x: (0/3.5+0.1   + 0.0125), y: 0.0, z: 0.0), relativeTo: axisZEntity)
+        zJelolo1.setPosition(SIMD3(x: (0.15), y: 0.0, z: 0.0), relativeTo: axisZEntity)
         
         
-        let elsoZSzoveg = textGeneration(value: "Valami")
+        let elsoZSzoveg = textGeneration(value: "Start")
         axisZEntity.addChild(elsoZSzoveg)
         elsoZSzoveg.orientation = simd_quatf(angle: radians2, axis: SIMD3(x: 0, y: -1.0, z: 0.0))
-        elsoZSzoveg.setPosition(SIMD3(x: (0/3.5+0.1   + 0.0125), y: -0.05, z: 0.0), relativeTo: axisZEntity)
+        elsoZSzoveg.setPosition(SIMD3(x: (0.15), y: -0.05, z: 0.0), relativeTo: axisZEntity)
         
         
         let zJelolo2 = ModelEntity(mesh: cylinderSmallMeshResource, materials: [myMaterial])
         axisZEntity.addChild(zJelolo2)
         zJelolo2.orientation = simd_quatf(angle: radians, axis: SIMD3(x: 0, y: 0, z: 1))
-        zJelolo2.setPosition(SIMD3(x: (1/3.5+0.1   + 0.0125), y: 0.0, z: 0.0), relativeTo: axisZEntity)
+        zJelolo2.setPosition(SIMD3(x: (0.3), y: 0.0, z: 0.0), relativeTo: axisZEntity)
         
        
-        /*let elsoxSzoveg = textGeneration(value: controler.activeCurrencyModels[1].name)
-        axisXEntity.addChild(elsoxSzoveg)
-        elsoxSzoveg.setPosition(SIMD3(x: (1/3.5+0.1   + 0.0125), y: -0.05, z: 0.0), relativeTo: axisXEntity)*/
+        let masodikZSzoveg = textGeneration(value: "End")
+        axisZEntity.addChild(masodikZSzoveg)
+        masodikZSzoveg.orientation = simd_quatf(angle: radians2, axis: SIMD3(x: 0, y: -1.0, z: 0.0))
+        masodikZSzoveg.setPosition(SIMD3(x: (0.3), y: -0.05, z: 0.0), relativeTo: axisZEntity)
+        
+        let zJelolo3 = ModelEntity(mesh: cylinderSmallMeshResource, materials: [myMaterial])
+        axisZEntity.addChild(zJelolo3)
+        zJelolo3.orientation = simd_quatf(angle: radians, axis: SIMD3(x: 0, y: 0, z: 1))
+        zJelolo3.setPosition(SIMD3(x: (0.45), y: 0.0, z: 0.0), relativeTo: axisZEntity)
+        
+       
+        let harmadikZSzoveg = textGeneration(value: "1 year ago")
+        axisZEntity.addChild(harmadikZSzoveg)
+        harmadikZSzoveg.orientation = simd_quatf(angle: radians2, axis: SIMD3(x: 0, y: -1.0, z: 0.0))
+        harmadikZSzoveg.setPosition(SIMD3(x: (0.45), y: -0.05, z: 0.0), relativeTo: axisZEntity)
         
         
         
@@ -164,13 +176,13 @@ struct CurrencyARViewContainer: UIViewRepresentable {
             
             
             axisXEntity.addChild(i.fluctuation_Start_columnModel)
-            i.fluctuation_Start_columnModel.setPosition(SIMD3(x: index/3.5+0.1+0.01, y: (Float(i.fluctuation_Start)/2000.0 - Float(i.fluctuation_Start)/2000.0/2) + 0.01, z: -0.2), relativeTo: axisXEntity)
+            i.fluctuation_Start_columnModel.setPosition(SIMD3(x: index/3.5+0.1+0.01, y: (Float(i.fluctuation_Start)/2000.0 - Float(i.fluctuation_Start)/2000.0/2) + 0.01, z: -0.15), relativeTo: axisXEntity)
             
             axisXEntity.addChild(i.fluctuation_End_columnModel)
-            i.fluctuation_End_columnModel.setPosition(SIMD3(x: index/3.5+0.1+0.01, y: (Float(i.fluctuation_End)/2000.0 - Float(i.fluctuation_End)/2000.0/2) + 0.01, z: -0.4), relativeTo: axisXEntity)
+            i.fluctuation_End_columnModel.setPosition(SIMD3(x: index/3.5+0.1+0.01, y: (Float(i.fluctuation_End)/2000.0 - Float(i.fluctuation_End)/2000.0/2) + 0.01, z: -0.3), relativeTo: axisXEntity)
             
             axisXEntity.addChild(i.oneYearAgoValue_columnModel)
-            i.oneYearAgoValue_columnModel.setPosition(SIMD3(x: index/3.5+0.1+0.01, y: (Float(i.oneYearAgoValue)/2000.0 - Float(i.oneYearAgoValue)/2000.0/2) + 0.01, z: -0.6), relativeTo: axisXEntity)
+            i.oneYearAgoValue_columnModel.setPosition(SIMD3(x: index/3.5+0.1+0.01, y: (Float(i.oneYearAgoValue)/2000.0 - Float(i.oneYearAgoValue)/2000.0/2) + 0.01, z: -0.45), relativeTo: axisXEntity)
             
             index += 1
             
