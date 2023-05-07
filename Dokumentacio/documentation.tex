@@ -40,11 +40,11 @@ Unity is a purpose-build framework for augmented reality development. It's key f
 
 AR Foundation which is the recommended framework for Unity development there are several features what the developers can use like:
 \begin{itemize}
-    \item Device tracking
-    \item Raycast
-    \item Plane detection
-    \item Gestures
-    \item Face tracking
+  \item Device tracking
+  \item Raycast
+  \item Plane detection
+  \item Gestures
+  \item Face tracking
 \end{itemize}
 
 \section{Apple ARKit and RealityKit}
@@ -59,17 +59,17 @@ Together, ARKit and RealityKit provide developers with a comprehensive set of to
 
 RealityKit’s features:
 \begin{itemize}
-    \item Rendering: RealityKit offers a powerful new physically-based renderer built on top of Metal, which is fully optimized for all Apple devices.
+  \item Rendering: RealityKit offers a powerful new physically-based renderer built on top of Metal, which is fully optimized for all Apple devices.
 
-    \item Animation: It has built-in support for Skeletal animation and Transform-based animation. So, if you want, you can animate anithing or you can move, scale and rotate objects with various easing functions.
+  \item Animation: It has built-in support for Skeletal animation and Transform-based animation. So, if you want, you can animate anithing or you can move, scale and rotate objects with various easing functions.
 
-    \item Physics: With a powerful physics engine, RealityKit lets you adjust real-world physics properties like mass, drag and restitution, allowing you to fine-tune collisions.
+  \item Physics: With a powerful physics engine, RealityKit lets you adjust real-world physics properties like mass, drag and restitution, allowing you to fine-tune collisions.
 
-    \item Audio: Spacial audio understanding and automatic listener configuration let you attach sound effects to 3D objects. You can then track those sounds, making them sound realistic based on their position in the real world.
+  \item Audio: Spacial audio understanding and automatic listener configuration let you attach sound effects to 3D objects. You can then track those sounds, making them sound realistic based on their position in the real world.
 
-    \item ECS: From a coding perspective, RealityKit enforces the Entity Component System design pattern to build objects within the world.
+  \item ECS: From a coding perspective, RealityKit enforces the Entity Component System design pattern to build objects within the world.
 
-    \item Synchronization: The framework has built-in support for networking, designed for collaborative experiences. It even offers automatic synchronization of entities between multiple clients.
+  \item Synchronization: The framework has built-in support for networking, designed for collaborative experiences. It even offers automatic synchronization of entities between multiple clients.
 \end{itemize}
 
 
@@ -140,6 +140,58 @@ I used a common state management technique, the MVC pattern, to control the data
 
 To operate augmented reality and display the 3D generated graph, I used the ARKit and RealityKit frameworks provided by Apple.
 
+The CurrencyARViewContainer is responsible for displaying the AR view.
+
+\begin{lstlisting}
+struct CurrencyARViewContainer: UIViewRepresentable {
+    
+    @StateObject var controler:CurrencyController
+    
+    func makeUIView(context: Context) -> ARView{
+        AR.view = ARView(frame: .zero)
+        return AR.view
+    }
+    
+    func updateUIView(_ uiView: ARView, context: Context) {
+        print("updating view - \(controler.timerHappened)")
+        uiView.scene.anchors.removeAll()
+        ...
+    }
+}
+\end{lstlisting}
+
+To generate the texts and columns, I used the .generateBox() and .generateText() functions of the built-in MeshResource class.
+The MeshResource class stores the points defining the shapes. In order for this to become a 3D model, a texture must also be specified. I used the SimpleMaterial() function for this.
+We also need an AnchorEntity, which defines the center of our model in the 3D world.
+After defining these variables, we can create the ModelEntity and place it in the AR world using the AnchorEntity.
+
+\begin{lstlisting}
+    func updateUIView(_ uiView: ARView, context: Context) {
+        uiView.scene.anchors.removeAll()
+        
+        let cylinderMeshResource = MeshResource.generateBox(size: SIMD3(x: 1.2, y: 0.01, z: 0.01), cornerRadius: 0.1)
+        
+        let myMaterial = SimpleMaterial(color: .gray, roughness: 0, isMetallic: true)
+        let radians = 90.0 * Float.pi / 180.0
+            
+        let kozeppont = AnchorEntity(world: SIMD3(x: 0.0, y: 0.0, z: 0.0))
+        let axisXEntity = ModelEntity(mesh: cylinderMeshResource, materials: [myMaterial])
+        
+        let coneXEntity = ModelEntity(mesh: coneMeshResource, materials: [myMaterial])
+        coneXEntity.orientation = simd_quatf(angle: radians, axis: SIMD3(x: 0, y: 0, z: -1))
+        
+        axisXEntity.addChild(coneXEntity)
+        coneXEntity.setPosition(SIMD3(x: 0.6, y: 0.0, z: 0.0), relativeTo: axisXEntity)
+        
+        
+        kozeppont.addChild(axisXEntity)
+        uiView.scene.addAnchor(kozeppont)
+        ...
+    }
+\end{lstlisting}
+
+To be able to move the different elements together, all 3D models are children of the axes. Thus, if the axis moves, the connected elements will also move due to the parent-child relationship. In its current version, MeshResource does not support the generation of cones by default, so I was able to achieve this by using an external library package. After importing the RealityGeometries library, I was able to easily generate cones, which I eventually used to draw axes.
+
 \chapter{Presentation of finished work}
 
 In this section I will present and showcase my finished appliction. I will include screenshots to have a better representation and understanding for the reader.
@@ -172,7 +224,7 @@ Below I list the external links and sources used during the project and the repo
 
 \hyperlink{https://www.kodeco.com/books/apple-augmented-reality-by-tutorials/v1.0/chapters/iii-introduction}{Kodeco - RalityKit tutorials}
 
-\hyperlink{https://developer.apple.com/forums/thread/658300}{Rövid leírás - https://developer.apple.com/forums/thread/658300}
+\hyperlink{https://developer.apple.com/forums/thread/658300}{Apple Forum - Where to start ARKit}
 
 \hyperlink{https://developer.apple.com/documentation/realitykit/adding-procedural-assets-to-a-scene}{Apple - Adding procedural assets to a scene}
 
