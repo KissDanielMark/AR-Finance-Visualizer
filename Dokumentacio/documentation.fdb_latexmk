@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1683457086 "/Users/kissdanielmark/Documents/01.Iskola/MSc/1/Onlab1/AR-Finance-Visualizer/Dokumentacio/documentation.tex" "documentation.pdf" "documentation" 1683457089 0
-  "/Users/kissdanielmark/Documents/01.Iskola/MSc/1/Onlab1/AR-Finance-Visualizer/Dokumentacio/documentation.tex" 1683457082 15096 f2f4813a8377a8c8ae3f678a55d55943 ""
+["pdflatex"] 1683457660 "/Users/kissdanielmark/Documents/01.Iskola/MSc/1/Onlab1/AR-Finance-Visualizer/Dokumentacio/documentation.tex" "documentation.pdf" "documentation" 1683457663 0
+  "/Users/kissdanielmark/Documents/01.Iskola/MSc/1/Onlab1/AR-Finance-Visualizer/Dokumentacio/documentation.tex" 1683457652 15234 43a228914441401322deceb602a5922a ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -251,11 +251,14 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1680448633 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1680448502 7883463 a7581c939f4ca38753d48a4cf8e34f92 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "documentation.aux" 1683457089 6355 cdb30f9490e356aed731cd565ee57223 "pdflatex"
-  "documentation.tex" 1683457082 15096 f2f4813a8377a8c8ae3f678a55d55943 ""
-  "documentation.toc" 1683457089 895 51e8e897878f3bd80f5e19b051500d10 "pdflatex"
+  "documentation.aux" 1683457663 6355 43c14cd9c33f67324a6d4bee5c067e4d "pdflatex"
+  "documentation.tex" 1683457652 15234 43a228914441401322deceb602a5922a ""
+  "documentation.toc" 1683457663 895 51e8e897878f3bd80f5e19b051500d10 "pdflatex"
   "images//front.jpeg" 1683456206 164804 02785984e3d4c0e517c6a51be1f487c7 ""
+  "images//megerosites.jpeg" 1683457541 192733 707dbf5d7fe4f97e97cd8d60335f5d76 ""
+  "images//not_available.jpeg" 1683457541 178567 bcd3c345b9138afcb978bb2e7b376ab1 ""
   "images//realitykit.png" 1682940131 36137 c641b54e638bacba8681f2beb71255e6 ""
+  "images//selector.jpeg" 1683457541 185021 96cd0f542d072d6ac3f40046933a1e91 ""
   "images//side.jpeg" 1683456206 264591 873a72ab2b2787515467eb95483e483c ""
   "images//top.jpeg" 1683456206 243881 1525233ace4e3857dbacda8c9df3fe14 ""
   "preamble.tex" 1680597245 20018 a0894faad26ec4c9bcc59c01417a4e6c ""
