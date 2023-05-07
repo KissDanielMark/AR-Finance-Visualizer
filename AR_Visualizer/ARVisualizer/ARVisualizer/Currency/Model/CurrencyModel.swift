@@ -39,6 +39,7 @@ class CurrencyModel{
         currentValue = newValue
         rebuildModel()
     }
+    
     private func rebuildModel(){
         textModel = textGeneration()
         currentValue_columnnModel = columnGeneration(value: currentValue)

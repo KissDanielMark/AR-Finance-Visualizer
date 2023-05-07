@@ -79,10 +79,9 @@ RealityKit’s features:
 For the development phase of the project I used Apple's XCode integrated developer environment(IDE) as the main developer platform for iOS and ARKit development. For testing I used an iPhone 11 with dual camera system.
 I have also version controled the whole development process using git and publishing it on GitHub. Not only the source code can be found there but also the documentation of this project as I have writen it using \LaTeX{}.
 
-\section{Yahoo Rest API}
+\section{APILayer Rest API}
 
-For retriving the displayed informations I used Yahoo's open and available for free financial API.
-
+The fundamental part of the application is the data it displays. For retriving the displayed informations I used APILayer's Exchange Rates Data API an open and available for free financial API.  The only problem is that you can only do 250 queries per month in the free version. I used 2 endpoints. The first is '/convert'. With this endpoint, we have any amount conversion from one currency to another. The output of this enpoint is the following JSON.
 
 \begin{lstlisting}
 {
@@ -101,13 +100,58 @@ For retriving the displayed informations I used Yahoo's open and available for f
 }
 \end{lstlisting}
 
+The other endpoint used is '/fluctuation'. This endpoint returns the fluctuation data between specified dates. The data can be for all available currencies or for a specific set.
+\begin{lstlisting}
+{
+  "base": "EUR",
+  "end_date": "2018-02-26",
+  "fluctuation": true,
+  "rates": {
+    "JPY": {
+      "change": 0.0635,
+      "change_pct": 0.0483,
+      "end_rate": 131.651142,
+      "start_rate": 131.587611
+    },
+    "USD": {
+      "change": 0.0038,
+      "change_pct": 0.3078,
+      "end_rate": 1.232735,
+      "start_rate": 1.228952
+    }
+  },
+  "start_date": "2018-02-25",
+  "success": true
+}
+\end{lstlisting}
+
 \section{SwiftUI}
 
+SwiftUI is Apple's brand new framework for building user interfaces for iOS, tvOS, macOS, and watchOS. Apple introduced SwiftUI in 2019 and the framework has been evolving ever since. Unlike UIKit, SwiftUI is a cross-platform framework. The key difference with UIKit and AppKit is that SwiftUI defines the user interface declaratively, not imperatively. What does that mean?
+
+Using UIKit you create views to build the view hierarchy of your application's user interface. That is not how SwiftUI works. SwiftUI provides developers with an API to declare or describe what the user interface should look like. SwiftUI inspects the declaration or description of the user interface and converts it to your application's user interface. SwiftUI does the heavy lifting for you.
+
+One of the most challenging aspects of user interface development is synchronizing the application's state and its user interface. Every time the application's state changes, the user interface needs to update to reflect the change. During the development phase, this was a challenge that had to be overcome. Despite the fact that I have already used and developed an iOS application with SwiftUI, it was excellent practice to deepen my knowledge of user state management. I used ObservableObjects to solve this problem.
+
+I used a common state management technique, the MVC pattern, to control the data and model. MVC (Model-View-Controller) is a pattern in software design commonly used to implement user interfaces, data, and controlling logic. It emphasizes a separation between the software's business logic and display. This "separation of concerns" provides for a better division of labor and improved maintenance. Sticking to convention, I created a CurrencyController, CurrencyView and a CurrencyModell class. The CurrencyModel class contains the generated 3D models and their associated values. The task of the CurrencyController class is to query the data and update the information displayed on the View. In the CurrencyView class, it deals with the code defining the appearance of the application and the display of the given dataset.
+
+
 \section{ARKit and RealityKit}
+
+To operate augmented reality and display the 3D generated graph, I used the ARKit and RealityKit frameworks provided by Apple.
 
 \chapter{Presentation of finished work}
 
 In this section I will present and showcase my finished appliction. I will include screenshots to have a better representation and understanding for the reader.
+The camera function in the application allows you to capture the current state of the graphs, which in this case came in handy for documentation.
+
+\includegraphics[scale=0.2]{front.jpeg}
+\includegraphics[scale=0.2]{side.jpeg}
+\includegraphics[scale=0.2]{top.jpeg}
+
+As the attached images clearly show, the virtual 3D graph can be easily walked around and viewed from different angles, thereby giving users a new comparative perspective. It is possible to move and rotate the entire graph, as well as move the current exchange rate columns to make it easier to compare with other metrics. The move and rotate functions are only available in Spectate mode, for this you have to stop Live mode (or otherwise start Live mode) by pressing the button located in the upper left corner.
+
+Currently, 2 currencies are available in the application, but of course this can be easily expanded at any time in the future. These two are EUR to HUF and USD to HUF. These can be displayed after selection and confirmation from the bottom bar. If the given exchange rate is already placed, it can no longer be added to the graph twice.
 
 
 \chapter{Sources}
@@ -147,5 +191,11 @@ Below I list the external links and sources used during the project and the repo
 \hyperlink{https://github.com/maxxfrazer/RealityGeometries}{RealityGeometries - Kúpinsta}
 
 \hyperlink{https://www.youtube.com/watch?v=itGRaAryUxA}{YouTube - RealitySchool: Place, Interact with, and Remove AR Objects in RealityKit}
+
+\hyperlink{https://cocoacasts.com/swiftui-fundamentals-what-is-swiftui}{Cocoacast - SwiftUI}
+
+\hyperlink{https://www.hackingwithswift.com/quick-start/swiftui/how-to-use-observedobject-to-manage-state-from-external-objects}{Hacking with Swift - ObservedObject}
+
+\hyperlink{https://developer.mozilla.org/en-US/docs/Glossary/MVC}{Mozilla - MVC}
 
 \end{document}
