@@ -10,14 +10,14 @@ import Foundation
 class CurrencyAPILayer{
     
     private let apiKey = "YNIJuQBfnnnQvmVHMDooFtGY4nE6u0Rj"
-    var usdCurrent:Float = 0.0
-    var eurCurrent:Float = 0.0
+    var usdCurrent = 0.0
+    var eurCurrent = 0.0
     
     func convert(mire: String){
         let semaphore = DispatchSemaphore (value: 0)
 
         let url = "https://api.apilayer.com/exchangerates_data/convert?to=HUF&from=\(mire)&amount=1"
-        var request = URLRequest(url: URL(string: url)!,timeoutInterval: 10.0)
+        var request = URLRequest(url: URL(string: url)!,timeoutInterval: 50.0)
         
         request.httpMethod = "GET"
         request.addValue("\(apiKey)", forHTTPHeaderField: "apikey")
@@ -34,9 +34,13 @@ class CurrencyAPILayer{
                     // make sure this JSON is in the format we expect
                     if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                         // try to read out a string array
-                        if self.usdCurrent == json["result"] as? Float {
+                        /*if self.usdCurrent == json["result"] as? Float {
                             print("USD: \(self.usdCurrent)")
-                        }
+                        }*/
+                        let ertek = json["result"]
+                        print(ertek)
+                        self.usdCurrent = ertek! as! Double
+                        print("USD LEKÉRVE: \(self.usdCurrent)")
                     }
                 } catch let error as NSError {
                     print("Failed to load: \(error.localizedDescription)")
@@ -47,12 +51,13 @@ class CurrencyAPILayer{
             {
                 do {
                     // make sure this JSON is in the format we expect
-                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                    if let json = try JSONSerialization.jsonObject(with: data) as? [String: Any] {
                         // try to read out a string array
-                        print(json)
-                        if self.usdCurrent == json["result"] as? Float {
-                            print(self.eurCurrent)
-                        }
+                        //print(type(of: json))
+                        let ertek = json["result"]
+                        print(ertek)
+                        self.eurCurrent = ertek! as! Double
+                        print(self.eurCurrent)
                     }
                 } catch let error as NSError {
                     print("Failed to load: \(error.localizedDescription)")

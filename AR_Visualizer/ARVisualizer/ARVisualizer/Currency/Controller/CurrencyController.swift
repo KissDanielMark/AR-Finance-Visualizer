@@ -25,14 +25,14 @@ class CurrencyController: ObservableObject{
         currency_api = CurrencyAPILayer()
         currency_api.convert(mire: "EUR")
         //currency_api.convert(mire: "USD")
-        currency_api.fluctuation()
+        //currency_api.fluctuation()
         //api.get_data()
         
         
         availableCurrencies =
         [
-            CurrencyModel(name: "EUR", currentValue: currency_api.eurCurrent, columnnModel: ModelEntity(), fluctuation_Start: 300.0, fluctuation_End: 340.0, oneYearAgoValue: 200),
-            CurrencyModel(name: "USD", currentValue: currency_api.usdCurrent, columnnModel: ModelEntity(), fluctuation_Start: 400.0, fluctuation_End: 500.0, oneYearAgoValue: 100.0)
+            CurrencyModel(name: "EUR", currentValue: Float(currency_api.eurCurrent), columnnModel: ModelEntity(), fluctuation_Start: 300.0, fluctuation_End: 340.0, oneYearAgoValue: 200),
+            CurrencyModel(name: "USD", currentValue: Float(currency_api.usdCurrent), columnnModel: ModelEntity(), fluctuation_Start: 400.0, fluctuation_End: 500.0, oneYearAgoValue: 100.0)
         ]
         
         timer = Timer.scheduledTimer(timeInterval: timerInterval, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
@@ -45,11 +45,11 @@ class CurrencyController: ObservableObject{
         for i in activeCurrencyModels{
             if(i.name == "EUR")
             {
-                i.updateValue(newValue: currency_api.eurCurrent)
+                i.updateValue(newValue: Float(currency_api.eurCurrent))
             }
             else if(i.name == "USD")
             {
-                i.updateValue(newValue: currency_api.usdCurrent)
+                i.updateValue(newValue: Float(currency_api.usdCurrent))
             }
             
         }
