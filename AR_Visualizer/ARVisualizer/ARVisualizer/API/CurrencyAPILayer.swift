@@ -13,6 +13,9 @@ class CurrencyAPILayer{
     var usdCurrent = 0.0
     var eurCurrent = 0.0
     
+    var eurStart = 0.0
+    var eurEnd = 0.0
+    
     func convert(mire: String){
         let semaphore = DispatchSemaphore (value: 0)
 
@@ -27,7 +30,7 @@ class CurrencyAPILayer{
             print(String(describing: error))
             return
           }
-          print(String(data: data, encoding: .utf8)!)
+          //print(String(data: data, encoding: .utf8)!)
             if(mire == "USD")
             {
                 do {
@@ -71,10 +74,10 @@ class CurrencyAPILayer{
         semaphore.wait()
     }
     
-    func fluctuation(){
+    func fluctuation(mire: String){
         let semaphore = DispatchSemaphore (value: 0)
 
-        let url = "https://api.apilayer.com/exchangerates_data/fluctuation?start_date=2023-05-02&end_date=2023-05-03&base=EUR&currencies=HUF"
+        let url = "https://api.apilayer.com/exchangerates_data/fluctuation?start_date=2023-05-10&end_date=2023-05-09&base=EUR&currencies=HUF"
         var request = URLRequest(url: URL(string: url)!,timeoutInterval: Double.infinity)
         request.httpMethod = "GET"
         request.addValue("\(apiKey)", forHTTPHeaderField: "apikey")
@@ -85,6 +88,25 @@ class CurrencyAPILayer{
             return
           }
           print(String(data: data, encoding: .utf8)!)
+            if(mire == "EUR")
+            {
+                do {
+                    // make sure this JSON is in the format we expect
+                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                        let rates = json["rates"] as? [String: Any]
+                        print(rates)
+                        let HUF = rates?["HUF"] as? [String: Any]
+                        print(HUF)
+                        let start_rate = HUF?["start_rate"]
+                        let end_rate = HUF?["end_rate"]
+                        self.eurStart = start_rate! as! Double
+                        self.eurEnd = end_rate! as! Double
+                    }
+                } catch let error as NSError {
+                    print("Failed to load: \(error.localizedDescription)")
+                }
+                
+            }
           semaphore.signal()
         }
 
