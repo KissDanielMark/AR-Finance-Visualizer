@@ -10,11 +10,13 @@ import Foundation
 class CurrencyAPILayer{
     
     private let apiKey = "YNIJuQBfnnnQvmVHMDooFtGY4nE6u0Rj"
+    var usdCurrent:Float = 0.0
+    var eurCurrent:Float = 0.0
     
-    func convert(){
-        var semaphore = DispatchSemaphore (value: 0)
+    func convert(mire: String){
+        let semaphore = DispatchSemaphore (value: 0)
 
-        let url = "https://api.apilayer.com/exchangerates_data/convert?to=HUF&from=USD&amount=1"
+        let url = "https://api.apilayer.com/exchangerates_data/convert?to=HUF&from=\(mire)&amount=1"
         var request = URLRequest(url: URL(string: url)!,timeoutInterval: 10.0)
         
         request.httpMethod = "GET"
@@ -26,6 +28,37 @@ class CurrencyAPILayer{
             return
           }
           print(String(data: data, encoding: .utf8)!)
+            if(mire == "USD")
+            {
+                do {
+                    // make sure this JSON is in the format we expect
+                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                        // try to read out a string array
+                        if self.usdCurrent == json["result"] as? Float {
+                            print("USD: \(self.usdCurrent)")
+                        }
+                    }
+                } catch let error as NSError {
+                    print("Failed to load: \(error.localizedDescription)")
+                }
+                
+            }
+            else if (mire == "EUR")
+            {
+                do {
+                    // make sure this JSON is in the format we expect
+                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                        // try to read out a string array
+                        print(json)
+                        if self.usdCurrent == json["result"] as? Float {
+                            print(self.eurCurrent)
+                        }
+                    }
+                } catch let error as NSError {
+                    print("Failed to load: \(error.localizedDescription)")
+                }
+            }
+            
           semaphore.signal()
         }
 
@@ -34,7 +67,7 @@ class CurrencyAPILayer{
     }
     
     func fluctuation(){
-        var semaphore = DispatchSemaphore (value: 0)
+        let semaphore = DispatchSemaphore (value: 0)
 
         let url = "https://api.apilayer.com/exchangerates_data/fluctuation?start_date=2023-05-02&end_date=2023-05-03&base=EUR&currencies=HUF"
         var request = URLRequest(url: URL(string: url)!,timeoutInterval: Double.infinity)

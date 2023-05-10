@@ -14,34 +14,50 @@ class CurrencyController: ObservableObject{
     var activeCurrencyModels: [CurrencyModel] = []
     var timer = Timer()
     @Published var isPaused = false
-    
+    let timerInterval = 10.0
     @Published var timerHappened = 0
+    var currency_api: CurrencyAPILayer
     
     init() {
         //TODO: lekérés megírása
         
         //let api = RapidAPI()
-        let currency_api = CurrencyAPILayer()
-        //currency_api.fluctuation()
+        currency_api = CurrencyAPILayer()
+        currency_api.convert(mire: "EUR")
+        //currency_api.convert(mire: "USD")
+        currency_api.fluctuation()
         //api.get_data()
-        //currency_api.convert()
         
-        availableCurrencies = [CurrencyModel(name: "EUR", currentValue: 400.0, columnnModel: ModelEntity(), fluctuation_Start: 300.0, fluctuation_End: 340.0, oneYearAgoValue: 200), CurrencyModel(name: "USD", currentValue: 300.0, columnnModel: ModelEntity(), fluctuation_Start: 400.0, fluctuation_End: 500.0, oneYearAgoValue: 100.0)]
         
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+        availableCurrencies =
+        [
+            CurrencyModel(name: "EUR", currentValue: currency_api.eurCurrent, columnnModel: ModelEntity(), fluctuation_Start: 300.0, fluctuation_End: 340.0, oneYearAgoValue: 200),
+            CurrencyModel(name: "USD", currentValue: currency_api.usdCurrent, columnnModel: ModelEntity(), fluctuation_Start: 400.0, fluctuation_End: 500.0, oneYearAgoValue: 100.0)
+        ]
+        
+        timer = Timer.scheduledTimer(timeInterval: timerInterval, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
     }
     
     @objc private func fireTimer() {
         print("Timer fired! - \(timerHappened)")
         timerHappened += 1
+        currency_api.convert(mire: "EUR")
         for i in activeCurrencyModels{
-            i.updateValue(newValue: Float(Int.random(in: 300..<500)))
+            if(i.name == "EUR")
+            {
+                i.updateValue(newValue: currency_api.eurCurrent)
+            }
+            else if(i.name == "USD")
+            {
+                i.updateValue(newValue: currency_api.usdCurrent)
+            }
+            
         }
     }
     
     func pauseResume(){
         if isPaused{
-            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector:  #selector(fireTimer), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: timerInterval, target: self, selector:  #selector(fireTimer), userInfo: nil, repeats: true)
                 isPaused = false
         }
         else{
