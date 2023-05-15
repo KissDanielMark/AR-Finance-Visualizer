@@ -23,7 +23,7 @@ class CurrencyController: ObservableObject{
         
         //let api = RapidAPI()
         currency_api = CurrencyAPILayer()
-        //currency_api.convert(mire: "EUR")
+        currency_api.convert(mire: "EUR")
         //currency_api.convert(mire: "USD")
         currency_api.fluctuation(mire: "EUR")
         //api.get_data()
@@ -31,8 +31,8 @@ class CurrencyController: ObservableObject{
         
         availableCurrencies =
         [
-            CurrencyModel(name: "EUR", currentValue: Float(currency_api.eurCurrent), columnnModel: ModelEntity(), fluctuation_Start: Float(currency_api.eurStart), fluctuation_End: Float(currency_api.eurEnd), oneYearAgoValue: 200),
-            CurrencyModel(name: "USD", currentValue: Float(currency_api.usdCurrent), columnnModel: ModelEntity(), fluctuation_Start: 400.0, fluctuation_End: 500.0, oneYearAgoValue: 100.0)
+            CurrencyModel(name: "EUR", currentValue: Float(currency_api.eurCurrent), fluctuation_Start: Float(currency_api.eurStart), fluctuation_End: Float(currency_api.eurEnd), oneYearAgoValue: 200),
+            CurrencyModel(name: "USD", currentValue: Float(currency_api.usdCurrent), fluctuation_Start: 400.0, fluctuation_End: 500.0, oneYearAgoValue: 100.0)
         ]
         
         timer = Timer.scheduledTimer(timeInterval: timerInterval, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
@@ -69,6 +69,8 @@ class CurrencyController: ObservableObject{
     }
     
     func addActiveCurrencyModel(new: CurrencyModel){
+        print("Timer fired(addActiveCurrencyModel) - \(timerHappened)")
+        timerHappened += 1
         activeCurrencyModels.append(new)
     }
     

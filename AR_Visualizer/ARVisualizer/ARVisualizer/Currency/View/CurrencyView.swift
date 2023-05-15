@@ -192,6 +192,10 @@ struct CurrencyARViewContainer: UIViewRepresentable {
     }
 }
 
+func refresh_and_Display_AcriveCurrency(){
+    
+}
+
 struct CurrencyPicker: View {
     @Binding var isSelectionActive: Bool
     @Binding var selectedCurrency: CurrencyModel?

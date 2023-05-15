@@ -19,11 +19,12 @@ class CurrencyAPILayer{
     func convert(mire: String){
         let semaphore = DispatchSemaphore (value: 0)
 
-        let url = "https://api.apilayer.com/exchangerates_data/convert?to=HUF&from=\(mire)&amount=1"
+        let url = "https://szolariummasszazs-klub.hu/dani/currency.json"
+        //let url = "https://api.apilayer.com/exchangerates_data/convert?to=HUF&from=\(mire)&amount=1"
         var request = URLRequest(url: URL(string: url)!,timeoutInterval: 50.0)
         
         request.httpMethod = "GET"
-        request.addValue("\(apiKey)", forHTTPHeaderField: "apikey")
+        //request.addValue("\(apiKey)", forHTTPHeaderField: "apikey")
 
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
           guard let data = data else {
@@ -60,7 +61,7 @@ class CurrencyAPILayer{
                         let ertek = json["result"]
                         print(ertek)
                         self.eurCurrent = ertek! as! Double
-                        print(self.eurCurrent)
+                        print("EUR-o lekert erteke: \(self.eurCurrent)")
                     }
                 } catch let error as NSError {
                     print("Failed to load: \(error.localizedDescription)")
@@ -77,10 +78,11 @@ class CurrencyAPILayer{
     func fluctuation(mire: String){
         let semaphore = DispatchSemaphore (value: 0)
 
-        let url = "https://api.apilayer.com/exchangerates_data/fluctuation?start_date=2023-05-10&end_date=2023-05-09&base=EUR&currencies=HUF"
+        let url = "https://szolariummasszazs-klub.hu/dani/fluctuation.json"
+        //let url = "https://api.apilayer.com/exchangerates_data/fluctuation?start_date=2023-05-10&end_date=2023-05-09&base=EUR&currencies=HUF"
         var request = URLRequest(url: URL(string: url)!,timeoutInterval: Double.infinity)
         request.httpMethod = "GET"
-        request.addValue("\(apiKey)", forHTTPHeaderField: "apikey")
+        //request.addValue("\(apiKey)", forHTTPHeaderField: "apikey")
 
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
           guard let data = data else {

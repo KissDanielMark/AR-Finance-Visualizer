@@ -25,13 +25,14 @@ class CurrencyModel{
     
     var isPlaced = false
     
-    init(name: String, currentValue: Float, columnnModel: ModelEntity, fluctuation_Start: Float, fluctuation_End: Float, oneYearAgoValue: Float) {
+    init(name: String, currentValue: Float, fluctuation_Start: Float, fluctuation_End: Float, oneYearAgoValue: Float) {
         self.name = name
         self.currentValue = currentValue
-        self.currentValue_columnnModel = columnnModel
         self.fluctuation_Start = fluctuation_Start
         self.fluctuation_End = fluctuation_End
         self.oneYearAgoValue = oneYearAgoValue
+        
+        currentValue_columnnModel = columnGeneration(value: currentValue)
     }
     
     func updateValue(newValue: Float){
