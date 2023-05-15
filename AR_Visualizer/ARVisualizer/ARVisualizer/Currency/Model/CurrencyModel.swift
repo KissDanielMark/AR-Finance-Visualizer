@@ -33,6 +33,9 @@ class CurrencyModel{
         self.oneYearAgoValue = oneYearAgoValue
         
         currentValue_columnnModel = columnGeneration(value: currentValue)
+        fluctuation_Start_columnModel = columnGeneration(value: fluctuation_Start)
+        fluctuation_End_columnModel = columnGeneration(value: fluctuation_End)
+        oneYearAgoValue_columnModel = columnGeneration(value: oneYearAgoValue)
     }
     
     func updateValue(newValue: Float){
