@@ -1,4 +1,4 @@
-\documentclass{report}
+\documentclass[11pt,a4paper,oneside]{report}   
 \usepackage{listings}
 \linespread{1.5}
 \input{preamble}
@@ -91,8 +91,8 @@ I have also version controled the whole development process using git and publis
 
 The fundamental part of the application is the data it displays. For retriving the displayed informations I used APILayer's Exchange Rates Data API an open and available for free financial API.  The only problem is that you can only do 250 queries per month in the free version. I used 2 endpoints. The first is '/convert'. With this endpoint, we have any amount conversion from one currency to another. The output of this enpoint is the following JSON.
 
-\begin{lstlisting}
-{
+\begin{lstlisting}[frame=single,float=!ht,caption=JSON from /convert endpoint, label=listing:Bibtex]
+  {
     "success": true,
     "query": {
         "from": "EUR",
@@ -105,11 +105,11 @@ The fundamental part of the application is the data it displays. For retriving t
     },
     "date": "2023-05-01",
     "result": 373.180303
-}
+  }
 \end{lstlisting}
 
 The other endpoint used is '/fluctuation'. This endpoint returns the fluctuation data between specified dates. The data can be for all available currencies or for a specific set.
-\begin{lstlisting}
+\begin{lstlisting}[frame=single,float=!ht,caption=JSON from /fluctuation endpoint, label=listing:Bibtex]
 {
   "base": "EUR",
   "end_date": "2018-02-26",
@@ -265,6 +265,8 @@ Currently, 2 currencies are available in the application, but of course this can
 \chapter{Sources}
 
 Below I list the external links and sources used during the project and the report.
+
+% \bibliography{mybib}
 
 \section{External Links}
 
