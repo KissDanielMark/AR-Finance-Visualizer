@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  24 MAY 2023 20:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  24 MAY 2023 20:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -375,27 +375,50 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 73.
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count295
 \l__pdf_internal_box=\box55
-) (./onlab.aux (./titlepage.aux) (./introduction.aux) (./chapter1.aux) (./chapter2.aux) (./appendices.aux))
+) (./onlab.aux (./titlepage.aux) (./introduction.aux) (./chapter1.aux) (./chapter2.aux) (./chapter3.aux
+
+LaTeX Warning: Label `listing:Bibtex' multiply defined.
+
+) (./chapter4.aux
+
+LaTeX Warning: Label `fig:TexnicCenter' multiply defined.
+
+
+LaTeX Warning: Label `fig:TexnicCenter' multiply defined.
+
+
+LaTeX Warning: Label `fig:TexnicCenter' multiply defined.
+
+
+LaTeX Warning: Label `fig:TexnicCenter' multiply defined.
+
+
+LaTeX Warning: Label `fig:TexnicCenter' multiply defined.
+
+
+LaTeX Warning: Label `fig:TexnicCenter' multiply defined.
+
+) (./appendices.aux))
 \openout1 = `onlab.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
  (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count296
@@ -419,7 +442,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 134.
+Package hyperref Info: Link coloring ON on input line 136.
  (./onlab.out) (./onlab.out)
 \@outlinefile=\write3
 \openout3 = `onlab.out'.
@@ -427,7 +450,7 @@ Package hyperref Info: Link coloring ON on input line 134.
 \openout2 = `titlepage.aux'.
 
  (./titlepage.tex
-<../images/BMElogo.png, id=20, 975.645pt x 273.02pt>
+<../images/BMElogo.png, id=48, 975.645pt x 273.02pt>
 File: ../images/BMElogo.png Graphic file (type png)
 <use ../images/BMElogo.png>
 Package pdftex.def Info: ../images/BMElogo.png  used on input line 3.
@@ -450,7 +473,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.140 \include{introduction}
+l.142 \include{introduction}
                              [1
 
 
@@ -474,7 +497,7 @@ Chapter 2.
 
 
 {/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-<../images/realitykit.png, id=55, 585.68813pt x 377.91188pt>
+<../images/realitykit.png, id=90, 585.68813pt x 377.91188pt>
 File: ../images/realitykit.png Graphic file (type png)
 <use ../images/realitykit.png>
 Package pdftex.def Info: ../images/realitykit.png  used on input line 31.
@@ -483,29 +506,127 @@ Package pdftex.def Info: ../images/realitykit.png  used on input line 31.
 \openout2 = `chapter2.aux'.
 
  (./chapter2.tex)
-No file onlab.bbl.
+\openout2 = `chapter3.aux'.
+
+ (./chapter3.tex
+Chapter 3.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 11.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 11.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
+) [7
+
+
+
+
+
+
+
+] [8]
+Overfull \hbox (169.76833pt too wide) in paragraph at lines 97--99
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.6067pt too wide) in paragraph at lines 99--100
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (32.10071pt too wide) in paragraph at lines 103--105
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (11.7055pt too wide) in paragraph at lines 105--106
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (42.29831pt too wide) in paragraph at lines 106--108
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (16.8043pt too wide) in paragraph at lines 109--112
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[9]) [10]
+\openout2 = `chapter4.aux'.
+
+ (./chapter4.tex
+Chapter 4.
+<../images/front.jpeg, id=202, 831.105pt x 1798.72pt>
+File: ../images/front.jpeg Graphic file (type jpg)
+<use ../images/front.jpeg>
+Package pdftex.def Info: ../images/front.jpeg  used on input line 9.
+(pdftex.def)             Requested size: 166.21805pt x 359.73763pt.
+<../images/side.jpeg, id=203, 831.105pt x 1798.72pt>
+File: ../images/side.jpeg Graphic file (type jpg)
+<use ../images/side.jpeg>
+Package pdftex.def Info: ../images/side.jpeg  used on input line 17.
+(pdftex.def)             Requested size: 166.21805pt x 359.73763pt.
+<../images/top.jpeg, id=204, 831.105pt x 1798.72pt>
+File: ../images/top.jpeg Graphic file (type jpg)
+<use ../images/top.jpeg>
+Package pdftex.def Info: ../images/top.jpeg  used on input line 25.
+(pdftex.def)             Requested size: 166.21805pt x 359.73763pt.
+[11
+
+
+
+
+ <../images/front.jpeg>]
+<../images/selector.jpeg, id=210, 831.105pt x 1798.72pt>
+File: ../images/selector.jpeg Graphic file (type jpg)
+<use ../images/selector.jpeg>
+Package pdftex.def Info: ../images/selector.jpeg  used on input line 37.
+(pdftex.def)             Requested size: 166.21805pt x 359.73763pt.
+<../images/megerosites.jpeg, id=211, 831.105pt x 1798.72pt>
+File: ../images/megerosites.jpeg Graphic file (type jpg)
+<use ../images/megerosites.jpeg>
+Package pdftex.def Info: ../images/megerosites.jpeg  used on input line 45.
+(pdftex.def)             Requested size: 166.21805pt x 359.73763pt.
+<../images/not_available.jpeg, id=212, 831.105pt x 1798.72pt>
+File: ../images/not_available.jpeg Graphic file (type jpg)
+<use ../images/not_available.jpeg>
+Package pdftex.def Info: ../images/not_available.jpeg  used on input line 53.
+(pdftex.def)             Requested size: 166.21805pt x 359.73763pt.
+) [12 <../images/side.jpeg>] [13 <../images/top.jpeg>] [14 <../images/selector.jpeg>] [15 <../images/megerosites.jpeg>] [16 <../images/not_available.jpeg>] (./onlab.bbl
+
+LaTeX Warning: Empty `thebibliography' environment on input line 3.
+
+) [17
+
+
+
+]
 \tf@thm=\write5
 \openout5 = `onlab.thm'.
 
-
+ 
 enddocument/afterlastpage: lastpage setting LastPage.
-(./onlab.aux (./titlepage.aux) (./introduction.aux) (./chapter1.aux) (./chapter2.aux) (./appendices.aux))
+(./onlab.aux (./titlepage.aux) (./introduction.aux) (./chapter1.aux) (./chapter2.aux) (./chapter3.aux) (./chapter4.aux) (./appendices.aux))
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `onlab.out' has not changed.
-(rerunfilecheck)             Checksum: 9A98B28573A0A3DC818FDCA4F35665F0;224.
+(rerunfilecheck)             Checksum: 18812EEE7DCFBBEBF12F55C316921869;625.
  ) 
 Here is how much of TeX's memory you used:
- 13209 strings out of 476025
- 213868 string characters out of 5790018
- 1856388 words of memory out of 5000000
- 33417 multiletter control sequences out of 15000+600000
- 530724 words of font info for 69 fonts, out of 8000000 for 9000
+ 13703 strings out of 476025
+ 220594 string characters out of 5790018
+ 1900388 words of memory out of 5000000
+ 33782 multiletter control sequences out of 15000+600000
+ 531801 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,7n,76p,1148b,497s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
-Output written on onlab.pdf (7 pages, 230865 bytes).
+ 75i,7n,76p,1148b,1183s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb>
+Output written on onlab.pdf (18 pages, 1539829 bytes).
 PDF statistics:
- 123 PDF objects out of 1000 (max. 8388607)
- 89 compressed objects within 1 object stream
- 13 named destinations out of 1000 (max. 500000)
- 43 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 326 PDF objects out of 1000 (max. 8388607)
+ 269 compressed objects within 3 object streams
+ 115 named destinations out of 1000 (max. 500000)
+ 129 words of extra memory for PDF output out of 10000 (max. 10000000)
 

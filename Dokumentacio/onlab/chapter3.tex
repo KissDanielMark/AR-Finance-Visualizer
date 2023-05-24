@@ -1,0 +1,118 @@
+\chapter{Development}
+
+\section{Overview}
+For the development phase of the project I used Apple's XCode integrated developer environment(IDE) as the main developer platform for iOS and ARKit development. For testing I used an iPhone 11 with dual camera system.
+I have also version controled the whole development process using git and publishing it on GitHub. Not only the source code can be found there but also the documentation of this project as I have writen it using \LaTeX{}.
+
+\section{APILayer Rest API}
+
+The fundamental part of the application is the data it displays. For retriving the displayed informations I used APILayer's Exchange Rates Data API an open and available for free financial API.  The only problem is that you can only do 250 queries per month in the free version. I used 2 endpoints. The first is '/convert'. With this endpoint, we have any amount conversion from one currency to another. The output of this enpoint is the following JSON.
+
+\begin{lstlisting}[frame=single,float=!ht,caption=JSON from /convert endpoint, label=listing:Bibtex]
+  {
+    "success": true,
+    "query": {
+        "from": "EUR",
+        "to": "HUF",
+        "amount": 1
+    },
+    "info": {
+        "timestamp": 1682930463,
+        "rate": 373.180303
+    },
+    "date": "2023-05-01",
+    "result": 373.180303
+  }
+\end{lstlisting}
+
+The other endpoint used is '/fluctuation'. This endpoint returns the fluctuation data between specified dates. The data can be for all available currencies or for a specific set.
+\begin{lstlisting}[frame=single,float=!ht,caption=JSON from /fluctuation endpoint, label=listing:Bibtex]
+{
+  "base": "EUR",
+  "end_date": "2018-02-26",
+  "fluctuation": true,
+  "rates": {
+    "JPY": {
+      "change": 0.0635,
+      "change_pct": 0.0483,
+      "end_rate": 131.651142,
+      "start_rate": 131.587611
+    },
+    "USD": {
+      "change": 0.0038,
+      "change_pct": 0.3078,
+      "end_rate": 1.232735,
+      "start_rate": 1.228952
+    }
+  },
+  "start_date": "2018-02-25",
+  "success": true
+}
+\end{lstlisting}
+
+\section{SwiftUI}
+
+SwiftUI is Apple's brand new framework for building user interfaces for iOS, tvOS, macOS, and watchOS. Apple introduced SwiftUI in 2019 and the framework has been evolving ever since. Unlike UIKit, SwiftUI is a cross-platform framework. The key difference with UIKit and AppKit is that SwiftUI defines the user interface declaratively, not imperatively. What does that mean?
+
+Using UIKit you create views to build the view hierarchy of your application's user interface. That is not how SwiftUI works. SwiftUI provides developers with an API to declare or describe what the user interface should look like. SwiftUI inspects the declaration or description of the user interface and converts it to your application's user interface. SwiftUI does the heavy lifting for you.
+
+One of the most challenging aspects of user interface development is synchronizing the application's state and its user interface. Every time the application's state changes, the user interface needs to update to reflect the change. During the development phase, this was a challenge that had to be overcome. Despite the fact that I have already used and developed an iOS application with SwiftUI, it was excellent practice to deepen my knowledge of user state management. I used ObservableObjects to solve this problem.
+
+I used a common state management technique, the MVC pattern, to control the data and model. MVC (Model-View-Controller) is a pattern in software design commonly used to implement user interfaces, data, and controlling logic. It emphasizes a separation between the software's business logic and display. This "separation of concerns" provides for a better division of labor and improved maintenance. Sticking to convention, I created a CurrencyController, CurrencyView and a CurrencyModell class. The CurrencyModel class contains the generated 3D models and their associated values. The task of the CurrencyController class is to query the data and update the information displayed on the View. In the CurrencyView class, it deals with the code defining the appearance of the application and the display of the given dataset.
+
+
+\section{ARKit and RealityKit}
+
+To operate augmented reality and display the 3D generated graph, I used the ARKit and RealityKit frameworks provided by Apple.
+
+The CurrencyARViewContainer is responsible for displaying the AR view.
+
+\begin{lstlisting}
+struct CurrencyARViewContainer: UIViewRepresentable {
+    
+    @StateObject var controler:CurrencyController
+    
+    func makeUIView(context: Context) -> ARView{
+        AR.view = ARView(frame: .zero)
+        return AR.view
+    }
+    
+    func updateUIView(_ uiView: ARView, context: Context) {
+        print("updating view - (controler.timerHappened)")
+        uiView.scene.anchors.removeAll()
+        ...
+    }
+}
+\end{lstlisting}
+
+To generate the texts and columns, I used the .generateBox() and .generateText() functions of the built-in MeshResource class.
+The MeshResource class stores the points defining the shapes. In order for this to become a 3D model, a texture must also be specified. I used the SimpleMaterial() function for this.
+We also need an AnchorEntity, which defines the center of our model in the 3D world.
+After defining these variables, we can create the ModelEntity and place it in the AR world using the AnchorEntity.
+
+\begin{lstlisting}
+    func updateUIView(_ uiView: ARView, context: Context) {
+        uiView.scene.anchors.removeAll()
+        
+        let cylinderMeshResource = MeshResource.generateBox(size: SIMD3(x: 1.2, y: 0.01, z: 0.01), cornerRadius: 0.1)
+        
+        let myMaterial = SimpleMaterial(color: .gray, roughness: 0, isMetallic: true)
+        let radians = 90.0 * Float.pi / 180.0
+            
+        let kozeppont = AnchorEntity(world: SIMD3(x: 0.0, y: 0.0, z: 0.0))
+        let axisXEntity = ModelEntity(mesh: cylinderMeshResource, materials: [myMaterial])
+        
+        let coneXEntity = ModelEntity(mesh: coneMeshResource, materials: [myMaterial])
+        coneXEntity.orientation = simd_quatf(angle: radians, axis: SIMD3(x: 0, y: 0, z: -1))
+        
+        axisXEntity.addChild(coneXEntity)
+        coneXEntity.setPosition(SIMD3(x: 0.6, y: 0.0, z: 0.0), relativeTo: axisXEntity)
+        
+        
+        kozeppont.addChild(axisXEntity)
+        uiView.scene.addAnchor(kozeppont)
+        ...
+    }
+\end{lstlisting}
+
+To be able to move the different elements together, all 3D models are children of the axes. Thus, if the axis moves, the connected elements will also move due to the parent-child relationship. In its current version, MeshResource does not support the generation of cones by default, so I was able to achieve this by using an external library package. After importing the RealityGeometries library, I was able to easily generate cones, which I eventually used to draw axes.
