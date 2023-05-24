@@ -12,10 +12,10 @@
 \usepackage{epsfig}
 \usepackage{listings}
 \usepackage{color}
-%\usepackage{fancyhdr}
+\usepackage{fancyhdr}
 \usepackage{lastpage}
 \usepackage{anysize}
-\usepackage[magyar]{babel}
+%\usepackage[magyar]{babel}
 \usepackage{sectsty}
 \usepackage{setspace}  % Ettol a tablazatok, abrak, labjegyzetek maradnak 1-es sorkozzel!
 \usepackage[hang]{caption}
@@ -25,11 +25,11 @@
 % Main variables
 %--------------------------------------------------------------------------------------
 \newcommand{\vikszerzo}{Kiss Dániel Márkr}
-\newcommand{\vikkonzulens}{dr.~Konzulens Elem�r}
-\newcommand{\vikcim}{Elektronikus terel�k}
-\newcommand{\viktanszek}{M�r�stechnika �s Inform�ci�s Rendszerek Tansz�k}
+\newcommand{\vikkonzulens}{dr.~Konzulens Elemér}
+\newcommand{\vikcim}{Elektronikus terelők}
+\newcommand{\viktanszek}{Méréstechnika És Információs Rendszerek Tanszék}
 \newcommand{\vikdoktipus}{Önálló laboratórium 1}
-\newcommand{\vikdepartmentr}{B�dis-Szomor� Andr�s}
+\newcommand{\vikdepartmentr}{---}
 
 %--------------------------------------------------------------------------------------
 % Page layout setup
@@ -40,10 +40,10 @@
 % (like the ToC, the References, and the Chapter pages)remain in plane style
 
 \pagestyle{plain}
-%\setlength{\parindent}{0pt} % �ttekinthet�bb, angol nyelv� dokumentumokban jellemz�
-%\setlength{\parskip}{8pt plus 3pt minus 3pt} % �ttekinthet�bb, angol nyelv� dokumentumokban jellemz�
-\setlength{\parindent}{12pt} % magyar nyelv� dokumentumokban jellemz�
-\setlength{\parskip}{0pt}    % magyar nyelv� dokumentumokban jellemz�
+\setlength{\parindent}{0pt} % �ttekinthet�bb, angol nyelv� dokumentumokban jellemz�
+\setlength{\parskip}{8pt plus 3pt minus 3pt} % �ttekinthet�bb, angol nyelv� dokumentumokban jellemz�
+%\setlength{\parindent}{12pt} % magyar nyelv� dokumentumokban jellemz�
+%\setlength{\parskip}{0pt}    % magyar nyelv� dokumentumokban jellemz�
 
 \marginsize{35mm}{25mm}{15mm}{15mm} % anysize package
 \setcounter{secnumdepth}{0}
@@ -110,17 +110,10 @@
 \author{\vikszerzo}
 \title{\viktitle}
 \includeonly{
-	guideline,%
-	project,%
 	titlepage,%
-	declaration,%
-	abstract,%
 	introduction,%
 	chapter1,%
 	chapter2,%
-	chapter3,%
-	acknowledgement,%
-	appendices,%
 }
 %--------------------------------------------------------------------------------------
 %	Setup captions
@@ -144,9 +137,9 @@ aboveskip=10pt}
 \onehalfspacing
 \include{titlepage}
 \tableofcontents\vfill
+\include{introduction}
 \include{chapter1}
-
-
+\include{chapter2}
 %\listoffigures\addcontentsline{toc}{chapter}{�br�k jegyz�ke}
 %\listoftables\addcontentsline{toc}{chapter}{T�bl�zatok jegyz�ke}
 
