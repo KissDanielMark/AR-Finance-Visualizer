@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  24 MAY 2023 11:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  24 MAY 2023 12:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/kissdanielmark/Documents/01.Iskola/MSc/1/Onlab1/AR-Finance-Visualizer/Dokumentacio/onlab.tex
-(/Users/kissdanielmark/Documents/01.Iskola/MSc/1/Onlab1/AR-Finance-Visualizer/Dokumentacio/onlab.tex
+**/Users/kissdanielmark/Documents/01.Iskola/MSc/1/Onlab1/AR-Finance-Visualizer/Dokumentacio/onlab/onlab.tex
+(/Users/kissdanielmark/Documents/01.Iskola/MSc/1/Onlab1/AR-Finance-Visualizer/Dokumentacio/onlab/onlab.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (/usr/local/texlive/2023/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2022/07/02 v1.4n Standard LaTeX document class
@@ -29,9 +29,7 @@ Package: t1enc 1994/06/01 Standard LaTeX package
 Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks16
 \inpenc@posthook=\toks17
- (/usr/local/texlive/2023/texmf-dist/tex/latex/base/latin2.def
-File: latin2.def 2021/02/14 v1.3d Input encoding file
-)) (/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsmath.sty
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2022/04/08 v2.17n AMS math features
 \@mathmargin=\skip50
 
@@ -223,9 +221,9 @@ Package: babel 2023/02/13 3.86 The Babel package
  (/usr/local/texlive/2023/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
 \bbl@dirlevel=\count283
- (/usr/local/texlive/2023/texmf-dist/tex/generic/babel-hungarian/magyar.ldf
-Language: magyar 2019/01/14 v1.5c Magyar (Hungarian) support for babel
-Package babel Info: Making ` an active character on input line 2819.
+ (./magyar.ldf
+Language: magyar 2007/10/19 v1.5 Magyar support from the babel v3.7 system
+Package babel Info: Making ` an active character on input line 2609.
 \c@footnote@add=\count284
 \c@footnote@ch=\count285
 )) (/usr/local/texlive/2023/texmf-dist/tex/generic/babel/locale/hu/babel-magyar.tex
@@ -378,76 +376,13 @@ Package hyperref Warning: Option `bookmarks' has already been used,
 (hyperref)                setting the option has no effect on input line 73.
 
 Package hyperref Info: Option `unicode' set `false' on input line 73.
-
-Package hyperref Warning: Composite letter `\textasciicaron+d'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 73.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\H' on input line 73.
-
-
-Package hyperref Warning: Composite letter `\textasciicaron+d'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 73.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\H' on input line 73.
-
-
-Package hyperref Warning: Composite letter `\textasciicaron+d'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 73.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\H' on input line 73.
-
-
-Package hyperref Warning: Composite letter `\textasciicaron+d'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 73.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\H' on input line 73.
-
-
-Package hyperref Warning: Composite letter `\textasciicaron+d'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 73.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\H' on input line 73.
-
-
-Package hyperref Warning: Composite letter `\textasciicaron+d'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 73.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\H' on input line 73.
-
-
-Package hyperref Warning: Composite letter `\textasciicaron+d'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 73.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\H' on input line 73.
-
 Package hyperref Info: Option `pdfnewwindow' set `true' on input line 73.
 Package hyperref Info: Option `colorlinks' set `true' on input line 73.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count299
 \l__pdf_internal_box=\box55
-) (./onlab.aux (./guideline.aux) (./project.aux) (./chapter1.aux) (./appendices.aux))
+) (./onlab.aux)
 \openout1 = `onlab.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 141.
@@ -488,40 +423,162 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 \c@lstlisting=\count306
+
+
+LaTeX Warning: Please use \usepackage[latin2]{inputenc} with
+               \usepackage[magyar]{babel}.
+
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring ON on input line 141.
- (./onlab.out) (./onlab.out)
 \@outlinefile=\write3
 \openout3 = `onlab.out'.
 
- (/usr/local/texlive/2023/texmf-dist/tex/latex/base/report.cls
+(/usr/local/texlive/2023/texmf-dist/tex/latex/base/report.cls
 LaTeX Info: Redefining \cal on input line 577.
 LaTeX Info: Redefining \mit on input line 578.
 )
-\openout2 = `guideline.aux'.
+\openout2 = `titlepage.aux'.
+
+ (./titlepage.tex
+<../images/BMElogo.png, id=4, 975.645pt x 273.02pt>
+File: ../images/BMElogo.png Graphic file (type png)
+<use ../images/BMElogo.png>
+Package pdftex.def Info: ../images/BMElogo.png  used on input line 6.
+(pdftex.def)             Requested size: 170.71652pt x 47.77087pt.
 
 
-No file guideline.tex.
-\openout2 = `project.aux'.
+./titlepage.tex:10: LaTeX Error: Unicode character � (U+FFFD)
+               not set up for use with LaTeX.
 
-No file project.tex.
-(./onlab.toc)
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10         \textmd{\viktanszek}
+                                 \\[5cm]
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./titlepage.tex:10: LaTeX Error: Unicode character � (U+FFFD)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10         \textmd{\viktanszek}
+                                 \\[5cm]
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./titlepage.tex:10: LaTeX Error: Unicode character � (U+FFFD)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10         \textmd{\viktanszek}
+                                 \\[5cm]
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./titlepage.tex:10: LaTeX Error: Unicode character � (U+FFFD)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10         \textmd{\viktanszek}
+                                 \\[5cm]
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./titlepage.tex:10: LaTeX Error: Unicode character � (U+FFFD)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10         \textmd{\viktanszek}
+                                 \\[5cm]
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./titlepage.tex:10: LaTeX Error: Unicode character � (U+FFFD)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10         \textmd{\viktanszek}
+                                 \\[5cm]
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./titlepage.tex:13: LaTeX Error: Unicode character � (U+FFFD)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.13         {\huge \bfseries \vikcim
+                                     }\\[0.8cm]
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 17.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 17.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+./titlepage.tex:19: LaTeX Error: Unicode character � (U+FFFD)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.19 ...rzo}        & \makebox[7cm]{\vikkonzulens}
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+[1
+
+
+
+{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc} <../images/BMElogo.png>])
+No file onlab.toc.
 \tf@toc=\write4
 \openout4 = `onlab.toc'.
 
- [1
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.147 \include{chapter1}
+                         [1
 
 
 
-
-
-
-
-
-
-{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
+]
 \openout2 = `chapter1.aux'.
 
  (./chapter1.tex
@@ -533,27 +590,9 @@ No file project.tex.
 2. fejezet.
 ) [4
 
-] (./onlab.bbl
-
-LaTeX Warning: Empty `thebibliography' environment on input line 3.
-
-)
-
-Package hyperref Warning: Composite letter `\textasciicaron+d'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 157.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\H' on input line 157.
-
-[5
-
-
-
 ]
+No file onlab.bbl.
 \openout2 = `appendices.aux'.
-
 
 No file appendices.tex.
 \tf@thm=\write5
@@ -565,23 +604,35 @@ See the caption package documentation for explanation.
 
 
 enddocument/afterlastpage: lastpage setting LastPage.
-(./onlab.aux (./guideline.aux) (./project.aux) (./chapter1.aux) (./appendices.aux))
-Package rerunfilecheck Info: File `onlab.out' has not changed.
-(rerunfilecheck)             Checksum: 079C370C64D13D2C98A2DA94B71EC731;153.
+(./onlab.aux (./titlepage.aux) (./chapter1.aux) (./appendices.aux))
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `onlab.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `onlab.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  6A01E5A404CDB77642B9E16711DD82B7;101.
+
+Package lastpage Warning: Rerun to get the references right on input line 160.
+
  ) 
 Here is how much of TeX's memory you used:
- 14793 strings out of 476025
- 244507 string characters out of 5790018
+ 14785 strings out of 476025
+ 243830 string characters out of 5790018
  1857388 words of memory out of 5000000
- 35030 multiletter control sequences out of 15000+600000
- 517235 words of font info for 39 fonts, out of 8000000 for 9000
+ 35019 multiletter control sequences out of 15000+600000
+ 524388 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,5n,76p,1138b,383s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on onlab.pdf (5 pages, 85350 bytes).
+ 75i,7n,76p,1144b,376s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
+Output written on onlab.pdf (5 pages, 144351 bytes).
 PDF statistics:
- 69 PDF objects out of 1000 (max. 8388607)
- 53 compressed objects within 1 object stream
- 10 named destinations out of 1000 (max. 500000)
- 25 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 70 PDF objects out of 1000 (max. 8388607)
+ 47 compressed objects within 1 object stream
+ 8 named destinations out of 1000 (max. 500000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

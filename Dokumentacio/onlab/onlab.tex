@@ -3,7 +3,7 @@
 
 %\PassOptionsToPackage{chapternumber=Huordinal}{magyar.ldf}
 \usepackage{t1enc}
-\usepackage[latin2]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{enumerate}
@@ -24,11 +24,11 @@
 %--------------------------------------------------------------------------------------
 % Main variables
 %--------------------------------------------------------------------------------------
-\newcommand{\vikszerzo}{B�dis-Szomor� Andr�s}
+\newcommand{\vikszerzo}{Kiss Dániel Márkr}
 \newcommand{\vikkonzulens}{dr.~Konzulens Elem�r}
 \newcommand{\vikcim}{Elektronikus terel�k}
 \newcommand{\viktanszek}{M�r�stechnika �s Inform�ci�s Rendszerek Tansz�k}
-\newcommand{\vikdoktipus}{Diplomaterv}
+\newcommand{\vikdoktipus}{Önálló laboratórium 1}
 \newcommand{\vikdepartmentr}{B�dis-Szomor� Andr�s}
 
 %--------------------------------------------------------------------------------------
@@ -140,13 +140,10 @@ aboveskip=10pt}
 %--------------------------------------------------------------------------------------
 \begin{document}
 \singlespacing
-\include{guideline}
-\include{project}
-
 \pagenumbering{arabic}
 \onehalfspacing
+\include{titlepage}
 \tableofcontents\vfill
-
 \include{chapter1}
 
 
@@ -154,7 +151,7 @@ aboveskip=10pt}
 %\listoftables\addcontentsline{toc}{chapter}{T�bl�zatok jegyz�ke}
 
 \bibliography{mybib}
-\addcontentsline{toc}{chapter}{Irodalomjegyz�k}
+\addcontentsline{toc}{chapter}{Irodalomjegyzék}
 \bibliographystyle{plain}
 
 \include{appendices}
