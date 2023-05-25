@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  24 MAY 2023 20:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  25 MAY 2023 22:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -522,52 +522,22 @@ File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 
 
 
-] [8]
-Overfull \hbox (169.76833pt too wide) in paragraph at lines 97--99
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (6.6067pt too wide) in paragraph at lines 99--100
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (32.10071pt too wide) in paragraph at lines 103--105
-[][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (11.7055pt too wide) in paragraph at lines 105--106
-[][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (42.29831pt too wide) in paragraph at lines 106--108
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (16.8043pt too wide) in paragraph at lines 109--112
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-[9]) [10]
+] [8]) [9] [10]
 \openout2 = `chapter4.aux'.
 
  (./chapter4.tex
 Chapter 4.
-<../images/front.jpeg, id=202, 831.105pt x 1798.72pt>
+<../images/front.jpeg, id=201, 831.105pt x 1798.72pt>
 File: ../images/front.jpeg Graphic file (type jpg)
 <use ../images/front.jpeg>
 Package pdftex.def Info: ../images/front.jpeg  used on input line 9.
 (pdftex.def)             Requested size: 166.21805pt x 359.73763pt.
-<../images/side.jpeg, id=203, 831.105pt x 1798.72pt>
+<../images/side.jpeg, id=202, 831.105pt x 1798.72pt>
 File: ../images/side.jpeg Graphic file (type jpg)
 <use ../images/side.jpeg>
 Package pdftex.def Info: ../images/side.jpeg  used on input line 17.
 (pdftex.def)             Requested size: 166.21805pt x 359.73763pt.
-<../images/top.jpeg, id=204, 831.105pt x 1798.72pt>
+<../images/top.jpeg, id=203, 831.105pt x 1798.72pt>
 File: ../images/top.jpeg Graphic file (type jpg)
 <use ../images/top.jpeg>
 Package pdftex.def Info: ../images/top.jpeg  used on input line 25.
@@ -578,17 +548,17 @@ Package pdftex.def Info: ../images/top.jpeg  used on input line 25.
 
 
  <../images/front.jpeg>]
-<../images/selector.jpeg, id=210, 831.105pt x 1798.72pt>
+<../images/selector.jpeg, id=209, 831.105pt x 1798.72pt>
 File: ../images/selector.jpeg Graphic file (type jpg)
 <use ../images/selector.jpeg>
 Package pdftex.def Info: ../images/selector.jpeg  used on input line 37.
 (pdftex.def)             Requested size: 166.21805pt x 359.73763pt.
-<../images/megerosites.jpeg, id=211, 831.105pt x 1798.72pt>
+<../images/megerosites.jpeg, id=210, 831.105pt x 1798.72pt>
 File: ../images/megerosites.jpeg Graphic file (type jpg)
 <use ../images/megerosites.jpeg>
 Package pdftex.def Info: ../images/megerosites.jpeg  used on input line 45.
 (pdftex.def)             Requested size: 166.21805pt x 359.73763pt.
-<../images/not_available.jpeg, id=212, 831.105pt x 1798.72pt>
+<../images/not_available.jpeg, id=211, 831.105pt x 1798.72pt>
 File: ../images/not_available.jpeg Graphic file (type jpg)
 <use ../images/not_available.jpeg>
 Package pdftex.def Info: ../images/not_available.jpeg  used on input line 53.
@@ -612,21 +582,21 @@ enddocument/afterlastpage: lastpage setting LastPage.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `onlab.out' has not changed.
-(rerunfilecheck)             Checksum: 18812EEE7DCFBBEBF12F55C316921869;625.
+(rerunfilecheck)             Checksum: 4B77A288FC593E73BB6EE35DC58AC65B;621.
  ) 
 Here is how much of TeX's memory you used:
- 13703 strings out of 476025
- 220594 string characters out of 5790018
- 1900388 words of memory out of 5000000
+ 13702 strings out of 476025
+ 220579 string characters out of 5790018
+ 1894388 words of memory out of 5000000
  33782 multiletter control sequences out of 15000+600000
  531801 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,7n,76p,1148b,1183s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb>
-Output written on onlab.pdf (18 pages, 1539829 bytes).
+Output written on onlab.pdf (18 pages, 1541069 bytes).
 PDF statistics:
- 326 PDF objects out of 1000 (max. 8388607)
- 269 compressed objects within 3 object streams
- 115 named destinations out of 1000 (max. 500000)
+ 324 PDF objects out of 1000 (max. 8388607)
+ 267 compressed objects within 3 object streams
+ 114 named destinations out of 1000 (max. 500000)
  129 words of extra memory for PDF output out of 10000 (max. 10000000)
 

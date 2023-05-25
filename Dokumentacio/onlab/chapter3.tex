@@ -94,20 +94,19 @@ After defining these variables, we can create the ModelEntity and place it in th
     func updateUIView(_ uiView: ARView, context: Context) {
         uiView.scene.anchors.removeAll()
         
-        let cylinderMeshResource = MeshResource.generateBox(size: SIMD3(x: 1.2, y: 0.01, z: 0.01), cornerRadius: 0.1)
+        let cylinderMeshResource = MeshResource.generateBox(...)
         
-        let myMaterial = SimpleMaterial(color: .gray, roughness: 0, isMetallic: true)
+        let myMaterial = SimpleMaterial(...)
         let radians = 90.0 * Float.pi / 180.0
             
         let kozeppont = AnchorEntity(world: SIMD3(x: 0.0, y: 0.0, z: 0.0))
-        let axisXEntity = ModelEntity(mesh: cylinderMeshResource, materials: [myMaterial])
+        let axisXEntity = ModelEntity(mesh: cylinderMeshResource, materials: ...)
         
-        let coneXEntity = ModelEntity(mesh: coneMeshResource, materials: [myMaterial])
-        coneXEntity.orientation = simd_quatf(angle: radians, axis: SIMD3(x: 0, y: 0, z: -1))
+        let coneXEntity = ModelEntity(mesh: coneMeshResource, materials: ...)
+        coneXEntity.orientation = simd_quatf(...)
         
         axisXEntity.addChild(coneXEntity)
-        coneXEntity.setPosition(SIMD3(x: 0.6, y: 0.0, z: 0.0), relativeTo: axisXEntity)
-        
+        coneXEntity.setPosition(...)
         
         kozeppont.addChild(axisXEntity)
         uiView.scene.addAnchor(kozeppont)
