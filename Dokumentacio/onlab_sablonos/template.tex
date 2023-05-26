@@ -31,7 +31,7 @@
 %        \Apageref{}, \Apageref*{}
 % idézetek: \acite, \acite*, \Acite, \Acite*
 % ###################
-\usepackage[english,magyar]{babel} %vegyes nyelvi támogatás a
+%\usepackage[english,magyar]{babel} %vegyes nyelvi támogatás a
 % magyar helyesírás ellenőrzéshez (ispell) és elválasztáshoz
 %\selectlanguage{english}
 
@@ -144,7 +144,7 @@
 \label{sec:bevezeto}
 
 
-Smartphones have become a defining part of our days. By now we can't even imagine our everyday life without them. We read e-mails, browse the Internet or monitor daily exchange rates. Now we can do all important things with our phones. Listening to music and watching series, but in terms of photography and video capabilities, they are not far behind cameras designed for professional purposes. Their computing capacity has grown exponentially over the years. The quality of camera systems is also undergoing significant progress every year.Perhaps this is why many people say that the development of telephones is starting to slow down. This industry has reached its peak.
+Smartphones have become a defining part of our days. By now we can't even imagine our everyday life without them. We read e-mails, browse the Internet or monitor daily exchange rates. Now we can do all important things with our phones. Listening to music and watching series, but in terms of photography and video capabilities, they are not far behind cameras designed for professional purposes. Their computing capacity has grown exponentially over the years, but that was true only for the firt ten years of the industry. The quality of camera systems is also undergoing significant progress every year.Perhaps this is why many people say that the development of telephones is starting to slow down. This industry has reached its peak.
 
 At the time, in 2007, the iPhone was considered a huge world sensation and now we know it was a world-changing announcement. At the time of writing this report, there are several reports that Apple is working on the introduction of a similarly large and decisive new product line. The so-called Apple AR/VR glasses. Only time will tell if this really happened until then I thought that it would be a great advance if I started familiarising with this technology. If this will be the next "touchscreen phone era", I thought it would be worthwhile to start dealing with it in time. Regardless, I have long been interested in the technology's operating principle and scope of use. From the consumer side, what kind of application possibilities does augmented reality technology have? At that time, I wanted to implement a similar augmented reality-like navigation system in my own high school navigation application. Unfortunately, I did not know about the existence of these technologies at the time.
 
@@ -152,15 +152,15 @@ As I mentioned in the first paragraph, today's phones have a huge computing capa
 
 Last but not least, it is important to mention the Oculus Quest 2 VR headset introduced by Meta and the computer use and games based on it. In addition, the Metaverse, announced by Meta 2 years ago, is also an important milestone in the life of virtual reality and therefore also in the life of augmented reality.
 
-As the examples above clearly reflect, it will be an important and presumably defining technology in the future. In light of this, during my self-lab, I got to know the ARKit and RealityKit developed and used by Apple. And with the help of the frameworks, I developed an augmented reality application displaying economic metrics. And during the report I used LaTex, because I felt it was time to familiarize myself with this kind of documentation language.
+As the examples above clearly reflect, it will be an important and presumably defining technology in the future. In light of this, during my self-lab, I got to know the ARKit and RealityKit developed and used by Apple. And with the help of the frameworks, I developed an augmented reality application displaying economic metrics. It helped me to reach my goal significantly faster with it. The pre-defined classes and functions lifted the heavy part of the work from my shoulders. And during the report I used LaTex, because I felt it was time to familiarize myself with this kind of documentation language.
 
 \newpage
 %==================================================================
 \section{Current techologies}
 \label{sec:az-elvegzett-munka}
 
-Before I started the development of the application I have done a research period to have a better overview of the current market. \cite{microsoftAr}
-There are several frameworks to choose from to start developing augmented reality applications. The most used AR frameworks are Google ARCore, Apple ARKit and RealityKit, Simple CV and Unity AR Foundation. \cite{appleAr} \cite{appleArRealityKit}
+Before I started the development of the application I have done a research period to have a better overview of the current market \cite{microsoftAr}.
+There are several frameworks to choose from to start developing augmented reality applications. The most used AR frameworks are Google ARCore, Apple ARKit and RealityKit, Simple CV and Unity AR Foundation \cite{appleAr} \cite{appleArRealityKit}.
 I ended up using Apple ARKit to build my app. I've been working with iOS development for several years and I'm sure with the Swift language as well.
 
 
@@ -168,7 +168,7 @@ I ended up using Apple ARKit to build my app. I've been working with iOS develop
 \label{sec:a-munkam-ismert}
 
 One of the main frameworks that we can use if we want to develope augmented reality application is Unity.
-Unity is a purpose-build framework for augmented reality development. It's key feature is that with the framework developer can easily deploy it's product across multiple mobile and wearable AR devices. It includes core features from ARKit(Apple), ARCore(Google) and HoloLens(Microsoft) as well unique features.
+Unity is a purpose-build framework for augmented reality development.  It's key feature is that with the framework developer can easily deploy it's product across multiple mobile and wearable AR devices. It includes core features from ARKit(Apple), ARCore(Google) and HoloLens(Microsoft) as well unique features \cite{unity}.
 
 AR Foundation which is the recommended framework for Unity development there are several features what the developers can use like:
 \begin{itemize}
@@ -177,25 +177,25 @@ AR Foundation which is the recommended framework for Unity development there are
   \item Plane detection
   \item Gestures
   \item Face tracking
-\end{itemize} \cite{unity}
+\end{itemize}
 
 \subsection{Apple ARKit and RealityKit}
 
-Apple ARKit and RealityKit are two powerful technologies developed by Apple that enable the creation of immersive augmented reality experiences on iOS devices. ARKit is a software framework that provides developers with the tools and resources they need to build augmented reality apps for iPhones and iPads. It allows developers to easily place virtual objects in the real world, track the user's position and orientation, and integrate real-time camera data to create realistic and interactive experiences.
+Apple ARKit \cite{appleArKit} and RealityKit \cite{appleArRealityKit} are two powerful technologies developed by Apple that enable the creation of immersive augmented reality experiences on iOS devices. ARKit is a software framework that provides developers with the tools and resources they need to build augmented reality apps for iPhones and iPads. It allows developers to easily place virtual objects in the real world, track the user's position and orientation, and integrate real-time camera data to create realistic and interactive experiences.
 
 On the other hand, RealityKit is a high-level framework that makes it easy for developers to create 3D content and build AR experiences without requiring extensive knowledge of 3D graphics or game engine programming. RealityKit includes features such as physics simulations, animations, and spatial audio, which can be used to create highly immersive AR experiences.
 
 Together, ARKit and RealityKit provide developers with a comprehensive set of tools for building augmented reality experiences on iOS devices. With these technologies, developers can create innovative and engaging apps that allow users to interact with virtual objects in the real world, opening up new possibilities for gaming, education, and more.
+
+ARKit detects the real-world and with the help of RealityKit it projects the virtual object on the scene. As we can see on the example below \ref{fig:arKitRealityKit} the real world table is detected by ARKit and after that it can be used in RealityKit to compose the scene with the added virtual sphere in it.
 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=150mm]{../images/realitykit.png}
   % \includegraphics[width=150mm, keepaspectratio]{figures/TeXnicCenter.png}
   \caption{RealityKit and ARKit usage.}
-  \label{fig:TexnicCenter}
+  \label{fig:arKitRealityKit}
 \end{figure}
-
-
 
 RealityKit’s features:
 \begin{itemize}
@@ -211,21 +211,37 @@ RealityKit’s features:
 
   \item Synchronization: The framework has built-in support for networking, designed for collaborative experiences. It even offers automatic synchronization of entities between multiple clients.
 \end{itemize}
-\cite{appleArRealityKit}
-\cite{appleArKit}
+
+
+\subsection{SwiftUI}
+
+SwiftUI is Apple's brand new framework for building user interfaces for iOS, tvOS, macOS, and watchOS. Apple introduced SwiftUI in 2019 and the framework has been evolving ever since. Unlike UIKit, SwiftUI is a cross-platform framework. The key difference with UIKit and AppKit is that SwiftUI defines the user interface declaratively, not imperatively. What does that mean?
+
+Using UIKit you create views to build the view hierarchy of your application's user interface. That is not how SwiftUI works. SwiftUI provides developers with an API to declare or describe what the user interface should look like. SwiftUI inspects the declaration or description of the user interface and converts it to your application's user interface. SwiftUI does the heavy lifting for you.
+
 
 
 \section{Development}
 
 \subsection{Overview}
+
+The AR app is designed to retrieve real-time economic data from an API and display it to the user in an augmented reality environment. The app provides users with the ability to interact with the data, manipulate its presentation, and perform various actions.
+
+Upon launching the app, the user will have access to a selection of economic indicators and financial data. The app will establish a connection with the designated API to fetch the latest information in real-time.
+This data can include stock market indices, currency exchange rates, inflation rates, and other relevant economic metrics.
+
+The user can choose to view the data in chart representation.
+The app will offer a range of customization options, allowing the user to rotate, reposition, and manipulate the visual elements to suit their preferences.
+The app's potential for expansion and enhancement is virtually limitless. Developers can continuously add new economic data sources, expand the available indicators, introduce advanced analytics and forecasting capabilities, integrate social media sentiment analysis, and incorporate machine learning algorithms to offer personalized insights and recommendations to users.
+\subsection{Development process}
 For the development phase of the project I used Apple's XCode integrated developer environment(IDE) as the main developer platform for iOS and ARKit development. For testing I used an iPhone 11 with dual camera system.
 I have also version controled the whole development process using git and publishing it on GitHub. Not only the source code can be found there but also the documentation of this project as I have writen it using \LaTeX{}.
 
 \subsection{APILayer Rest API}
 
-The fundamental part of the application is the data it displays. For retriving the displayed informations I used APILayer's Exchange Rates Data API an open and available for free financial API.  The only problem is that you can only do 250 queries per month in the free version. I used 2 endpoints. The first is '/convert'. With this endpoint, we have any amount conversion from one currency to another. The output of this enpoint is the following JSON.
+The fundamental part of the application is the data it displays. For retriving the displayed informations I used APILayer's Exchange Rates Data API an open and available for free financial API.  The only problem is that you can only do 250 queries per month in the free version. I used 2 endpoints. The first is '/convert' \ref{listing:convertEndpoint}. With this endpoint, we have any amount conversion from one currency to another. The output of this enpoint is the following JSON.
 
-\begin{lstlisting}[frame=single,float=!ht,caption=JSON from /convert endpoint, label=listing:Bibtex]
+\begin{lstlisting}[frame=single,float=!ht,caption=JSON from /convert endpoint, label=listing:convertEndpoint]
   {
     "success": true,
     "query": {
@@ -242,8 +258,10 @@ The fundamental part of the application is the data it displays. For retriving t
   }
 \end{lstlisting}
 
-The other endpoint used is '/fluctuation'. This endpoint returns the fluctuation data between specified dates. The data can be for all available currencies or for a specific set.
-\begin{lstlisting}[frame=single,float=!ht,caption=JSON from /fluctuation endpoint, label=listing:Bibtex]
+The other endpoint used is '/fluctuation' \ref{listing:fluctuationEndpoint}. This endpoint returns the fluctuation data between specified dates. The data can be for all available currencies or for a specific set.
+
+
+\begin{lstlisting}[frame=single,float=!ht,caption=JSON from /fluctuation endpoint, label=listing:fluctuationEndpoint]
 {
   "base": "EUR",
   "end_date": "2018-02-26",
@@ -269,147 +287,82 @@ The other endpoint used is '/fluctuation'. This endpoint returns the fluctuation
 
 %\cite{apilayer}
 
-\subsection{SwiftUI}
+\subsection{Visualization}
 
-SwiftUI is Apple's brand new framework for building user interfaces for iOS, tvOS, macOS, and watchOS. Apple introduced SwiftUI in 2019 and the framework has been evolving ever since. Unlike UIKit, SwiftUI is a cross-platform framework. The key difference with UIKit and AppKit is that SwiftUI defines the user interface declaratively, not imperatively. What does that mean?
-
-Using UIKit you create views to build the view hierarchy of your application's user interface. That is not how SwiftUI works. SwiftUI provides developers with an API to declare or describe what the user interface should look like. SwiftUI inspects the declaration or description of the user interface and converts it to your application's user interface. SwiftUI does the heavy lifting for you.
 
 One of the most challenging aspects of user interface development is synchronizing the application's state and its user interface. Every time the application's state changes, the user interface needs to update to reflect the change. During the development phase, this was a challenge that had to be overcome. Despite the fact that I have already used and developed an iOS application with SwiftUI, it was excellent practice to deepen my knowledge of user state management. I used ObservableObjects to solve this problem.
 
-I used a common state management technique, the MVC pattern, to control the data and model. MVC (Model-View-Controller) is a pattern in software design commonly used to implement user interfaces, data, and controlling logic. It emphasizes a separation between the software's business logic and display. This "separation of concerns" provides for a better division of labor and improved maintenance.  Sticking to convention, I created a CurrencyController, CurrencyView and a CurrencyModell class. The CurrencyModel class contains the generated 3D models and their associated values. The task of the CurrencyController class is to query the data and update the information displayed on the View. In the CurrencyView class, it deals with the code defining the appearance of the application and the display of the given dataset.
-\cite{mozilla}
-
-
-\subsection{ARKit and RealityKit}
+I used a common state management technique, the MVC pattern, to control the data and model. MVC (Model-View-Controller) is a pattern in software design commonly used to implement user interfaces, data, and controlling logic. It emphasizes a separation between the software's business logic and display. This "separation of concerns" provides for a better division of labor and improved maintenance.  Sticking to convention, I created a CurrencyController, CurrencyView and a CurrencyModell class. The CurrencyModel class contains the generated 3D models and their associated values. The task of the CurrencyController class is to query the data and update the information displayed on the View. In the CurrencyView class, it deals with the code defining the appearance of the application and the display of the given dataset \cite{mozilla}.
 
 To operate augmented reality and display the 3D generated graph, I used the ARKit and RealityKit frameworks provided by Apple.
 
 The CurrencyARViewContainer is responsible for displaying the AR view.
-
-\begin{lstlisting}
-struct CurrencyARViewContainer: UIViewRepresentable {
-    
-    @StateObject var controler:CurrencyController
-    
-    func makeUIView(context: Context) -> ARView{
-        AR.view = ARView(frame: .zero)
-        return AR.view
-    }
-    
-    func updateUIView(_ uiView: ARView, context: Context) {
-        print("updating view - (controler.timerHappened)")
-        uiView.scene.anchors.removeAll()
-        ...
-    }
-}
-\end{lstlisting}
 
 To generate the texts and columns, I used the .generateBox() and .generateText() functions of the built-in MeshResource class.
 The MeshResource class stores the points defining the shapes. In order for this to become a 3D model, a texture must also be specified. I used the SimpleMaterial() function for this.
 We also need an AnchorEntity, which defines the center of our model in the 3D world.
 After defining these variables, we can create the ModelEntity and place it in the AR world using the AnchorEntity.
 
-\begin{lstlisting}
-    func updateUIView(_ uiView: ARView, context: Context) {
-        uiView.scene.anchors.removeAll()
-        
-        let cylinderMeshResource = MeshResource.generateBox(...)
-        
-        let myMaterial = SimpleMaterial(...)
-        let radians = 90.0 * Float.pi / 180.0
-            
-        let kozeppont = AnchorEntity(world: SIMD3(x: 0.0, y: 0.0, z: 0.0))
-        let axisXEntity = ModelEntity(mesh: cylinderMeshResource, materials: ...)
-        
-        let coneXEntity = ModelEntity(mesh: coneMeshResource, materials: ...)
-        coneXEntity.orientation = simd_quatf(...)
-        
-        axisXEntity.addChild(coneXEntity)
-        coneXEntity.setPosition(...)
-        
-        kozeppont.addChild(axisXEntity)
-        uiView.scene.addAnchor(kozeppont)
-        ...
-    }
-\end{lstlisting}
 
 To be able to move the different elements together, all 3D models are children of the axes. Thus, if the axis moves, the connected elements will also move due to the parent-child relationship. In its current version, MeshResource does not support the generation of cones by default, so I was able to achieve this by using an external library package. After importing the RealityGeometries library, I was able to easily generate cones, which I eventually used to draw axes.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+After the application launches the camera opens and show the real world for the user.  With the bottom selector the user can select which currency he/she  would like to display \ref{fig:selector}.
+After he/she decided which currency should be displayed a confirmation button appeares \ref{fig:megerosites}. If the green tick is touched then the graph shows up with the correct current informations.
 
-\section{Presentation of finished work}
-
-In this section I will present and showcase my finished appliction. I will include screenshots to have a better representation and understanding for the reader.
 The camera function in the application allows you to capture the current state of the graphs, which in this case came in handy for documentation.
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[height=75mm, keepaspectratio]{../images/selector.jpeg}
+  % \includegraphics[width=150mm, keepaspectratio]{figures/TeXnicCenter.png}
+  \caption{Selector UI part.}
+  \label{fig:selector}
+\end{figure}
 
 \begin{figure}[!ht]
   \centering
-  \includegraphics[height=67mm, keepaspectratio]{../images/front.jpeg}\hspace{1cm}
-  %\caption{The main screen of the application.}
-  \includegraphics[height=67mm, keepaspectratio]{../images/side.jpeg}\\\vspace{5mm}
-  \includegraphics[height=67mm, keepaspectratio]{../images/top.jpeg}\hspace{1cm}
-  \includegraphics[height=67mm, keepaspectratio]{../images/selector.jpeg}
-  \caption{Scenarios of the application}
-  \label{fig:HVSpaces}
+  \includegraphics[height=75mm, keepaspectratio]{../images/megerosites.jpeg}
+  % \includegraphics[width=150mm, keepaspectratio]{figures/TeXnicCenter.png}
+  \caption{Confirmation buttons.}
+  \label{fig:megerosites}
 \end{figure}
 
 
-As the attached images clearly show, the virtual 3D graph can be easily walked around and viewed from different angles, thereby giving users a new comparative perspective. It is possible to move and rotate the entire graph, as well as move the current exchange rate columns to make it easier to compare with other metrics. The move and rotate functions are only available in Spectate mode, for this you have to stop Live mode (or otherwise start Live mode) by pressing the button located in the upper left corner.
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[height=75mm, keepaspectratio]{../images/top.jpeg}
+  % \includegraphics[width=150mm, keepaspectratio]{figures/TeXnicCenter.png}
+  \caption{The visualized graphs.}
+  \label{fig:top}
+\end{figure}
+
+As the attached images clearly show, the virtual 3D graph can be easily walked around and viewed from different angles \ref{fig:top}, thereby giving users a new comparative perspective. It is possible to move and rotate the entire graph, as well as move the current exchange rate columns to make it easier to compare with other metrics. The move and rotate functions are only available in Spectate mode, for this you have to stop Live mode (or otherwise start Live mode) by pressing the button located in the upper left corner.
 
 Currently, 2 currencies are available in the application, but of course this can be easily expanded at any time in the future. These two are EUR to HUF and USD to HUF. These can be displayed after selection and confirmation from the bottom bar. If the given exchange rate is already placed, it can no longer be added to the graph twice.
 
+For the currencies currently only the EUR and USD are available. Both rates are convert to HUF refered to 1 unit.The blue column represents the EUR while the green columns shows the USD values.
 
-
-\begin{figure}[!ht]
-  \centering
-  \includegraphics[height=67mm, keepaspectratio]{../images/selector.jpeg}\hspace{1cm}
-  %\caption{The main screen of the application.}
-  \includegraphics[height=67mm, keepaspectratio]{../images/megerosites.jpeg}\\\vspace{5mm}
-  \includegraphics[height=67mm, keepaspectratio]{../images/not_available.jpeg}%\hspace{1cm}
-  \caption{User interface}
-  \label{fig:HVSpaces}
-\end{figure}
+On the Z axes the user can visualize and start and the end fluctuation for the past 10 days. The last column shows the one year ago value of the givne currency.
+I have also added the possibilitie to move and rotate the whole graph the grabbing the X axis and performing the correct finger gesture on the screen.
 
 
 
 
 
 
-\section{Summary}
+\section{Summary and future work}
 \label{sec:osszefoglalas}
 
-A félévi munka során elért új eredmények ismételt, vázlatos, tömör
-Ebben a részben az adott félévre vonatkozó, az \emph{Önálló
-  laboratórium tárgy keretében elvégzett munka során} elért
-\textbf{új} eredmények ismételt, vázlatos, \textbf{tömör}
-összefoglalását várjuk, lehetőleg nem felsorolásként.  Itt még egyszer
-ki lehet térni a leglényegesebb eredményekre, valamint a félév során
-felmerülő nehézségekre, de meg lehet említeni a továbbfejlesztési
-irányokat, lehetőségeket is.
-
-Ezt a részt tagolható a következő pontok megválaszolásával:
-\begin{itemize}
-  \item Mi volt az \textbf{aktuális kérdés}, probléma, amivel a félév
-        során foglalkoztál?
-  \item Mi a dolgozat \textbf{célja}, miért érdekes egyáltalán ezzel a
-        problémával foglalkozni?
-  \item Milyen \textbf{módszereket} használtál a probléma megoldása
-        érdekében?
-  \item Mik a legfontosabb \textbf{eredmények}?
-  \item Milyen \textbf{következtetéseket} lehet levonni?
-
-\end{itemize}
-
-Ha valaki elolvassa ezt a részt, képet kell kapnia az egész
-dolgozatról.  Ne legyen az absztrakt szó szerinti ismétlése.
-
-Fontos, hogy az itt megadott sablontól el lehet térni, használata nem
-kötelező, csak segítséget jelenthet, viszont a fedőlap lehetőleg
-maradjon ugyanez és tartalmilag egyezzen meg a sablon irányelveivel. A
-beszámoló felépítésében nem érdemes eltérni a \emph{Bevezető --
-  Féléves munka és eredmények bemutatása -- Összefoglaló} hármastól.
-
+The main focus of my independent lab topic was augmented reality. I was interested in how it works and where the technology currently stands.
+In light of this, I looked at the currently used technologies and chose Apple's solution.
+Throughout my semester, I got to know ARKit and RealityKit and gained deeper knowledge in SwiftUI.
+\newblock
+It was challenging to start this project because there were only a few good sources to educate myself from. Thankfully when I had any doubt my supervisor helped me.
+In the future the app will provide additional features to enhance the user experience.
+For example, it can offer historical data analysis, allowing users to compare current economic data with past trends. It can also include tools for creating personalized portfolios, setting up alerts for specific data thresholds, or conducting virtual simulations to predict the potential impact of economic events.
+Overall, the AR app serves as a dynamic platform for users to access and interact with real-time economic data in an immersive and customizable manner, with endless possibilities for future growth and innovation.
+It was also a good starting point if I ever want to continue my journy I have a begining point. For the time being it is totaly enough for me.
+Curretly from my point of view it is a very immature in a sense that the big companies can't even produce any remarkable augmented reality applications for the smartphones. All in all I think it has huge potentials in it but it's market is yet to be reveald. Perheaps with the launch of the commercial augemented reality glasses? Who knows. Only time will tell.
 \newpage
 
 %==================================================================
