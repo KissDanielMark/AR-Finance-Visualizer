@@ -1,3 +1,33 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{appleAr}
+Apple.
+\newblock {\em Augmented Reality}.
+\newblock Apple Inc, May 2023.
+\newblock URL: https://developer.apple.com/augmented-reality/.
+
+\bibitem{appleArKit}
+Apple.
+\newblock {\em Augmented Reality}.
+\newblock Apple Inc, May 2023.
+\newblock URL: https://developer.apple.com/documentation/arkit.
+
+\bibitem{appleArRealityKit}
+Apple.
+\newblock {\em Reality Kit}.
+\newblock Apple Inc, May 2023.
+\newblock URL: https://developer.apple.com/documentation/realitykit/.
+
+\bibitem{microsoftAr}
+Microsoft.
+\newblock {\em What is Augmenteted Reality}.
+\newblock Microsoft, May 2023.
+\newblock URL: https://dynamics.microsoft.com/en-us/mixed-reality/guides/what-is-augmented-reality-ar/.
+
+\bibitem{unity}
+Unity.
+\newblock {\em AR Foundation}.
+\newblock Unity, May 2023.
+\newblock URL: https://unity.com/unity/features/arfoundation.
 
 \end{thebibliography}
