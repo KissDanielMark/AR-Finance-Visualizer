@@ -140,7 +140,6 @@
 \label{sec:kornyezet}
 % A munka  előzményei és kiindulási állapota
 % \newpage
-\subsection{Summary}
 \label{sec:bevezeto}
 
 
@@ -220,10 +219,8 @@ SwiftUI is Apple's brand new framework for building user interfaces for iOS, tvO
 Using UIKit you create views to build the view hierarchy of your application's user interface. That is not how SwiftUI works. SwiftUI provides developers with an API to declare or describe what the user interface should look like. SwiftUI inspects the declaration or description of the user interface and converts it to your application's user interface. SwiftUI does the heavy lifting for you.
 
 
-
+\newpage
 \section{Development}
-
-\subsection{Overview}
 
 The AR app is designed to retrieve real-time economic data from an API and display it to the user in an augmented reality environment. The app provides users with the ability to interact with the data, manipulate its presentation, and perform various actions.
 
@@ -286,7 +283,7 @@ The other endpoint used is '/fluctuation' \ref{listing:fluctuationEndpoint}. Thi
 \end{lstlisting}
 
 %\cite{apilayer}
-
+\newpage
 \subsection{Visualization}
 
 
@@ -307,8 +304,8 @@ After defining these variables, we can create the ModelEntity and place it in th
 To be able to move the different elements together, all 3D models are children of the axes. Thus, if the axis moves, the connected elements will also move due to the parent-child relationship. In its current version, MeshResource does not support the generation of cones by default, so I was able to achieve this by using an external library package. After importing the RealityGeometries library, I was able to easily generate cones, which I eventually used to draw axes.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-After the application launches the camera opens and show the real world for the user.  With the bottom selector the user can select which currency he/she  would like to display \ref{fig:selector}.
-After he/she decided which currency should be displayed a confirmation button appeares \ref{fig:megerosites}. If the green tick is touched then the graph shows up with the correct current informations.
+After the application launches the camera opens and show the real world for the user.  With the bottom selector the user can select which currency he/she  would like to display as Figure \ref{fig:selector} presents.
+After he/she decided which currency should be displayed a confirmation button appeares as it is displayed on Figure \ref{fig:megerosites}. If the green tick is touched then the graph shows up with the correct current informations.
 
 The camera function in the application allows you to capture the current state of the graphs, which in this case came in handy for documentation.
 \begin{figure}[!ht]
@@ -336,7 +333,7 @@ The camera function in the application allows you to capture the current state o
   \label{fig:top}
 \end{figure}
 
-As the attached images clearly show, the virtual 3D graph can be easily walked around and viewed from different angles \ref{fig:top}, thereby giving users a new comparative perspective. It is possible to move and rotate the entire graph, as well as move the current exchange rate columns to make it easier to compare with other metrics. The move and rotate functions are only available in Spectate mode, for this you have to stop Live mode (or otherwise start Live mode) by pressing the button located in the upper left corner.
+As the attached images clearly show, the virtual 3D graph can be easily walked around and viewed from different angles as we see it on Figure \ref{fig:top}., thereby giving users a new comparative perspective. It is possible to move and rotate the entire graph, as well as move the current exchange rate columns to make it easier to compare with other metrics. The move and rotate functions are only available in Spectate mode, for this you have to stop Live mode (or otherwise start Live mode) by pressing the button located in the upper left corner.
 
 Currently, 2 currencies are available in the application, but of course this can be easily expanded at any time in the future. These two are EUR to HUF and USD to HUF. These can be displayed after selection and confirmation from the bottom bar. If the given exchange rate is already placed, it can no longer be added to the graph twice.
 

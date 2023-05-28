@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  26 MAY 2023 22:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  27 MAY 2023 21:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -300,7 +300,7 @@ Package hyperref Info: Link coloring ON on input line 86.
 \openout3 = `template.out'.
 
  (./onlabmacros.tex)
-<./figs//bme_logo.pdf, id=60, 705.63625pt x 188.705pt>
+<./figs//bme_logo.pdf, id=52, 705.63625pt x 188.705pt>
 File: ./figs//bme_logo.pdf Graphic file (type pdf)
 <use ./figs//bme_logo.pdf>
 Package pdftex.def Info: ./figs//bme_logo.pdf  used on input line 96.
@@ -323,57 +323,57 @@ Underfull \hbox (badness 10000) in paragraph at lines 134--135
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.157 \newpage
+l.156 \newpage
                [1]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 175.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 174.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-<../images/realitykit.png, id=88, 585.68813pt x 377.91188pt>
+<../images/realitykit.png, id=80, 585.68813pt x 377.91188pt>
 File: ../images/realitykit.png Graphic file (type png)
 <use ../images/realitykit.png>
-Package pdftex.def Info: ../images/realitykit.png  used on input line 194.
+Package pdftex.def Info: ../images/realitykit.png  used on input line 193.
 (pdftex.def)             Requested size: 426.79134pt x 275.39476pt.
  [2] [3 <../images/realitykit.png>]
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 244.
- [4]
-<../images/selector.jpeg, id=130, 831.105pt x 1798.72pt>
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 241.
+ [4] [5]
+<../images/selector.jpeg, id=151, 831.105pt x 1798.72pt>
 File: ../images/selector.jpeg Graphic file (type jpg)
 <use ../images/selector.jpeg>
-Package pdftex.def Info: ../images/selector.jpeg  used on input line 316.
+Package pdftex.def Info: ../images/selector.jpeg  used on input line 313.
 (pdftex.def)             Requested size: 98.59962pt x 213.39566pt.
-<../images/megerosites.jpeg, id=131, 831.105pt x 1798.72pt>
+<../images/megerosites.jpeg, id=152, 831.105pt x 1798.72pt>
 File: ../images/megerosites.jpeg Graphic file (type jpg)
 <use ../images/megerosites.jpeg>
-Package pdftex.def Info: ../images/megerosites.jpeg  used on input line 324.
+Package pdftex.def Info: ../images/megerosites.jpeg  used on input line 321.
 (pdftex.def)             Requested size: 98.59962pt x 213.39566pt.
-<../images/top.jpeg, id=132, 831.105pt x 1798.72pt>
+<../images/top.jpeg, id=153, 831.105pt x 1798.72pt>
 File: ../images/top.jpeg Graphic file (type jpg)
 <use ../images/top.jpeg>
-Package pdftex.def Info: ../images/top.jpeg  used on input line 333.
+Package pdftex.def Info: ../images/top.jpeg  used on input line 330.
 (pdftex.def)             Requested size: 98.59962pt x 213.39566pt.
- [5] [6 <../images/selector.jpeg> <../images/megerosites.jpeg>] [7 <../images/top.jpeg>]
-Underfull \hbox (badness 10000) in paragraph at lines 375--377
+ [6 <../images/selector.jpeg> <../images/megerosites.jpeg>] [7 <../images/top.jpeg>]
+Underfull \hbox (badness 10000) in paragraph at lines 372--374
 [][]$\T1/pcr/m/n/10 https : / / dynamics . microsoft . com / en-[]us / mixed-[]reality / guides /
  []
 
 [8] (./template.aux)
 Package rerunfilecheck Info: File `template.out' has not changed.
-(rerunfilecheck)             Checksum: D1C446437F6BD98B0752FCAA664D20D1;1736.
+(rerunfilecheck)             Checksum: 1332742783DF73FB1737B6FC37335148;1545.
  ) 
 Here is how much of TeX's memory you used:
- 10869 strings out of 476025
- 168996 string characters out of 5790018
- 1885388 words of memory out of 5000000
- 31113 multiletter control sequences out of 15000+600000
+ 10865 strings out of 476025
+ 168936 string characters out of 5790018
+ 1883388 words of memory out of 5000000
+ 31111 multiletter control sequences out of 15000+600000
  545629 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,7n,76p,1137b,1142s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on template.pdf (9 pages, 955028 bytes).
+Output written on template.pdf (9 pages, 954808 bytes).
 PDF statistics:
- 231 PDF objects out of 1000 (max. 8388607)
- 198 compressed objects within 2 object streams
- 70 named destinations out of 1000 (max. 500000)
- 138 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 223 PDF objects out of 1000 (max. 8388607)
+ 190 compressed objects within 2 object streams
+ 68 named destinations out of 1000 (max. 500000)
+ 122 words of extra memory for PDF output out of 10000 (max. 10000000)
 

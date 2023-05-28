@@ -1,10 +1,10 @@
 # Fdb version 4
-["pdflatex"] 1685132293 "/Users/kissdanielmark/Documents/01.Iskola/MSc/1/Onlab1/AR-Finance-Visualizer/Dokumentacio/onlab_sablonos/template.tex" "template.pdf" "template" 1685132295 0
+["pdflatex"] 1685213437 "/Users/kissdanielmark/Documents/01.Iskola/MSc/1/Onlab1/AR-Finance-Visualizer/Dokumentacio/onlab_sablonos/template.tex" "template.pdf" "template" 1685213439 0
   "../images/megerosites.jpeg" 1684911654 192733 707dbf5d7fe4f97e97cd8d60335f5d76 ""
   "../images/realitykit.png" 1684911654 36137 c641b54e638bacba8681f2beb71255e6 ""
   "../images/selector.jpeg" 1684911654 185021 96cd0f542d072d6ac3f40046933a1e91 ""
   "../images/top.jpeg" 1684911654 243881 1525233ace4e3857dbacda8c9df3fe14 ""
-  "/Users/kissdanielmark/Documents/01.Iskola/MSc/1/Onlab1/AR-Finance-Visualizer/Dokumentacio/onlab_sablonos/template.tex" 1685132292 26512 805222bb9bd1cc0451ccc9dead0457ab ""
+  "/Users/kissdanielmark/Documents/01.Iskola/MSc/1/Onlab1/AR-Finance-Visualizer/Dokumentacio/onlab_sablonos/template.tex" 1685213435 26556 c0bdb13f29a9edd19aea7f4b971dcebd ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/courier/pcrb8r.tfm" 1136768653 1292 3059476c50a24578715759f22652f3d0 ""
@@ -95,9 +95,9 @@
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   "figs//bme_logo.pdf" 1510838954 204651 7b6329ce4ae22d227f43ffc0242aaded ""
   "onlabmacros.tex" 1685123503 2082 0b3171974faf4f705d3566e610f7cf10 ""
-  "template.aux" 1685132295 4272 febf11c14a652896633400b8a1697256 "pdflatex"
-  "template.out" 1685132295 1736 d1c446437f6bd98b0752fcaa664d20d1 "pdflatex"
-  "template.tex" 1685132292 26512 805222bb9bd1cc0451ccc9dead0457ab ""
+  "template.aux" 1685213439 4041 bc1afca52992265c25a8c4ccae0d826a "pdflatex"
+  "template.out" 1685213439 1545 1332742783df73fb1737b6fc37335148 "pdflatex"
+  "template.tex" 1685213435 26556 c0bdb13f29a9edd19aea7f4b971dcebd ""
   (generated)
   "template.aux"
   "template.log"
