@@ -214,9 +214,18 @@ RealityKit’s features:
 
 \subsection{SwiftUI}
 
-SwiftUI is Apple's brand new framework for building user interfaces for iOS, tvOS, macOS, and watchOS. Apple introduced SwiftUI in 2019 and the framework has been evolving ever since. Unlike UIKit, SwiftUI is a cross-platform framework. The key difference with UIKit and AppKit is that SwiftUI defines the user interface declaratively, not imperatively. What does that mean?
+SwiftUI is Apple's brand new framework for building user interfaces for iOS, tvOS, macOS, and watchOS.
+Apple introduced SwiftUI in 2019 and the framework has been evolving ever since.
+Unlike UIKit, SwiftUI is a cross-platform framework. The key difference with UIKit and AppKit is that SwiftUI defines the user interface declaratively, not imperatively.
+What does that mean?
 
 Using UIKit you create views to build the view hierarchy of your application's user interface. That is not how SwiftUI works. SwiftUI provides developers with an API to declare or describe what the user interface should look like. SwiftUI inspects the declaration or description of the user interface and converts it to your application's user interface. SwiftUI does the heavy lifting for you.
+
+This declarative approach in SwiftUI simplifies the process of building user interfaces by allowing developers to focus on describing the desired outcome rather than manually managing the view hierarchy. Instead of writing code that specifies how each UI element should be positioned and styled, developers can define the structure and appearance of their user interface using SwiftUI's intuitive syntax.
+
+One of the powerful features of SwiftUI is its ability to provide real-time previews of your user interface while you are designing it. As you make changes to the code, the preview updates automatically, allowing you to see the immediate impact of your modifications. This live preview feature accelerates the development process by providing instant feedback and reducing the need for constant recompilation.
+
+SwiftUI also offers seamless integration with other Apple frameworks and technologies. For example, you can easily incorporate augmented reality experiences using ARKit or leverage the power of Core ML for machine learning tasks within your SwiftUI-based app. This level of integration allows developers to leverage the full potential of Apple's ecosystem while building their user interfaces.
 
 
 \newpage
@@ -340,7 +349,9 @@ Currently, 2 currencies are available in the application, but of course this can
 For the currencies currently only the EUR and USD are available. Both rates are convert to HUF refered to 1 unit.The blue column represents the EUR while the green columns shows the USD values.
 
 On the Z axes the user can visualize and start and the end fluctuation for the past 10 days. The last column shows the one year ago value of the givne currency.
-I have also added the possibilitie to move and rotate the whole graph the grabbing the X axis and performing the correct finger gesture on the screen.
+In addition to the Z-axis functionality, I have also implemented interactive controls for manipulating the graph itself.
+By enabling users to move and rotate the entire graph, they have the flexibility to view the data from different angles and perspectives. This interactive capability is achieved by grabbing the X-axis and performing the appropriate finger gesture on the screen, providing a tactile and intuitive method for exploring the data.
+Furthermore, the ability to move and rotate the graph allows for a more immersive and customizable experience. Users can adjust the graph's position and orientation to suit their preferences, making the app feel more personalized and tailored to their individual needs.
 
 
 
@@ -351,15 +362,17 @@ I have also added the possibilitie to move and rotate the whole graph the grabbi
 \label{sec:osszefoglalas}
 
 The main focus of my independent lab topic was augmented reality. I was interested in how it works and where the technology currently stands.
-In light of this, I looked at the currently used technologies and chose Apple's solution.
-Throughout my semester, I got to know ARKit and RealityKit and gained deeper knowledge in SwiftUI.
-\newblock
+The field of augmented reality (AR) has witnessed significant advancements in recent years, and its potential for growth and innovation continues to expand. During my independent lab project, I delved into the intricacies of AR technology and closely examined its current state. In this pursuit, I focused specifically on Apple's ARKit and RealityKit, which are widely recognized as powerful tools for AR development.
+Exploring ARKit and RealityKit allowed me to gain comprehensive knowledge of their capabilities and how they can be leveraged in real-world applications. Additionally, my project provided an opportunity to deepen my understanding of SwiftUI, which complements AR development by providing a declarative and intuitive approach to building user interfaces.
+\linebreak
 It was challenging to start this project because there were only a few good sources to educate myself from. Thankfully when I had any doubt my supervisor helped me.
 In the future the app will provide additional features to enhance the user experience.
 For example, it can offer historical data analysis, allowing users to compare current economic data with past trends. It can also include tools for creating personalized portfolios, setting up alerts for specific data thresholds, or conducting virtual simulations to predict the potential impact of economic events.
+\linebreak
 Overall, the AR app serves as a dynamic platform for users to access and interact with real-time economic data in an immersive and customizable manner, with endless possibilities for future growth and innovation.
 It was also a good starting point if I ever want to continue my journy I have a begining point. For the time being it is totaly enough for me.
-Curretly from my point of view it is a very immature in a sense that the big companies can't even produce any remarkable augmented reality applications for the smartphones. All in all I think it has huge potentials in it but it's market is yet to be reveald. Perheaps with the launch of the commercial augemented reality glasses? Who knows. Only time will tell.
+\linebreak
+Curretly from my point of view it is a very immature in a sense that the big companies can't even produce any remarkable augmented reality applications for the smartphones. Major companies are yet to unleash the full potential of augmented reality applications, indicating that there is still much to be explored and discovered. All in all I think it has huge potentials in it but it's market is yet to be reveald. Perheaps with the launch of the commercial augemented reality glasses? Who knows. Only time will tell.
 \newpage
 
 %==================================================================
